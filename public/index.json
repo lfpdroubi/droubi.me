@@ -6,7 +6,7 @@
       "Norberto Hochheim"
     ],
     "categories": null,
-    "content": "More detail can easily be written here using Markdown and $\\rm \\LaTeX$ math code.\n",
+    "content": "",
     "date": 1541111760,
     "expirydate": -62135596800,
     "kind": "page",
@@ -197,28 +197,6 @@
     "summary": "Person re-identification is a critical security task for recognizing a person across spatially disjoint sensors. Previous work can be computationally intensive and is mainly based on low-level cues extracted from RGB data and implemented on a PC for a fixed sensor network (such as traditional CCTV). We present a practical and efficient framework for mobile devices (such as smart phones and robots) where high-level semantic soft biometrics are extracted from RGB and depth data. By combining these cues, our approach attempts to provide robustness to noise, illumination, and minor variations in clothing. This mobile approach may be particularly useful for the identification of persons in areas ill-served by fixed sensors or for tasks where the sensor position and direction need to dynamically adapt to a target. Results on the BIWI dataset are preliminary but encouraging. Further evaluation and demonstration of the system will be available on our website.",
     "tags": [],
     "title": "A Person Re-Identification System For Mobile Devices",
-    "type": "publication"
-  },
-  {
-    "authors": [
-      "GA Cushen",
-      "MS Nixon"
-    ],
-    "categories": null,
-    "content": "More detail can easily be written here using Markdown and $\\rm \\LaTeX$ math code.\n",
-    "date": 1372647600,
-    "expirydate": -62135596800,
-    "kind": "page",
-    "lang": "en",
-    "lastmod": 1372647600,
-    "objectID": "2b4d919e3cf73dfcd0063c88fe01cb00",
-    "permalink": "/publication/clothing-search/",
-    "publishdate": "2013-07-01T00:00:00-03:00",
-    "relpermalink": "/publication/clothing-search/",
-    "section": "publication",
-    "summary": "We present a mobile visual clothing search system whereby a smart phone user can either choose a social networking photo or take a new photo of a person wearing clothing of interest and search for similar clothing in a retail database. From the query image, the person is detected, clothing is segmented, and clothing features are extracted and quantized. The information is sent from the phone client to a server, where the feature vector of the query image is used to retrieve similar clothing products from online databases. The phone's GPS location is used to re-rank results by retail store location. State of the art work focuses primarily on the recognition of a diverse range of clothing offline and pays little attention to practical applications. Evaluated on a challenging dataset, the system is relatively fast and achieves promising results.",
-    "tags": [],
-    "title": "Mobile visual clothing search",
     "type": "publication"
   },
   {

@@ -40,7 +40,7 @@ projects = ["internal-project"]
 tags = ["distribuição lognormal", "regressão-linear", "heterocedasticidade", "Box-Cox"]
 
 # Links (optional).
-url_pdf = "http://eprints.soton.ac.uk/352095/1/Cushen-IMV2013.pdf"
+url_pdf = "https://github.com/lfpdroubi/cobrac2018/raw/master/537-1947-1-DR.pdf"
 #url_preprint = "http://eprints.soton.ac.uk/352095/1/Cushen-IMV2013.pdf"
 #url_code = "#"
 #url_dataset = "#"
@@ -52,7 +52,7 @@ url_poster = "https://github.com/lfpdroubi/cobrac2018/raw/master/poster_dist_log
 
 # Custom links (optional).
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.
-url_custom = [{name = "Custom Link", url = "http://example.org"}]
+url_custom = [{name = "COBRAC 2018", url = "http://cobrac2018.ufsc.br/"}]
 
 # Digital Object Identifier (DOI)
 doi = ""
@@ -70,5 +70,3 @@ math = true
   # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
   focal_point = ""
 +++
-
-More detail can easily be written here using *Markdown* and $\rm \LaTeX$ math code.
