@@ -1,6 +1,34 @@
 [
   {
     "authors": [
+      "Willian Zonato",
+      "Luiz Fernando Palin Droubi",
+      "Norberto Hochheim"
+    ],
+    "categories": null,
+    "content": "",
+    "date": 1541113560,
+    "expirydate": -62135596800,
+    "kind": "page",
+    "lang": "en",
+    "lastmod": 1541113560,
+    "objectID": "6b09376db9ae84ed3716c1911a01fe8f",
+    "permalink": "/publication/pressupostos-classicos/",
+    "publishdate": "2018-11-01T20:06:00-03:00",
+    "relpermalink": "/publication/pressupostos-classicos/",
+    "section": "publication",
+    "summary": "Este artigo visa mostrar com clareza as hipóteses clássicas da regressão linear e as implicações do não atendimento destas hipóteses no processo de inferência. Especial atenção é dada à hipótese de maior impacto sobre este processo, a saber, a hipótese da homoscedasticidade. Especialmente nos modelos de avaliação em massa, o problema da heteroscedasticidade tende a ser mais comum, haja vista a grande amplitude do domínio do modelo. Desta maneira, mostramos como surge a heteroscedasticidade, como esta pode ser detectada, e as maneiras de contorná-la. Suas implicações são detalhadas com precisão. Para o presente artigo foi realizado um estudo de caso, utilizando-se dados de imóveis comerciais na região central da cidade de Florianópolis/SC, fazendo uso de diferentes transformações para a variável dependente. Objetivando alcançar a transformação mais adequada da variável dependente, para o modelo de regressão, foi aplicado o método de Box-Cox. Por fim, foram comparadas as estimativas realizadas com os diferentes modelos, fazendo uso do método de Eicker-White para o cômputo da matriz de Covariância na presença de heteroscedasticidade. Constatou-se que aplicação do método Eicker-White, para fins de contorno da heterocedasticidade, pode ser considerada uma boa alternativa frente a pesquisa de transformações de variaveis que estabilizem a variância do modelo de regressão.",
+    "tags": [
+      "heterocedasticidade",
+      "covariância",
+      "regressão-linear",
+      "avaliação-em-massa"
+    ],
+    "title": "Pressupostos inferência clássica",
+    "type": "publication"
+  },
+  {
+    "authors": [
       "Luiz Fernando Palin Droubi",
       "Willian Zonato",
       "Norberto Hochheim"
@@ -177,27 +205,6 @@
     ],
     "title": "Academic: the website designer for Hugo",
     "type": "post"
-  },
-  {
-    "authors": [
-      "GA Cushen"
-    ],
-    "categories": null,
-    "content": "More detail can easily be written here using Markdown and $\\rm \\LaTeX$ math code.\n",
-    "date": 1441076400,
-    "expirydate": -62135596800,
-    "kind": "page",
-    "lang": "en",
-    "lastmod": 1441076400,
-    "objectID": "d77fa4a74076ffcd7ca6c21cfc27a4b2",
-    "permalink": "/publication/person-re-id/",
-    "publishdate": "2015-09-01T00:00:00-03:00",
-    "relpermalink": "/publication/person-re-id/",
-    "section": "publication",
-    "summary": "Person re-identification is a critical security task for recognizing a person across spatially disjoint sensors. Previous work can be computationally intensive and is mainly based on low-level cues extracted from RGB data and implemented on a PC for a fixed sensor network (such as traditional CCTV). We present a practical and efficient framework for mobile devices (such as smart phones and robots) where high-level semantic soft biometrics are extracted from RGB and depth data. By combining these cues, our approach attempts to provide robustness to noise, illumination, and minor variations in clothing. This mobile approach may be particularly useful for the identification of persons in areas ill-served by fixed sensors or for tasks where the sensor position and direction need to dynamically adapt to a target. Results on the BIWI dataset are preliminary but encouraging. Further evaluation and demonstration of the system will be available on our website.",
-    "tags": [],
-    "title": "A Person Re-Identification System For Mobile Devices",
-    "type": "publication"
   },
   {
     "authors": null,

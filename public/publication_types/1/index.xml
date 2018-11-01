@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Thu, 01 Nov 2018 19:36:00 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 01 Nov 2018 20:06:00 -0300</lastBuildDate>
     
 	<atom:link href="/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pressupostos inferência clássica</title>
+      <link>/publication/pressupostos-classicos/</link>
+      <pubDate>Thu, 01 Nov 2018 20:06:00 -0300</pubDate>
+      
+      <guid>/publication/pressupostos-classicos/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Distribuição Lognormal</title>
