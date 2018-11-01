@@ -1,0 +1,22 @@
+---
+title: Básico de regressão linear no R
+author: Droubi
+date: 2018-10-30T21:13:14-05:00
+categories: ["R"]
+tags: ["R Markdown", "plot", "regression"]
+---
+
+Para fazer uma simples regressão linear no [**R**](https://cran.r-project.org/), utilize a função `lm`, como abaixo:
+
+```{r}
+fit <- lm(mpg ~ factor(cyl) + wt, data = mtcars)
+summary(fit)
+```
+
+O primeiro argumento da função `lm` é a fórmula, onde se separam os regressores da variávels dependente pelo til (~). A função `factor` pode ser utilizada para transformar uma variável (seja ela numérica ou não) em um fator.
+
+Pode-se notar a significância das variáveis na coluna `Pr(>|t|)`. Os valores dos coeficientes de regressão ($\beta_i$) são mostrados na coluna `Estimate`.
+
+Note o alto valor do $R^2_{ajustado}$ (`r round(summary(fit)$adj.r.squared, 2)`)
+
+**Obs.:** O conjunto de dados `mtcars` está disponível na instalação padrão do [**R**](https://cran.r-project.org/).

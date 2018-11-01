@@ -1,0 +1,21 @@
+---
+title: "Diagnóstico de regressão no R"
+author: "Droubi"
+date: 2018-10-31T21:13:14-05:00
+categories: ["R"]
+tags: ["R Markdown", "plot", "regression"]
+---
+
+
+
+<p>Seguindo o post anterior, agora vamos fazer uma análise qualitativa do modelo encontrado.</p>
+<p>Uma análise gráfica rápida pode ser feita utilizando-se a função <code>plot</code>, como abaixo:</p>
+<pre class="r"><code>fit &lt;- lm(mpg ~ factor(cyl) + wt, data = mtcars)
+plot(fit)</code></pre>
+<p><img src="/post/2018-01-04-diagnóstico-de-regressão-no-r_files/figure-html/unnamed-chunk-1-1.png" width="672" /><img src="/post/2018-01-04-diagnóstico-de-regressão-no-r_files/figure-html/unnamed-chunk-1-2.png" width="672" /><img src="/post/2018-01-04-diagnóstico-de-regressão-no-r_files/figure-html/unnamed-chunk-1-3.png" width="672" /><img src="/post/2018-01-04-diagnóstico-de-regressão-no-r_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
+<p>O usuário verá uma série de quatro gráficos de diagnóstico no painel de visualização, um de cada vez (tem que apertar Enter para mudar de gráfico).</p>
+<p>O primeiro gráfico (<em>Residuals vs Fitted</em>) mostra os resíduos em função dos valores ajustados (<em>Fitted values</em>) e é ideal para analisar a presença de não-linearidades no modelo.</p>
+<p>O segundo é um <a href="https://pt.wikipedia.org/wiki/Gr%C3%A1fico_Q-Q">gráfico Q-Q</a> dos resíduos padronizados, para verificação da normalidade dos resíduos.</p>
+<p>O terceiro gráfico (<em>Scale-Location</em>) serve para verificação da hipótese da homocedasticidade dos resíduos.</p>
+<p>E, finalmente, o quarto gráfico (<em>Residuals vs Leverage</em>) pode ser útil para detectar a presença de pontos inflluenciantes.</p>
+<p>Este <a href="http://data.library.virginia.edu/diagnostic-plots/">link</a> pode ser consultado para mais detalhes.</p>

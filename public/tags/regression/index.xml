@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>regression on Academic</title>
+    <link>/tags/regression/</link>
+    <description>Recent content in regression on Academic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Wed, 31 Oct 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/tags/regression/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Diagnóstico de regressão no R</title>
+      <link>/post/2018-01-04-diagn%C3%B3stico-de-regress%C3%A3o-no-r/</link>
+      <pubDate>Wed, 31 Oct 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2018-01-04-diagn%C3%B3stico-de-regress%C3%A3o-no-r/</guid>
+      <description>Seguindo o post anterior, agora vamos fazer uma análise qualitativa do modelo encontrado.
+Uma análise gráfica rápida pode ser feita utilizando-se a função plot, como abaixo:
+fit &amp;lt;- lm(mpg ~ factor(cyl) + wt, data = mtcars)plot(fit)O usuário verá uma série de quatro gráficos de diagnóstico no painel de visualização, um de cada vez (tem que apertar Enter para mudar de gráfico).
+O primeiro gráfico (Residuals vs Fitted) mostra os resíduos em função dos valores ajustados (Fitted values) e é ideal para analisar a presença de não-linearidades no modelo.</description>
+    </item>
+    
+    <item>
+      <title>Básico de regressão linear no R</title>
+      <link>/post/2018-01-04-b%C3%A1sico-de-regress%C3%A3o-linear-no-r/</link>
+      <pubDate>Tue, 30 Oct 2018 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2018-01-04-b%C3%A1sico-de-regress%C3%A3o-linear-no-r/</guid>
+      <description>Para fazer uma simples regressão linear no R, utilize a função lm, como abaixo:
+fit &amp;lt;- lm(mpg ~ factor(cyl) + wt, data = mtcars)summary(fit)## ## Call:## lm(formula = mpg ~ factor(cyl) + wt, data = mtcars)## ## Residuals:## Min 1Q Median 3Q Max ## -4.5890 -1.2357 -0.5159 1.3845 5.7915 ## ## Coefficients:## Estimate Std. Error t value Pr(&amp;gt;|t|) ## (Intercept) 33.9908 1.8878 18.006 &amp;lt; 2e-16 ***## factor(cyl)6 -4.</description>
+    </item>
+    
+  </channel>
+</rss>

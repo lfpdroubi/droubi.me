@@ -1,0 +1,37 @@
+---
+title: Básico de regressão linear no R
+author: Droubi
+date: 2018-10-30T21:13:14-05:00
+categories: ["R"]
+tags: ["R Markdown", "plot", "regression"]
+---
+
+
+
+<p>Para fazer uma simples regressão linear no <a href="https://cran.r-project.org/"><strong>R</strong></a>, utilize a função <code>lm</code>, como abaixo:</p>
+<pre class="r"><code>fit &lt;- lm(mpg ~ factor(cyl) + wt, data = mtcars)
+summary(fit)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = mpg ~ factor(cyl) + wt, data = mtcars)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.5890 -1.2357 -0.5159  1.3845  5.7915 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   33.9908     1.8878  18.006  &lt; 2e-16 ***
+## factor(cyl)6  -4.2556     1.3861  -3.070 0.004718 ** 
+## factor(cyl)8  -6.0709     1.6523  -3.674 0.000999 ***
+## wt            -3.2056     0.7539  -4.252 0.000213 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.557 on 28 degrees of freedom
+## Multiple R-squared:  0.8374, Adjusted R-squared:   0.82 
+## F-statistic: 48.08 on 3 and 28 DF,  p-value: 3.594e-11</code></pre>
+<p>O primeiro argumento da função <code>lm</code> é a fórmula, onde se separam os regressores da variávels dependente pelo til (~). A função <code>factor</code> pode ser utilizada para transformar uma variável (seja ela numérica ou não) em um fator.</p>
+<p>Pode-se notar a significância das variáveis na coluna <code>Pr(&gt;|t|)</code>. Os valores dos coeficientes de regressão (<span class="math inline">\(\beta_i\)</span>) são mostrados na coluna <code>Estimate</code>.</p>
+<p>Note o alto valor do <span class="math inline">\(R^2_{ajustado}\)</span> (0.82)</p>
+<p><strong>Obs.:</strong> O conjunto de dados <code>mtcars</code> está disponível na instalação padrão do <a href="https://cran.r-project.org/"><strong>R</strong></a>.</p>

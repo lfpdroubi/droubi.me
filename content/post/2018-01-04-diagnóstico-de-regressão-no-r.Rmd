@@ -1,0 +1,28 @@
+---
+title: "Diagnóstico de regressão no R"
+author: "Droubi"
+date: 2018-10-31T21:13:14-05:00
+categories: ["R"]
+tags: ["R Markdown", "plot", "regression"]
+---
+
+Seguindo o post anterior, agora vamos fazer uma análise qualitativa do modelo encontrado.
+
+Uma análise gráfica rápida pode ser feita utilizando-se a função `plot`, como abaixo:
+
+```{r, fig.show='hold'}
+fit <- lm(mpg ~ factor(cyl) + wt, data = mtcars)
+plot(fit)
+```
+
+O usuário verá uma série de quatro gráficos de diagnóstico no painel de visualização, um de cada vez (tem que apertar Enter para mudar de gráfico).
+
+O primeiro gráfico (*Residuals vs Fitted*) mostra os resíduos em função dos valores ajustados (*Fitted values*) e é ideal para analisar a presença de não-linearidades no modelo.
+
+O segundo é um [gráfico Q-Q](https://pt.wikipedia.org/wiki/Gr%C3%A1fico_Q-Q) dos resíduos padronizados, para verificação da normalidade dos resíduos.
+
+O terceiro gráfico (*Scale-Location*) serve para verificação da hipótese da homocedasticidade dos resíduos.
+
+E, finalmente, o quarto gráfico (*Residuals vs Leverage*) pode ser útil para detectar a presença de pontos inflluenciantes.
+
+Este [link](http://data.library.virginia.edu/diagnostic-plots/) pode ser consultado para mais detalhes.
