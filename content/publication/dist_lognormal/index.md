@@ -22,22 +22,7 @@ publication = "In *13º Congresso Brasileiro de Cadastro Técnico Multifinalitá
 publication_short = "In *COBRAC*"
 
 # Abstract and optional shortened version.
-abstract = "Um procedimento muito comum na área de engenharia de avaliações é a adoção de transformações das variáveis
-para a obtenção de um modelo de regressão “melhor” ajustado. Dentre tais transformações, a mais usual e
-preferida de muitos avaliadores é a função logaritmo, especialmente para a variável dependente. Muitas vezes
-esta transformação é adequada e percebe-se uma notória melhora no ajuste do modelo. Outras vezes, esta
-transformação pode não ser adequada. Apesar do modelo aparentar-se melhor ajustado, problemas podem
-ocorrer quanto às verificações das hipóteses clássicas da regressão, as quais nem sempre os avaliadores estão tão
-atentos quanto estão com as verificações dos intervalos de confiança e níveis de significância. No entanto, o
-avaliador que assim procede estará verificando intervalos de confiança e níveis de significâncias incorretos, haja
-vista que a hipótese da heteroscedasticidade implica na incorreção destas inferências. Pretende-se apresentar aos
-avaliadores a importância da adoção de escolhas criteriosas para as transformações da variáveis através da
-análise do histograma da variável original e da variável transformada. Normalmente, uma boa escolha de
-transformação leva a uma distribuição aproximadamente normal. Quando a variável dependente apresenta
-distribuição lognormal, esta transformação é a transformação logarítmica. Desta maneira, descrevemos as
-características básicas desta distribuição, sua formulação, características além do seu relacionamento com a
-distribuição normal. Por fim, o presente estudo evindencia as implicações da adoção da transformação da
-variável dependente e o problema da retransformação da variável dependente à sua escala original."
+abstract = "Um procedimento muito comum na área de engenharia de avaliações é a adoção de transformações das variáveis para a obtenção de um modelo de regressão “melhor” ajustado. Dentre tais transformações, a mais usual e preferida de muitos avaliadores é a função logaritmo, especialmente para a variável dependente. Muitas vezes esta transformação é adequada e percebe-se uma notória melhora no ajuste do modelo. Outras vezes, esta transformação pode não ser adequada. Apesar do modelo aparentar-se melhor ajustado, problemas podem ocorrer quanto às verificações das hipóteses clássicas da regressão, as quais nem sempre os avaliadores estão tão atentos quanto estão com as verificações dos intervalos de confiança e níveis de significância. No entanto, o avaliador que assim procede estará verificando intervalos de confiança e níveis de significâncias incorretos, haja vista que a hipótese da heteroscedasticidade implica na incorreção destas inferências. Pretende-se apresentar aos avaliadores a importância da adoção de escolhas criteriosas para as transformações da variáveis através da análise do histograma da variável original e da variável transformada. Normalmente, uma boa escolha de transformação leva a uma distribuição aproximadamente normal. Quando a variável dependente apresenta distribuição lognormal, esta transformação é a transformação logarítmica. Desta maneira, descrevemos as características básicas desta distribuição, sua formulação, características além do seu relacionamento com a distribuição normal. Por fim, o presente estudo evindencia as implicações da adoção da transformação da variável dependente e o problema da retransformação da variável dependente à sua escala original."
 
 # Is this a selected publication? (true/false)
 selected = true
