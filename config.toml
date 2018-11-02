@@ -51,23 +51,23 @@ enableGitInfo = false
   # AUTHOR SETUP
 
   # Your details.
-  name = "Luiz Droubi"
+  name = "Luiz F. P. Droubi"
   role = "Mestrando no Programa de Pós-Graduação em Engenharia de Transportes e Gestão Territorial"
 
   # Organizations/Affiliations.
   #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
   organizations = [ { name = "Universidade Federal de Santa Catarina", url = "http://ufsc.br" } ]
 
-  gravatar = false  # Get your avatar from Gravatar.com? (true/false)
-  avatar = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
+  gravatar = true  # Get your avatar from Gravatar.com? (true/false)
+  #avatar = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
 
   # Details for the Contact Widget
   email = "lfpdroubi@gmail.com"
   address = "Rua Bela Vista, 1408, Águas Mornas, Santa Catarina, 88150-000, Brasil"
   office_hours = "Monday 10:00 to 13:00 or email for appointment"
-  phone = "888 888 88 88"
+  phone = "(48) 99673-0389"
   skype = "droubi"
-  telegram = ""
+  telegram = "(48) 99673-0389"
   keybase = ""  # Your keybase.io username.
 
   # Discussion link (e.g. link to a forum, mailing list, or chat).
@@ -91,8 +91,8 @@ enableGitInfo = false
   #   3: OpenStreetMap (Mapbox)
   map = 3
   map_api_key = ""
-  latitude = "-27.6955454"
-  longitude = "-48.827737"
+  latitude = "-27.599977"
+  longitude = "-48.51501"
   zoom = 15
 
   # SITE SETUP
