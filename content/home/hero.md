@@ -7,7 +7,7 @@ date = 2018-11-04T00:00:00
 title = "Página Pessoal de Luiz F. P. Droubi"
 
 # Order that this section will appear in.
-weight = 3
+weight = 5
 
 # Overlay a color or image (optional).
 #   Deactivate an option by commenting out the line, prefixing it with `#`.
@@ -24,4 +24,4 @@ weight = 3
 #  label = '<i class="fas fa-download"></i> Install Now'
 +++
 
-Esta é a página pessoal do Eng. Luiz Fernando P. Droubi. Se pretende entrar em contato, por favor utilize o [formulário abaixo](#contato).
+Esta é a página pessoal do Eng. Luiz Fernando P. Droubi. Para entrar em contato, por favor utilize o [formulário abaixo](#contato).
