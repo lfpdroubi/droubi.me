@@ -3,7 +3,7 @@
 widget = "experience"  # Do not modify this line!
 active = true  # Activate this widget? true/false
 
-title = "Experiência"
+title = "Experiência Profissional"
 subtitle = ""
 
 # Order that this section will appear in.
@@ -19,27 +19,27 @@ date_format = "January 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
-  title = "CEO"
-  company = "GenCoin"
-  company_url = ""
-  location = "California"
-  date_start = "2017-01-01"
-  date_end = ""
+  title = "Engenheiro Avaliador"
+  company = "SPU/SC"
+  company_url = "http://patrimoniodetodos.gov.br"
+  location = "Florianópolis/SC"
+  date_start = "2017-11-01"
+  date_end = "2018-10-01"
   description = """
-  Responsibilities include:
+  Responsibilidades:
   
-  * Analysing
-  * Modelling
-  * Deploying
+  * Análise de laudos periciais envolvendo avaliações de imóveis da União ou de interesse da União.
+  * Elaboração de laudos e pareceres técnicos de avaliação de imóveis
+  * Elaboração de *templates* em **Rmarkdown** para laudos e pareceres
   """
 
 [[experience]]
-  title = "Professor"
-  company = "University X"
-  company_url = ""
-  location = "California"
-  date_start = "2016-01-01"
-  date_end = "2016-12-31"
+  title = "Engenheiro de Estruturas e Edificações"
+  company = "INFRAERO"
+  company_url = "http://infraero.gov.br"
+  location = "Florianópolis/SC"
+  date_start = "2011-11-01"
+  date_end = "2017-11-01"
   description = """Taught electronic engineering and researched semiconductor physics."""
 
 +++
