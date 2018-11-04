@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on droubi.me</title>
-    <link>/project/</link>
-    <description>Recent content in Projects on droubi.me</description>
+    <title>avaliacoes on droubi.me</title>
+    <link>/tags/avaliacoes/</link>
+    <description>Recent content in avaliacoes on droubi.me</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sat, 03 Nov 2018 23:00:00 -0300</lastBuildDate>
     
-	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/avaliacoes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
