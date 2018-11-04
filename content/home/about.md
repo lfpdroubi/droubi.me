@@ -18,9 +18,24 @@ weight = 5
 # List your qualifications (such as academic degrees).
 
 [[education.courses]]
+  course = "Atual: Mestrado em Engenharia de Transportes e Gestão Territorial"
+  institution = "UFSC"
+  year = 2019
+  
+[[education.courses]]
+  course = "Data Scientist with R"
+  institution = "DataCamp"
+  year = 2019
+
+[[education.courses]]
   course = "Pós-Graduação em Auditoria, Avaliações e Perícias de Engenharia"
   institution = "IPOG"
-  year = 2014
+  year = 2016
+  
+[[education.courses]]
+  course = "Engenharia de Terminais e Dutos"
+  institution = "Universidade Petrobras"
+  year = 2008
 
 [[education.courses]]
   course = "Engenharia Civil"
@@ -33,6 +48,6 @@ weight = 5
 
 Luiz Droubi é mestrando no [Programa de Pós-Graduação em Engenharia de Transportes e Gestão Territorial](http://ppgtg.ufsc.br) da [UFSC](http://ufsc.br) e atualmente labora na [Secretaria do Patrimônio da União](http://www.patrimoniodetodos.gov.br/) em Santa Catarina.
 
-É formado em Engenharia Civil pela [Escola de Engenharia de São Carlos](http://www.eesc.usp.br/) da [USP](https://www5.usp.br/), com especialização em Auditoria, Avaliações e Perícias de Engenharia pelo [IPOG](https://www.ipog.edu.br/).
+É formado em Engenharia Civil pela [Escola de Engenharia de São Carlos](http://www.eesc.usp.br/) da [USP](https://www5.usp.br/), com especialização em [Auditoria, Avaliações & Perícias de Engenharia](https://www.ipog.edu.br/curso/engenharia-arquitetura/auditoria-avaliacoes--pericias-de-engenharia) pelo [IPOG](https://www.ipog.edu.br/).
 
 Também tem certificação como Cientista de Dados pela [DataCamp](http://www.datacamp.com).
