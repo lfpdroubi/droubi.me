@@ -24,4 +24,4 @@ weight = 5
 #  label = '<i class="fas fa-download"></i> Install Now'
 +++
 
-Esta é a página pessoal do Eng. Luiz Fernando P. Droubi. Para entrar em contato, por favor utilize o [formulário abaixo](#contato).
+Esta é a página pessoal do Eng. Luiz Fernando P. Droubi. Para entrar em contato, por favor utilize o [formulário abaixo](#contact).
