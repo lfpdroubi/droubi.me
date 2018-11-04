@@ -63,7 +63,7 @@ enableGitInfo = false
 
   # Details for the Contact Widget
   email = "lfpdroubi@gmail.com"
-  address = "Rua Bela Vista, 1408, Águas Mornas, Santa Catarina, 88150-000, Brasil"
+  address = "Rua João Pio Duarte da Silva, 205, Bairro Córrego Grande, Florianópolis/SC, CEP: 88040-900"
   office_hours = "Monday 10:00 to 13:00 or email for appointment"
   phone = "(48) 99673-0389"
   skype = "droubi"
@@ -89,7 +89,7 @@ enableGitInfo = false
   #   1: Google Maps
   #   2: OpenStreetMap (Mapnik)
   #   3: OpenStreetMap (Mapbox)
-  map = 3
+  map = 2
   map_api_key = ""
   latitude = "-27.599977"
   longitude = "-48.51501"
@@ -99,7 +99,7 @@ enableGitInfo = false
 
   # Color theme.
   #   Choose from `default`, `ocean`, `forest`, `dark`, `apogee`, `1950s`, `coffee`, `cupcake`.
-  color_theme = "default"
+  color_theme = "coffee"
 
   # Font style.
   #   Choose from `default`, `classic`, or `playfair`.
@@ -109,7 +109,7 @@ enableGitInfo = false
   description = ""
 
   # Default image for social sharing and search engines. Place image in `static/img/` folder and specify image name here.
-  sharing_image = ""
+  sharing_image = "eu.jpg"
 
   # Twitter username (without @). Used when a vistor shares your site on Twitter.
   twitter = "lfpdroubi"
@@ -122,7 +122,7 @@ enableGitInfo = false
   #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
   date_format = "Jan 2, 2006"
   #   Examples: "3:04 pm" or "15:04"
-  time_format = "3:04 PM"
+  time_format = "15:04"
 
   # Show estimated reading time for posts?
   reading_time = true
