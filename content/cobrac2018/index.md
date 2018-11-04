@@ -1,4 +1,10 @@
-# COBRAC 2018
+---
+title: COBRAC 2018
+author: Droubi
+date: 2018-11-04T15:15:00
+categories: ["congressos"]
+tags: ["cobrac", "congresso", "artigo"]
+---
 
 Página do evento: [COBRAC 2018](http://cobrac2018.ufsc.br/)
 

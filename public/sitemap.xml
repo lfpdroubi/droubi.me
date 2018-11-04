@@ -4,6 +4,14 @@
     
     <url>
     
+      <loc>/cobrac2018/</loc>
+      <lastmod>2018-11-04T15:15:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/publication/pressupostos-classicos/</loc>
       <lastmod>2018-11-01T20:06:00-03:00</lastmod>
     </url>
@@ -110,13 +118,6 @@
     
       <loc>/post/getting-started/</loc>
       <lastmod>2018-01-13T00:00:00-02:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/cobrac2018/</loc>
     </url>
     
   
@@ -236,8 +237,44 @@
     
     <url>
     
+      <loc>/tags/artigo/</loc>
+      <lastmod>2018-11-04T15:15:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/tags/avalia%C3%A7%C3%A3o-em-massa/</loc>
       <lastmod>2018-11-01T20:06:00-03:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/cobrac/</loc>
+      <lastmod>2018-11-04T15:15:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/congresso/</loc>
+      <lastmod>2018-11-04T15:15:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/congressos/</loc>
+      <lastmod>2018-11-04T15:15:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

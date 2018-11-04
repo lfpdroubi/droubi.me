@@ -11,6 +11,36 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>COBRAC 2018</title>
+      <link>/cobrac2018/</link>
+      <pubDate>Sun, 04 Nov 2018 15:15:00 +0000</pubDate>
+      
+      <guid>/cobrac2018/</guid>
+      <description>
+
+&lt;p&gt;Página do evento: &lt;a href=&#34;http://cobrac2018.ufsc.br/&#34; target=&#34;_blank&#34;&gt;COBRAC 2018&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;trabalhos-submetidos-pelo-autor-ao-cobrac-2018&#34;&gt;Trabalhos submetidos pelo autor ao COBRAC 2018&lt;/h2&gt;
+
+&lt;h3 id=&#34;distribuição-lognormal&#34;&gt;Distribuição Lognormal&lt;/h3&gt;
+
+&lt;p&gt;DROUBI, L. F. P.; ZONATO, W.; HOCHHEIM, N. Distribuição Lognormal: Propriedades e aplicações na engenharia de avaliações. In: 13º Congresso Brasileiro de Cadastro Técnico Multifinalitário e Gestão Territorial. Anais…, 2018. Florianópolis: COBRAC. Disponível em: &lt;a href=&#34;http://droubi.me/cobrac2018&#34; target=&#34;_blank&#34;&gt;http://droubi.me/cobrac2018&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;537-1947-1-DR.pdf&#34; target=&#34;_blank&#34;&gt;Artigo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;poster_dist_lognormal.pdf&#34; target=&#34;_blank&#34;&gt;Poster&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;pressupostos-clássicos-ols&#34;&gt;Pressupostos Clássicos OLS&lt;/h3&gt;
+
+&lt;p&gt;ZONATO, W.; DROUBI, L. F. P.; HOCHHEIM, N. Pressupostos clássicos dos modelos de regressão linear e suas implicações sobre as avaliações em massa. In: 13º Congresso Brasileiro de Cadastro Técnico Multifinalitário e Gestão Territorial. Anais…, 2018. COBRAC. Disponível em: &lt;a href=&#34;http://droubi.me/cobrac2018&#34; target=&#34;_blank&#34;&gt;http://droubi.me/cobrac2018&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;545-1948-1-DR.pdf&#34; target=&#34;_blank&#34;&gt;Artigo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;poster_pressupostos.pdf&#34; target=&#34;_blank&#34;&gt;Poster&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Pressupostos inferência clássica</title>
       <link>/publication/pressupostos-classicos/</link>
       <pubDate>Thu, 01 Nov 2018 20:06:00 -0300</pubDate>
@@ -394,38 +424,6 @@ git submodule update --init --recursive
 &lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecushen.com&#34; target=&#34;_blank&#34;&gt;George Cushen&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Released under the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/blob/master/LICENSE.md&#34; target=&#34;_blank&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/cobrac2018/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/cobrac2018/</guid>
-      <description>
-
-&lt;h1 id=&#34;cobrac-2018&#34;&gt;COBRAC 2018&lt;/h1&gt;
-
-&lt;p&gt;Página do evento: &lt;a href=&#34;http://cobrac2018.ufsc.br/&#34; target=&#34;_blank&#34;&gt;COBRAC 2018&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;trabalhos-submetidos-pelo-autor-ao-cobrac-2018&#34;&gt;Trabalhos submetidos pelo autor ao COBRAC 2018&lt;/h2&gt;
-
-&lt;h3 id=&#34;distribuição-lognormal&#34;&gt;Distribuição Lognormal&lt;/h3&gt;
-
-&lt;p&gt;DROUBI, L. F. P.; ZONATO, W.; HOCHHEIM, N. Distribuição Lognormal: Propriedades e aplicações na engenharia de avaliações. In: 13º Congresso Brasileiro de Cadastro Técnico Multifinalitário e Gestão Territorial. Anais…, 2018. Florianópolis: COBRAC. Disponível em: &lt;a href=&#34;http://droubi.me/cobrac2018&#34; target=&#34;_blank&#34;&gt;http://droubi.me/cobrac2018&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;537-1947-1-DR.pdf&#34; target=&#34;_blank&#34;&gt;Artigo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;poster_dist_lognormal.pdf&#34; target=&#34;_blank&#34;&gt;Poster&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;pressupostos-clássicos-ols&#34;&gt;Pressupostos Clássicos OLS&lt;/h3&gt;
-
-&lt;p&gt;ZONATO, W.; DROUBI, L. F. P.; HOCHHEIM, N. Pressupostos clássicos dos modelos de regressão linear e suas implicações sobre as avaliações em massa. In: 13º Congresso Brasileiro de Cadastro Técnico Multifinalitário e Gestão Territorial. Anais…, 2018. COBRAC. Disponível em: &lt;a href=&#34;http://droubi.me/cobrac2018&#34; target=&#34;_blank&#34;&gt;http://droubi.me/cobrac2018&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;545-1948-1-DR.pdf&#34; target=&#34;_blank&#34;&gt;Artigo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;poster_pressupostos.pdf&#34; target=&#34;_blank&#34;&gt;Poster&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
