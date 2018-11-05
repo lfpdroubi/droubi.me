@@ -135,7 +135,7 @@ enableGitInfo = false
 
   # Enable global LaTeX math rendering?
   #   If false, you can enable it locally on a per page basis.
-  math = false
+  math = true
 
   # Highlight.js options
   #   highlight
@@ -248,11 +248,26 @@ enableGitInfo = false
     icon = "envelope"
     icon_pack = "fas"
     link = "mailto:lfpdroubi@gmail.com"  # For a direct email link, use "mailto:test@example.org".
+  
+  [[params.social]]
+    icon = "github"
+    icon_pack = "fab"
+    link = "https://github.com/lfpdroubi"
 
-[[params.social]]
+  [[params.social]]
+    icon = "linkedin"
+    icon_pack = "fab"
+    link = "https://www.linkedin.com/in/luiz-fernando-palin-droubi-52942034/"
+  
+  [[params.social]]
     icon = "facebook"
     icon_pack = "fab"
     link = "http://www.facebook.com/luiz.droubi"
+    
+  [[params.social]]
+    icon = "instagram"
+    icon_pack = "fab"
+    link = "http://www.instagram.com/lfpdroubi"
  
  [[params.social]]
     icon = "twitter"
@@ -268,11 +283,6 @@ enableGitInfo = false
     icon = "lattes"
     icon_pack = "ai"
     link = "http://lattes.cnpq.br/5150615628956067"
-
-  [[params.social]]
-    icon = "github"
-    icon_pack = "fab"
-    link = "https://github.com/lfpdroubi"
 
   # Link to a PDF of your resume/CV from the About widget.
   # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
@@ -337,9 +347,9 @@ enableGitInfo = false
   # Configuration of Algolia search engine.
   # Paste the values from your Algolia dashboard.
   [params.search.algolia]
-    app_id = ""
-    api_key = ""
-    index_name = ""
+    app_id = "PMYD2EUH99"
+    api_key = "1b5fd26c49821f5b6fb6a5e69c488a3c"
+    index_name = "test_droubi.me"
     show_logo = false
 
 # Taxonomies.
