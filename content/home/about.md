@@ -18,9 +18,9 @@ weight = 5
 # List your qualifications (such as academic degrees).
 
 [[education.courses]]
-  course = "Atual: Mestrado em Engenharia de Transportes e Gestão Territorial"
+  course = "Mestrado em Engenharia de Transportes e Gestão Territorial"
   institution = "UFSC"
-  year = 2019
+  year = "em curso."
   
 [[education.courses]]
   course = "Data Scientist with R"
