@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Wed, 31 Oct 2018 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 05 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>appraiseR</title>
+      <link>/post/appraiser/</link>
+      <pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/appraiser/</guid>
+      <description>appraiseR é um pacote de software livre feito em R para auxiliar na prática da engenharia de avaliações de imóveis segundo a NBR14.653-02.
+Uma introdução à utilização do appraiseR pode ser vista aqui.
+A referência de todas as funções disponíveis para utilização pode ser vista aqui.
+Em breve mais novidades.</description>
+    </item>
     
     <item>
       <title>Diagnóstico de regressão no R</title>

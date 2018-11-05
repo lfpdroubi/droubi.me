@@ -11,6 +11,22 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>appraiseR</title>
+      <link>/post/appraiser/</link>
+      <pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/appraiser/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;a href=&#34;https://lfpdroubi.github.io/appraiseR/&#34;&gt;appraiseR&lt;/a&gt; é um pacote de software livre feito em &lt;code&gt;R&lt;/code&gt; para auxiliar na prática da engenharia de avaliações de imóveis segundo a NBR14.653-02.&lt;/p&gt;
+&lt;p&gt;Uma introdução à utilização do appraiseR pode ser vista &lt;a href=&#34;https://lfpdroubi.github.io/appraiseR/articles/appraiseR.html&#34;&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A referência de todas as funções disponíveis para utilização pode ser vista &lt;a href=&#34;https://lfpdroubi.github.io/appraiseR/reference/index.html&#34;&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Em breve mais novidades.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>COBRAC 2018</title>
       <link>/cobrac2018/</link>
       <pubDate>Sun, 04 Nov 2018 15:15:00 +0000</pubDate>
