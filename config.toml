@@ -252,7 +252,7 @@ enableGitInfo = false
 [[params.social]]
     icon = "facebook"
     icon_pack = "fab"
-    link = "lfpdroubi"
+    link = "luiz.droubi"
  
  [[params.social]]
     icon = "twitter"
