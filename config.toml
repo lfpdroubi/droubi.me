@@ -29,7 +29,7 @@ disqusShortname = "droubi"
 googleAnalytics = "UA-117082498-1"
 
 # Default language to use (if you setup multilingual support)
-defaultContentLanguage = "en"
+defaultContentLanguage = "pt"
 hasCJKLanguage = false  # Set `true` for Chinese/Japanese/Korean languages.
 defaultContentLanguageInSubdir = false
 
@@ -52,7 +52,7 @@ enableGitInfo = false
 
   # Your details.
   name = "Luiz F. P. Droubi"
-  role = "Mestrando no Programa de Pós-Graduação em Engenharia de Transportes e Gestão Territorial"
+  role = ""
 
   # Organizations/Affiliations.
   #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
@@ -300,12 +300,12 @@ enableGitInfo = false
   align_right = true
 
 [[menu.main]]
-  name = "Início"
+  name = "Home"
   url = "#about"
   weight = 1
 
 [[menu.main]]
-  name = "Publicações"
+  name = "Publications"
   url = "#publications_selected"
   weight = 2
 
@@ -315,17 +315,17 @@ enableGitInfo = false
   weight = 3
 
 [[menu.main]]
-  name = "Projetos"
+  name = "Projects"
   url = "#projects"
   weight = 4
 
 [[menu.main]]
-  name = "Tutoriais"
+  name = "Tutorials"
   url = "/tutorial/"
   weight = 5
 
 [[menu.main]]
-  name = "Contato"
+  name = "Contact"
   url = "#contact"
   weight = 6
 
@@ -367,13 +367,44 @@ enableGitInfo = false
   languageCode = "en-us"
 
 # Uncomment the lines below to configure your website in a second language.
-#[languages.zh]
-#  languageCode = "zh-Hans"
-#  title = "Chinese website title..."
-#  [languages.zh.params]
-#    name = "Your name in Chinese..."
-#    role = "Your role in Chinese..."
-#  [[languages.zh.menu.main]]
-#    name = "Wo"
-#    url = "#about"
-#    weight = 1
+ [languages.pt]
+  languageCode = "pt"
+  title = "droubi.me"
+  [languages.pt.params]
+    name = "Luiz F. P. Droubi"
+    role = "Mestrando no Programa de Pós-Graduação em Engenharia de Transportes e Gestão Territorial"
+  [[languages.pt.menu.main]]
+    name = "Sobre"
+    url = "#about"
+   weight = 1
+  [[languages.pt.menu.main]]
+    name = "Publicações"
+    url = "#publications_selected"
+    weight = 2
+  
+  [[languages.pt.menu.main]]
+    name = "Posts"
+    url = "#posts"
+    weight = 3
+  
+  [[languages.pt.menu.main]]
+    name = "Projetos"
+    url = "#projects"
+    weight = 4
+  
+  [[languages.pt.menu.main]]
+    name = "Tutoriais"
+    url = "/tutorial/"
+    weight = 5
+  
+  [[languages.pt.menu.main]]
+    name = "Contato"
+    url = "#contact"
+    weight = 6
+  
+  # Link to a PDF of your resume/CV from the menu.
+  # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
+  [[languages.pt.menu.main]]
+    name = "CV"
+    url = "files/cv.pdf"
+    weight = 7
