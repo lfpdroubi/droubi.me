@@ -20,6 +20,9 @@
     
     <url>
     
+      <xhtml:link rel="alternate" href="/project/appraiser/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="/en/project/appraiser/" hreflang="en"/>
+    
       <loc>/project/appraiser/</loc>
       <lastmod>2018-11-03T23:00:00-03:00</lastmod>
     </url>
@@ -162,6 +165,9 @@
     
     <url>
     
+      <xhtml:link rel="alternate" href="/tags/nbr14653/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="/en/tags/nbr14653/" hreflang="en"/>
+    
       <loc>/tags/nbr14653/</loc>
       <lastmod>2018-11-03T23:00:00-03:00</lastmod>
       <priority>0</priority>
@@ -170,6 +176,9 @@
   
     
     <url>
+    
+      <xhtml:link rel="alternate" href="/project/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="/en/project/" hreflang="en"/>
     
       <loc>/project/</loc>
       <lastmod>2018-11-03T23:00:00-03:00</lastmod>
@@ -245,6 +254,9 @@
   
     
     <url>
+    
+      <xhtml:link rel="alternate" href="/tags/avaliacoes/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="/en/tags/avaliacoes/" hreflang="en"/>
     
       <loc>/tags/avaliacoes/</loc>
       <lastmod>2018-11-03T23:00:00-03:00</lastmod>

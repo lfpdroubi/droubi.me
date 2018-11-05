@@ -4,10 +4,45 @@
     
     <url>
     
+      <xhtml:link rel="alternate" href="/en/project/appraiser/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="/project/appraiser/" hreflang="pt"/>
+    
+      <loc>/en/project/appraiser/</loc>
+      <lastmod>2018-11-03T23:00:00-03:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <xhtml:link rel="alternate" href="/en/categories/" hreflang="en"/>
       <xhtml:link rel="alternate" href="/categories/" hreflang="pt"/>
     
       <loc>/en/categories/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="/en/tags/nbr14653/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="/tags/nbr14653/" hreflang="pt"/>
+    
+      <loc>/en/tags/nbr14653/</loc>
+      <lastmod>2018-11-03T23:00:00-03:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="/en/project/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="/project/" hreflang="pt"/>
+    
+      <loc>/en/project/</loc>
+      <lastmod>2018-11-03T23:00:00-03:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -30,6 +65,19 @@
       <xhtml:link rel="alternate" href="/tags/" hreflang="pt"/>
     
       <loc>/en/tags/</loc>
+      <lastmod>2018-11-03T23:00:00-03:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="/en/tags/avaliacoes/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="/tags/avaliacoes/" hreflang="pt"/>
+    
+      <loc>/en/tags/avaliacoes/</loc>
+      <lastmod>2018-11-03T23:00:00-03:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -41,6 +89,7 @@
       <xhtml:link rel="alternate" href="/" hreflang="pt"/>
     
       <loc>/en/</loc>
+      <lastmod>2018-11-03T23:00:00-03:00</lastmod>
       <priority>0</priority>
     </url>
     

@@ -370,28 +370,30 @@ enableGitInfo = false
  [languages.pt]
   languageCode = "pt"
   title = "droubi.me"
-  [languages.pt.params]
-    name = "Luiz F. P. Droubi"
-    role = "Mestrando no Programa de Pós-Graduação em Engenharia de Transportes e Gestão Territorial"
-  [[languages.pt.menu.main]]
-    name = "Sobre"
-    url = "#about"
-   weight = 1
-  [[languages.pt.menu.main]]
-    name = "Publicações"
-    url = "#publications_selected"
-    weight = 2
+ [languages.pt.params]
+   name = "Luiz F. P. Droubi"
+   role = "Mestrando no Programa de Pós-Graduação em Engenharia de Transportes e Gestão Territorial"
+   
+ [[languages.pt.menu.main]]
+  name = "Sobre"
+  url = "#about"
+  weight = 1
   
-  [[languages.pt.menu.main]]
-    name = "Posts"
-    url = "#posts"
-    weight = 3
+ [[languages.pt.menu.main]]
+   name = "Publicações"
+   url = "#publications_selected"
+   weight = 2
+ 
+ [[languages.pt.menu.main]]
+   name = "Posts"
+   url = "#posts"
+   weight = 3
   
-  [[languages.pt.menu.main]]
-    name = "Projetos"
+ [[languages.pt.menu.main]]
+   name = "Projetos"
     url = "#projects"
-    weight = 4
-  
+   weight = 4
+ 
   [[languages.pt.menu.main]]
     name = "Tutoriais"
     url = "/tutorial/"

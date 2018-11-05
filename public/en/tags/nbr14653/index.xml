@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>droubi.me on droubi.me</title>
-    <link>/en/</link>
-    <description>Recent content in droubi.me on droubi.me</description>
+    <title>NBR14653 on droubi.me</title>
+    <link>/en/tags/nbr14653/</link>
+    <description>Recent content in NBR14653 on droubi.me</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sat, 03 Nov 2018 23:00:00 -0300</lastBuildDate>
-    <atom:link href="/en/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="/en/tags/nbr14653/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>appraiseR</title>
@@ -16,8 +18,7 @@
       <pubDate>Sat, 03 Nov 2018 23:00:00 -0300</pubDate>
       
       <guid>/en/project/appraiser/</guid>
-      <description>&lt;p&gt;appraiseR&amp;hellip;&lt;/p&gt;
-</description>
+      <description>appraiseR&amp;hellip;</description>
     </item>
     
   </channel>

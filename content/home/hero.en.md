@@ -4,7 +4,7 @@ widget = "hero"
 active = true
 date = 2018-11-04T00:00:00
 
-title = "Página Pessoal de Luiz F. P. Droubi"
+title = "Personal Website of Luiz Droubi"
 
 # Order that this section will appear in.
 weight = 5
@@ -24,4 +24,4 @@ weight = 5
 #  label = '<i class="fas fa-download"></i> Install Now'
 +++
 
-Esta é a página pessoal do Eng. Luiz Fernando P. Droubi. Para entrar em contato, por favor utilize o [formulário abaixo](#contact).
+This is the personal website of Luiz F. P. Droubi. To contact me, please use the [form below](#contact.en).

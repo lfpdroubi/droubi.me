@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homes on droubi.me</title>
+    <link>/en/home/</link>
+    <description>Recent content in Homes on droubi.me</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sat, 03 Nov 2018 23:00:00 -0300</lastBuildDate>
+    
+	<atom:link href="/en/home/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Personal Website of Luiz Droubi</title>
+      <link>/en/home/hero/</link>
+      <pubDate>Sat, 03 Nov 2018 23:00:00 -0300</pubDate>
+      
+      <guid>/en/home/hero/</guid>
+      <description>This is the personal website of Luiz F. P. Droubi. To contact me, please use the form below.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/en/home/about/</link>
+      <pubDate>Thu, 01 Nov 2018 00:00:00 -0300</pubDate>
+      
+      <guid>/en/home/about/</guid>
+      <description>Biography Luiz Droubi is a master&amp;rsquo;s degree student at UFSC and currently works at the Brazilian Union&amp;rsquo;s Estate Office in Santa Catarina.
+He holds a degree in Civil Engineering from the School of Engineering of São Carlos (USP) ans is also a Data Scientist (DataCamp).</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>/en/home/projects/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 -0300</pubDate>
+      
+      <guid>/en/home/projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>/en/home/contact/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 -0300</pubDate>
+      
+      <guid>/en/home/contact/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

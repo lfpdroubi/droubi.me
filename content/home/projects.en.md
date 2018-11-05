@@ -4,7 +4,7 @@ widget = "projects"
 active = true
 date = 2016-04-20T00:00:00
 
-title = "Projetos"
+title = "Projects"
 subtitle = ""
 
 # Order that this section will appear in.
@@ -34,8 +34,8 @@ filter_default = 0
   tag = "*"
 
 [[filter]]
-  name = "Engenharia de Avaliações"
-  tag = "Deep Learning"
+  name = "Real Estate Appraisals"
+  tag = "Real Estate"
 
 [[filter]]
   name = "Other"

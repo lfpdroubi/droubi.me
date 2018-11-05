@@ -7,9 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sat, 03 Nov 2018 23:00:00 -0300</lastBuildDate>
     
 	<atom:link href="/en/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NBR14653</title>
+      <link>/en/tags/nbr14653/</link>
+      <pubDate>Sat, 03 Nov 2018 23:00:00 -0300</pubDate>
+      
+      <guid>/en/tags/nbr14653/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>avaliacoes</title>
+      <link>/en/tags/avaliacoes/</link>
+      <pubDate>Sat, 03 Nov 2018 23:00:00 -0300</pubDate>
+      
+      <guid>/en/tags/avaliacoes/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
