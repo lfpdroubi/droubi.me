@@ -1,96 +1,88 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     
     <url>
     
-      <xhtml:link rel="alternate" href="/en/project/appraiser/" hreflang="en"/>
-      <xhtml:link rel="alternate" href="/project/appraiser/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/en/project/appraiser/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/project/appraiser/" hreflang="pt"/>
     
-      <loc>/en/project/appraiser/</loc>
-      <lastmod>2018-11-03T23:00:00-03:00</lastmod>
+      <loc>http://droubi.me/en/project/appraiser/</loc>
+      <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <xhtml:link rel="alternate" href="/en/categories/" hreflang="en"/>
-      <xhtml:link rel="alternate" href="/categories/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/en/tags/avaliacoes/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/tags/avaliacoes/" hreflang="pt"/>
     
-      <loc>/en/categories/</loc>
-      <priority>0</priority>
+      <loc>http://droubi.me/en/tags/avaliacoes/</loc>
+      <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <xhtml:link rel="alternate" href="/en/tags/nbr14653/" hreflang="en"/>
-      <xhtml:link rel="alternate" href="/tags/nbr14653/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/en/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/" hreflang="pt"/>
     
-      <loc>/en/tags/nbr14653/</loc>
-      <lastmod>2018-11-03T23:00:00-03:00</lastmod>
-      <priority>0</priority>
+      <loc>http://droubi.me/en/</loc>
+      <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <xhtml:link rel="alternate" href="/en/project/" hreflang="en"/>
-      <xhtml:link rel="alternate" href="/project/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/en/tags/nbr14653/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/tags/nbr14653/" hreflang="pt"/>
     
-      <loc>/en/project/</loc>
-      <lastmod>2018-11-03T23:00:00-03:00</lastmod>
-      <priority>0</priority>
+      <loc>http://droubi.me/en/tags/nbr14653/</loc>
+      <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <xhtml:link rel="alternate" href="/en/publication_types/" hreflang="en"/>
-      <xhtml:link rel="alternate" href="/publication_types/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/en/project/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/project/" hreflang="pt"/>
     
-      <loc>/en/publication_types/</loc>
-      <priority>0</priority>
+      <loc>http://droubi.me/en/project/</loc>
+      <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <xhtml:link rel="alternate" href="/en/tags/" hreflang="en"/>
-      <xhtml:link rel="alternate" href="/tags/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/en/tags/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/tags/" hreflang="pt"/>
     
-      <loc>/en/tags/</loc>
-      <lastmod>2018-11-03T23:00:00-03:00</lastmod>
-      <priority>0</priority>
+      <loc>http://droubi.me/en/tags/</loc>
+      <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <xhtml:link rel="alternate" href="/en/tags/avaliacoes/" hreflang="en"/>
-      <xhtml:link rel="alternate" href="/tags/avaliacoes/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/en/categories/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/categories/" hreflang="pt"/>
     
-      <loc>/en/tags/avaliacoes/</loc>
-      <lastmod>2018-11-03T23:00:00-03:00</lastmod>
-      <priority>0</priority>
+      <loc>http://droubi.me/en/categories/</loc>
     </url>
     
   
     
     <url>
     
-      <xhtml:link rel="alternate" href="/en/" hreflang="en"/>
-      <xhtml:link rel="alternate" href="/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/en/publication_types/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/publication_types/" hreflang="pt"/>
     
-      <loc>/en/</loc>
-      <lastmod>2018-11-03T23:00:00-03:00</lastmod>
-      <priority>0</priority>
+      <loc>http://droubi.me/en/publication_types/</loc>
     </url>
     
   

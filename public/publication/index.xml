@@ -1,32 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications on droubi.me</title>
-    <link>/publication/</link>
+    <link>http://droubi.me/publication/</link>
     <description>Recent content in Publications on droubi.me</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 -0200</lastBuildDate>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://droubi.me/publication/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Pressupostos inferência clássica</title>
-      <link>/publication/pressupostos-classicos/</link>
-      <pubDate>Thu, 01 Nov 2018 20:06:00 -0300</pubDate>
+      <link>http://droubi.me/publication/pressupostos-classicos/</link>
+      <pubDate>Thu, 01 Nov 2018 20:06:00 +0000</pubDate>
       
-      <guid>/publication/pressupostos-classicos/</guid>
+      <guid>http://droubi.me/publication/pressupostos-classicos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Distribuição Lognormal</title>
-      <link>/publication/dist_lognormal/</link>
-      <pubDate>Thu, 01 Nov 2018 19:36:00 -0300</pubDate>
+      <link>http://droubi.me/publication/dist_lognormal/</link>
+      <pubDate>Thu, 01 Nov 2018 19:36:00 +0000</pubDate>
       
-      <guid>/publication/dist_lognormal/</guid>
+      <guid>http://droubi.me/publication/dist_lognormal/</guid>
       <description></description>
     </item>
     

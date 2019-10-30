@@ -1,41 +1,41 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homes on droubi.me</title>
-    <link>/home/</link>
+    <link>http://droubi.me/home/</link>
     <description>Recent content in Homes on droubi.me</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/home/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://droubi.me/home/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>/home/hero_carousel/</link>
-      <pubDate>Sun, 15 Oct 2017 00:00:00 -0300</pubDate>
+      <link>http://droubi.me/home/hero_carousel/</link>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/home/hero_carousel/</guid>
+      <guid>http://droubi.me/home/hero_carousel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Página Pessoal de Luiz F. P. Droubi</title>
-      <link>/home/hero/</link>
-      <pubDate>Sat, 03 Nov 2018 23:00:00 -0300</pubDate>
+      <link>http://droubi.me/home/hero/</link>
+      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/home/hero/</guid>
+      <guid>http://droubi.me/home/hero/</guid>
       <description>Esta é a página pessoal do Eng. Luiz Fernando P. Droubi. Para entrar em contato, por favor utilize o formulário abaixo.</description>
     </item>
     
     <item>
       <title></title>
-      <link>/home/about/</link>
-      <pubDate>Thu, 01 Nov 2018 00:00:00 -0300</pubDate>
+      <link>http://droubi.me/home/about/</link>
+      <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/home/about/</guid>
+      <guid>http://droubi.me/home/about/</guid>
       <description>Biografia Luiz Droubi é mestrando no Programa de Pós-Graduação em Engenharia de Transportes e Gestão Territorial da UFSC e atualmente labora na Secretaria do Patrimônio da União em Santa Catarina.
 É formado em Engenharia Civil pela Escola de Engenharia de São Carlos da USP, com especialização em Auditoria, Avaliações &amp;amp; Perícias de Engenharia pelo IPOG.
 Também tem certificação como Cientista de Dados pela DataCamp.</description>
@@ -43,82 +43,82 @@ Também tem certificação como Cientista de Dados pela DataCamp.</description>
     
     <item>
       <title>Skills</title>
-      <link>/home/skills/</link>
-      <pubDate>Wed, 20 Sep 2017 00:00:00 -0300</pubDate>
+      <link>http://droubi.me/home/skills/</link>
+      <pubDate>Wed, 20 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/home/skills/</guid>
+      <guid>http://droubi.me/home/skills/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Experiência Profissional</title>
-      <link>/home/experience/</link>
+      <link>http://droubi.me/home/experience/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/home/experience/</guid>
+      <guid>http://droubi.me/home/experience/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Publicações Selecionadas</title>
-      <link>/home/publications_selected/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0300</pubDate>
+      <link>http://droubi.me/home/publications_selected/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/home/publications_selected/</guid>
+      <guid>http://droubi.me/home/publications_selected/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Publicações Recentes</title>
-      <link>/home/publications/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0300</pubDate>
+      <link>http://droubi.me/home/publications/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/home/publications/</guid>
+      <guid>http://droubi.me/home/publications/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Selected Talks</title>
-      <link>/home/talks_selected/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0300</pubDate>
+      <link>http://droubi.me/home/talks_selected/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/home/talks_selected/</guid>
+      <guid>http://droubi.me/home/talks_selected/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Participações em Congressos e Seminários</title>
-      <link>/home/talks/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0300</pubDate>
+      <link>http://droubi.me/home/talks/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/home/talks/</guid>
+      <guid>http://droubi.me/home/talks/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Posts Recentes</title>
-      <link>/home/posts/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0300</pubDate>
+      <link>http://droubi.me/home/posts/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/home/posts/</guid>
+      <guid>http://droubi.me/home/posts/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Projetos</title>
-      <link>/home/projects/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0300</pubDate>
+      <link>http://droubi.me/home/projects/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/home/projects/</guid>
+      <guid>http://droubi.me/home/projects/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ensino</title>
-      <link>/home/teaching/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0300</pubDate>
+      <link>http://droubi.me/home/teaching/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/home/teaching/</guid>
+      <guid>http://droubi.me/home/teaching/</guid>
       <description>This is an example of using the custom widget to create your own homepage section.
 I am a teaching instructor for the following courses at University X:
  CS101: An intro to computer science CS102: An intro to computer science CS103: An intro to computer science CS104: An intro to computer science CS105: An intro to computer science CS106: An intro to computer science CS107: An intro to computer science  </description>
@@ -126,28 +126,28 @@ I am a teaching instructor for the following courses at University X:
     
     <item>
       <title>Tags</title>
-      <link>/home/tags/</link>
-      <pubDate>Wed, 20 Sep 2017 00:00:00 -0300</pubDate>
+      <link>http://droubi.me/home/tags/</link>
+      <pubDate>Wed, 20 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/home/tags/</guid>
+      <guid>http://droubi.me/home/tags/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Search</title>
-      <link>/home/search/</link>
-      <pubDate>Mon, 23 Jul 2018 00:00:00 -0300</pubDate>
+      <link>http://droubi.me/home/search/</link>
+      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/home/search/</guid>
+      <guid>http://droubi.me/home/search/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Contato</title>
-      <link>/home/contact/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0300</pubDate>
+      <link>http://droubi.me/home/contact/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/home/contact/</guid>
+      <guid>http://droubi.me/home/contact/</guid>
       <description></description>
     </item>
     

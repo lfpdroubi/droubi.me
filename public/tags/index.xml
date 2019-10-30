@@ -1,149 +1,149 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on droubi.me</title>
-    <link>/tags/</link>
+    <link>http://droubi.me/tags/</link>
     <description>Recent content in Tags on droubi.me</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 04 Nov 2018 15:15:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://droubi.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Academic</title>
-      <link>/tags/academic/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0300</pubDate>
-      
-      <guid>/tags/academic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Box-Cox</title>
-      <link>/tags/box-cox/</link>
-      <pubDate>Thu, 01 Nov 2018 19:36:00 -0300</pubDate>
-      
-      <guid>/tags/box-cox/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NBR14653</title>
-      <link>/tags/nbr14653/</link>
-      <pubDate>Sat, 03 Nov 2018 23:00:00 -0300</pubDate>
-      
-      <guid>/tags/nbr14653/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R Markdown</title>
-      <link>/tags/r-markdown/</link>
-      <pubDate>Wed, 31 Oct 2018 21:13:14 -0500</pubDate>
-      
-      <guid>/tags/r-markdown/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>artigo</title>
-      <link>/tags/artigo/</link>
+      <link>http://droubi.me/tags/artigo/</link>
       <pubDate>Sun, 04 Nov 2018 15:15:00 +0000</pubDate>
       
-      <guid>/tags/artigo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>avaliacoes</title>
-      <link>/tags/avaliacoes/</link>
-      <pubDate>Sat, 03 Nov 2018 23:00:00 -0300</pubDate>
-      
-      <guid>/tags/avaliacoes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>avaliação-em-massa</title>
-      <link>/tags/avalia%C3%A7%C3%A3o-em-massa/</link>
-      <pubDate>Thu, 01 Nov 2018 20:06:00 -0300</pubDate>
-      
-      <guid>/tags/avalia%C3%A7%C3%A3o-em-massa/</guid>
+      <guid>http://droubi.me/tags/artigo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cobrac</title>
-      <link>/tags/cobrac/</link>
+      <link>http://droubi.me/tags/cobrac/</link>
       <pubDate>Sun, 04 Nov 2018 15:15:00 +0000</pubDate>
       
-      <guid>/tags/cobrac/</guid>
+      <guid>http://droubi.me/tags/cobrac/</guid>
       <description></description>
     </item>
     
     <item>
       <title>congresso</title>
-      <link>/tags/congresso/</link>
+      <link>http://droubi.me/tags/congresso/</link>
       <pubDate>Sun, 04 Nov 2018 15:15:00 +0000</pubDate>
       
-      <guid>/tags/congresso/</guid>
+      <guid>http://droubi.me/tags/congresso/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>avaliacoes</title>
+      <link>http://droubi.me/tags/avaliacoes/</link>
+      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://droubi.me/tags/avaliacoes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NBR14653</title>
+      <link>http://droubi.me/tags/nbr14653/</link>
+      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://droubi.me/tags/nbr14653/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>avaliação-em-massa</title>
+      <link>http://droubi.me/tags/avalia%C3%A7%C3%A3o-em-massa/</link>
+      <pubDate>Thu, 01 Nov 2018 20:06:00 +0000</pubDate>
+      
+      <guid>http://droubi.me/tags/avalia%C3%A7%C3%A3o-em-massa/</guid>
       <description></description>
     </item>
     
     <item>
       <title>covariância</title>
-      <link>/tags/covari%C3%A2ncia/</link>
-      <pubDate>Thu, 01 Nov 2018 20:06:00 -0300</pubDate>
+      <link>http://droubi.me/tags/covari%C3%A2ncia/</link>
+      <pubDate>Thu, 01 Nov 2018 20:06:00 +0000</pubDate>
       
-      <guid>/tags/covari%C3%A2ncia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>distribuição lognormal</title>
-      <link>/tags/distribui%C3%A7%C3%A3o-lognormal/</link>
-      <pubDate>Thu, 01 Nov 2018 19:36:00 -0300</pubDate>
-      
-      <guid>/tags/distribui%C3%A7%C3%A3o-lognormal/</guid>
+      <guid>http://droubi.me/tags/covari%C3%A2ncia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>heterocedasticidade</title>
-      <link>/tags/heterocedasticidade/</link>
-      <pubDate>Thu, 01 Nov 2018 20:06:00 -0300</pubDate>
+      <link>http://droubi.me/tags/heterocedasticidade/</link>
+      <pubDate>Thu, 01 Nov 2018 20:06:00 +0000</pubDate>
       
-      <guid>/tags/heterocedasticidade/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>plot</title>
-      <link>/tags/plot/</link>
-      <pubDate>Wed, 31 Oct 2018 21:13:14 -0500</pubDate>
-      
-      <guid>/tags/plot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>regression</title>
-      <link>/tags/regression/</link>
-      <pubDate>Wed, 31 Oct 2018 21:13:14 -0500</pubDate>
-      
-      <guid>/tags/regression/</guid>
+      <guid>http://droubi.me/tags/heterocedasticidade/</guid>
       <description></description>
     </item>
     
     <item>
       <title>regressão-linear</title>
-      <link>/tags/regress%C3%A3o-linear/</link>
-      <pubDate>Thu, 01 Nov 2018 20:06:00 -0300</pubDate>
+      <link>http://droubi.me/tags/regress%C3%A3o-linear/</link>
+      <pubDate>Thu, 01 Nov 2018 20:06:00 +0000</pubDate>
       
-      <guid>/tags/regress%C3%A3o-linear/</guid>
+      <guid>http://droubi.me/tags/regress%C3%A3o-linear/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Box-Cox</title>
+      <link>http://droubi.me/tags/box-cox/</link>
+      <pubDate>Thu, 01 Nov 2018 19:36:00 +0000</pubDate>
+      
+      <guid>http://droubi.me/tags/box-cox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>distribuição lognormal</title>
+      <link>http://droubi.me/tags/distribui%C3%A7%C3%A3o-lognormal/</link>
+      <pubDate>Thu, 01 Nov 2018 19:36:00 +0000</pubDate>
+      
+      <guid>http://droubi.me/tags/distribui%C3%A7%C3%A3o-lognormal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>plot</title>
+      <link>http://droubi.me/tags/plot/</link>
+      <pubDate>Wed, 31 Oct 2018 21:13:14 -0500</pubDate>
+      
+      <guid>http://droubi.me/tags/plot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R Markdown</title>
+      <link>http://droubi.me/tags/r-markdown/</link>
+      <pubDate>Wed, 31 Oct 2018 21:13:14 -0500</pubDate>
+      
+      <guid>http://droubi.me/tags/r-markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regression</title>
+      <link>http://droubi.me/tags/regression/</link>
+      <pubDate>Wed, 31 Oct 2018 21:13:14 -0500</pubDate>
+      
+      <guid>http://droubi.me/tags/regression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Academic</title>
+      <link>http://droubi.me/tags/academic/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://droubi.me/tags/academic/</guid>
       <description></description>
     </item>
     

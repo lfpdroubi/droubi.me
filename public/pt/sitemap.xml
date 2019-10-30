@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     
     <url>
     
-      <loc>/post/appraiser/</loc>
+      <loc>http://droubi.me/post/appraiser/</loc>
       <lastmod>2018-11-05T00:00:00+00:00</lastmod>
     </url>
     
@@ -12,7 +11,37 @@
     
     <url>
     
-      <loc>/cobrac2018/</loc>
+      <xhtml:link rel="alternate" href="http://droubi.me/categories/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/en/categories/" hreflang="en"/>
+    
+      <loc>http://droubi.me/categories/</loc>
+      <lastmod>2018-11-05T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="http://droubi.me/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/en/" hreflang="en"/>
+    
+      <loc>http://droubi.me/</loc>
+      <lastmod>2018-11-05T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/categories/r/</loc>
+      <lastmod>2018-11-05T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/tags/artigo/</loc>
       <lastmod>2018-11-04T15:15:00+00:00</lastmod>
     </url>
     
@@ -20,42 +49,177 @@
     
     <url>
     
-      <xhtml:link rel="alternate" href="/project/appraiser/" hreflang="pt"/>
-      <xhtml:link rel="alternate" href="/en/project/appraiser/" hreflang="en"/>
-    
-      <loc>/project/appraiser/</loc>
-      <lastmod>2018-11-03T23:00:00-03:00</lastmod>
+      <loc>http://droubi.me/tags/cobrac/</loc>
+      <lastmod>2018-11-04T15:15:00+00:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/publication/pressupostos-classicos/</loc>
-      <lastmod>2018-11-01T20:06:00-03:00</lastmod>
+      <loc>http://droubi.me/cobrac2018/</loc>
+      <lastmod>2018-11-04T15:15:00+00:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/publication/dist_lognormal/</loc>
-      <lastmod>2018-11-01T19:36:00-03:00</lastmod>
+      <loc>http://droubi.me/tags/congresso/</loc>
+      <lastmod>2018-11-04T15:15:00+00:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/talk/cobrac2018/</loc>
-      <lastmod>2018-11-01T00:00:00-03:00</lastmod>
+      <loc>http://droubi.me/categories/congressos/</loc>
+      <lastmod>2018-11-04T15:15:00+00:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/post/2018-01-04-diagn%C3%B3stico-de-regress%C3%A3o-no-r/</loc>
+      <xhtml:link rel="alternate" href="http://droubi.me/tags/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/en/tags/" hreflang="en"/>
+    
+      <loc>http://droubi.me/tags/</loc>
+      <lastmod>2018-11-04T15:15:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="http://droubi.me/project/appraiser/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/en/project/appraiser/" hreflang="en"/>
+    
+      <loc>http://droubi.me/project/appraiser/</loc>
+      <lastmod>2018-11-04T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="http://droubi.me/tags/avaliacoes/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/en/tags/avaliacoes/" hreflang="en"/>
+    
+      <loc>http://droubi.me/tags/avaliacoes/</loc>
+      <lastmod>2018-11-04T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="http://droubi.me/tags/nbr14653/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/en/tags/nbr14653/" hreflang="en"/>
+    
+      <loc>http://droubi.me/tags/nbr14653/</loc>
+      <lastmod>2018-11-04T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="http://droubi.me/project/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/en/project/" hreflang="en"/>
+    
+      <loc>http://droubi.me/project/</loc>
+      <lastmod>2018-11-04T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/publication_types/1/</loc>
+      <lastmod>2018-11-01T20:06:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/tags/avalia%C3%A7%C3%A3o-em-massa/</loc>
+      <lastmod>2018-11-01T20:06:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/tags/covari%C3%A2ncia/</loc>
+      <lastmod>2018-11-01T20:06:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/tags/heterocedasticidade/</loc>
+      <lastmod>2018-11-01T20:06:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/publication/pressupostos-classicos/</loc>
+      <lastmod>2018-11-01T20:06:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="http://droubi.me/publication_types/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/en/publication_types/" hreflang="en"/>
+    
+      <loc>http://droubi.me/publication_types/</loc>
+      <lastmod>2018-11-01T20:06:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/tags/regress%C3%A3o-linear/</loc>
+      <lastmod>2018-11-01T20:06:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/tags/box-cox/</loc>
+      <lastmod>2018-11-01T19:36:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/publication/dist_lognormal/</loc>
+      <lastmod>2018-11-01T19:36:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/tags/distribui%C3%A7%C3%A3o-lognormal/</loc>
+      <lastmod>2018-11-01T19:36:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/post/2018-01-04-diagn%C3%B3stico-de-regress%C3%A3o-no-r/</loc>
       <lastmod>2018-10-31T21:13:14-05:00</lastmod>
     </url>
     
@@ -63,7 +227,39 @@
     
     <url>
     
-      <loc>/post/2018-01-04-b%C3%A1sico-de-regress%C3%A3o-linear-no-r/</loc>
+      <loc>http://droubi.me/tags/plot/</loc>
+      <lastmod>2018-10-31T21:13:14-05:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/tags/r-markdown/</loc>
+      <lastmod>2018-10-31T21:13:14-05:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/tags/regression/</loc>
+      <lastmod>2018-10-31T21:13:14-05:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/talk/cobrac2018/</loc>
+      <lastmod>2018-11-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/post/2018-01-04-b%C3%A1sico-de-regress%C3%A3o-linear-no-r/</loc>
       <lastmod>2018-10-30T21:13:14-05:00</lastmod>
     </url>
     
@@ -71,298 +267,70 @@
     
     <url>
     
-      <loc>/tutorial/example/</loc>
-      <lastmod>2018-09-09T00:00:00-03:00</lastmod>
+      <loc>http://droubi.me/tutorial/example/</loc>
+      <lastmod>2018-09-09T00:00:00+00:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/tutorial/</loc>
-      <lastmod>2018-09-09T00:00:00-03:00</lastmod>
+      <loc>http://droubi.me/tutorial/</loc>
+      <lastmod>2018-09-09T00:00:00+00:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/privacy/</loc>
-      <lastmod>2018-06-28T00:00:00-03:00</lastmod>
+      <loc>http://droubi.me/post/</loc>
+      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/post/</loc>
-      <lastmod>2017-01-01T00:00:00-02:00</lastmod>
+      <loc>http://droubi.me/publication/</loc>
+      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/publication/</loc>
-      <lastmod>2017-01-01T00:00:00-02:00</lastmod>
+      <loc>http://droubi.me/talk/</loc>
+      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/talk/</loc>
-      <lastmod>2017-01-01T00:00:00-02:00</lastmod>
+      <loc>http://droubi.me/tags/academic/</loc>
+      <lastmod>2018-01-13T00:00:00+00:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/post/getting-started/</loc>
-      <lastmod>2018-01-13T00:00:00-02:00</lastmod>
+      <loc>http://droubi.me/post/getting-started/</loc>
+      <lastmod>2018-01-13T00:00:00+00:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/publication_types/1/</loc>
-      <lastmod>2018-11-01T20:06:00-03:00</lastmod>
-      <priority>0</priority>
+      <loc>http://droubi.me/slides/</loc>
     </url>
     
   
     
     <url>
     
-      <loc>/tags/academic/</loc>
-      <lastmod>2018-01-13T00:00:00-02:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/box-cox/</loc>
-      <lastmod>2018-11-01T19:36:00-03:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <xhtml:link rel="alternate" href="/categories/" hreflang="pt"/>
-      <xhtml:link rel="alternate" href="/en/categories/" hreflang="en"/>
-    
-      <loc>/categories/</loc>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <xhtml:link rel="alternate" href="/tags/nbr14653/" hreflang="pt"/>
-      <xhtml:link rel="alternate" href="/en/tags/nbr14653/" hreflang="en"/>
-    
-      <loc>/tags/nbr14653/</loc>
-      <lastmod>2018-11-03T23:00:00-03:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <xhtml:link rel="alternate" href="/project/" hreflang="pt"/>
-      <xhtml:link rel="alternate" href="/en/project/" hreflang="en"/>
-    
-      <loc>/project/</loc>
-      <lastmod>2018-11-03T23:00:00-03:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <xhtml:link rel="alternate" href="/publication_types/" hreflang="pt"/>
-      <xhtml:link rel="alternate" href="/en/publication_types/" hreflang="en"/>
-    
-      <loc>/publication_types/</loc>
-      <lastmod>2018-11-01T20:06:00-03:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/r/</loc>
-      <lastmod>2018-11-05T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/r-markdown/</loc>
-      <lastmod>2018-10-31T21:13:14-05:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/slides/</loc>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/slides/example-slides/</loc>
-    </url>
-    
-  
-    
-    <url>
-    
-      <xhtml:link rel="alternate" href="/tags/" hreflang="pt"/>
-      <xhtml:link rel="alternate" href="/en/tags/" hreflang="en"/>
-    
-      <loc>/tags/</loc>
-      <lastmod>2018-01-13T00:00:00-02:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/artigo/</loc>
-      <lastmod>2018-11-04T15:15:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <xhtml:link rel="alternate" href="/tags/avaliacoes/" hreflang="pt"/>
-      <xhtml:link rel="alternate" href="/en/tags/avaliacoes/" hreflang="en"/>
-    
-      <loc>/tags/avaliacoes/</loc>
-      <lastmod>2018-11-03T23:00:00-03:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/avalia%C3%A7%C3%A3o-em-massa/</loc>
-      <lastmod>2018-11-01T20:06:00-03:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/cobrac/</loc>
-      <lastmod>2018-11-04T15:15:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/congresso/</loc>
-      <lastmod>2018-11-04T15:15:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/congressos/</loc>
-      <lastmod>2018-11-04T15:15:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/covari%C3%A2ncia/</loc>
-      <lastmod>2018-11-01T20:06:00-03:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/distribui%C3%A7%C3%A3o-lognormal/</loc>
-      <lastmod>2018-11-01T19:36:00-03:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <xhtml:link rel="alternate" href="/" hreflang="pt"/>
-      <xhtml:link rel="alternate" href="/en/" hreflang="en"/>
-    
-      <loc>/</loc>
-      <lastmod>2017-10-15T00:00:00-03:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/heterocedasticidade/</loc>
-      <lastmod>2018-11-01T20:06:00-03:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/plot/</loc>
-      <lastmod>2018-10-31T21:13:14-05:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/regression/</loc>
-      <lastmod>2018-10-31T21:13:14-05:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/regress%C3%A3o-linear/</loc>
-      <lastmod>2018-11-01T20:06:00-03:00</lastmod>
-      <priority>0</priority>
+      <loc>http://droubi.me/slides/example-slides/</loc>
     </url>
     
   

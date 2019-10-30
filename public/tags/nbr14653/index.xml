@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NBR14653 on droubi.me</title>
-    <link>/tags/nbr14653/</link>
+    <link>http://droubi.me/tags/nbr14653/</link>
     <description>Recent content in NBR14653 on droubi.me</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sat, 03 Nov 2018 23:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/nbr14653/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://droubi.me/tags/nbr14653/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>appraiseR</title>
-      <link>/project/appraiser/</link>
-      <pubDate>Sat, 03 Nov 2018 23:00:00 -0300</pubDate>
+      <link>http://droubi.me/project/appraiser/</link>
+      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/project/appraiser/</guid>
-      <description>appraiseR&amp;hellip;</description>
+      <guid>http://droubi.me/project/appraiser/</guid>
+      <description>Um pacote de software R para avaliação de imóveis.</description>
     </item>
     
   </channel>
