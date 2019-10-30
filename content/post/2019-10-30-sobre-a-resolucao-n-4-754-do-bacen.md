@@ -1,10 +1,20 @@
 ---
-title: "Resolução do Bacen"
-author: "Droubi"
-date: 2019-10-30T07:48:14-05:00
-categories: ["Avaliação de Imóveis", "Machine Learning"]
-tags: ["Regulação", "Avaliações de Imóveis", "Bacen", "Machine Learning"]
+title: Sobre a Resolução nº 4.754 do Bacen
+author: Droubi
+date: '2019-10-30'
+slug: sobre-a-resolução-n-4-754-do-bacen
+categories:
+  - congressos
+  - avaliação de imóveis
+  - Machine Learning
+tags:
+  - cobreap
+  - Bacen
+image:
+  caption: ''
+  focal_point: ''
 ---
+
 
 Ficou um sentimento de indignação em relação à [resolução n.º 4.754 do Bacen](https://www.bcb.gov.br/estabilidadefinanceira/exibenormativo?tipo=Resolu%C3%A7%C3%A3o&numero=4754) permitindo a “avaliação automática” de imóveis pelos próprios bancos, que se dará provavelmente através de *Machine Learning* (ML), dispensando o trabalho dos peritos avaliadores.
 
@@ -40,7 +50,7 @@ Data science should not be a "spectator sport"; the methodology is effective onl
 
 Além disso, diversos avanços tem sido feitos tanto nas Ciências Estatísticas e a Engenharia de Avaliações está e deverá se manter sempre atenta a isto, adaptando aos poucos o que há de mais novo nas Ciências Estatísticas, porém de maneira que satisfaça às necessidades da Engenharia de Avaliações, afinal, como já ponderei, a Engenharia de Avaliações utiliza-se da Estatística, mas a Estatística **não é** a Engenharia de Avaliações.
 
-E o maior exemplo deste último aspecto, a meu ver, se deu na palestra do Prof. Norberto Hochheim sobre regressão polinomial no [XX COBREAP](http://www.cobreap.com.br/2019/): o método de regressão polinomial em si não pode ser visto como uma novidade, mas os recentes achados de Matloff et. al. (2017), mostrando que Redes Neurais, um algoritmo muito utilizado pela comunidade de ML nada mais é do que uma forma de regressão polinomial, vem muito a calhar para a Engenharia de Avaliações. Claro, pois além do método de regressão polinomial ter se mostrado mais eficiente do que as próprias redes neurais, a regressão polinomial é muito mais fácil de ser explicada do que uma rede neural, que são consideradas pelos próprios estatísticos como verdadeiras caixas pretas (Matloff et. al. 2017).
+E o maior exemplo deste último aspecto, a meu ver, se deu na palestra do Prof. Norberto Hochheim sobre regressão polinomial no [XX COBREAP](http://www.cobreap.com.br/2019/): o método de regressão polinomial em si não pode ser visto como uma novidade, mas os recentes achados de Matloff et. al. (2018), mostrando que Redes Neurais, um algoritmo muito utilizado pela comunidade de ML nada mais é do que uma forma de regressão polinomial, vem muito a calhar para a Engenharia de Avaliações. Claro, pois além do método de regressão polinomial ter se mostrado mais eficiente do que as próprias redes neurais, a regressão polinomial é muito mais fácil de ser explicada do que uma rede neural, que são consideradas pelos próprios estatísticos como verdadeiras caixas pretas (Matloff et. al. 2018).
 
 Obviamente que muito trabalho ainda deverá ser feito para a correta aplicação das regressão polinomial na Engenharia de Avaliações. Eventualmente serão necessários ajustes normativos, baseados em futuros estudos que eventualmente mostrarão os potenciais da aplicação do método na área e também os seus problemas.
 
@@ -71,3 +81,9 @@ Eu não posso deixar de concordar com eles, haja vista que o ideal para a Avalia
 Porém, imaginem o que pode ocorrer numa perícia se o assistente técnico de uma das partes descobrir que, no modelo do Sr. Perito, um acréscimo marginal de área construída diminui o valor total da avaliação do imóvel em discussão ou vice-versa.
 
 Enfim, é por estas e por outras que chamamos de Engenharia de Avaliações e não de Estatística de Avaliações: não basta simplesmente fazer um modelo estatístico, por melhor que seja, e prever com este modelo o valor de um novo imóvel. Por melhor que seja esta previsão, modelos estatísticos são puramente matemáticos, não são possuidores de **bom-senso**, principal qualidade de um bom **ENGENHEIRO**.
+
+## Referências
+
+MATLOFF, N. **Statistical regression and classification: From linear models to machine learning**. Boca Raton, Florida: Chapman & Hall, 2017
+
+MATLOFF, Norman; CHENG, Xi; KHOMTCHOUK, Bohdan; MOHANTY, Pete. **Polynomial regression as an alternative to neural nets**. 2018. Disponível em: < https://arxiv.org/abs/1806.06850>. Acesso em out. 2018.

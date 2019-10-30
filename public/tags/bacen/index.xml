@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>congressos on droubi.me</title>
-    <link>http://droubi.me/categories/congressos/</link>
-    <description>Recent content in congressos on droubi.me</description>
+    <title>Bacen on droubi.me</title>
+    <link>http://droubi.me/tags/bacen/</link>
+    <description>Recent content in Bacen on droubi.me</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Wed, 30 Oct 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://droubi.me/categories/congressos/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://droubi.me/tags/bacen/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,19 +20,6 @@
       <guid>http://droubi.me/post/sobre-a-resolu%C3%A7%C3%A3o-n-4-754-do-bacen/</guid>
       <description>Ficou um sentimento de indignação em relação à resolução n.º 4.754 do Bacen permitindo a “avaliação automática” de imóveis pelos próprios bancos, que se dará provavelmente através de Machine Learning (ML), dispensando o trabalho dos peritos avaliadores.
 Além dos problemas óbvios que advirão da piora da regulação do setor bancário, que aliás é o que está na raiz da crise do subprime que estourou em 2008, a resolução conta com problemas teóricos básicos.</description>
-    </item>
-    
-    <item>
-      <title>COBRAC 2018</title>
-      <link>http://droubi.me/cobrac2018/</link>
-      <pubDate>Sun, 04 Nov 2018 15:15:00 +0000</pubDate>
-      
-      <guid>http://droubi.me/cobrac2018/</guid>
-      <description>Página do evento: COBRAC 2018
-Trabalhos submetidos pelo autor ao COBRAC 2018 Distribuição Lognormal DROUBI, L. F. P.; ZONATO, W.; HOCHHEIM, N. Distribuição Lognormal: Propriedades e aplicações na engenharia de avaliações. In: 13º Congresso Brasileiro de Cadastro Técnico Multifinalitário e Gestão Territorial. Anais…, 2018. Florianópolis: COBRAC. Disponível em: http://droubi.me/cobrac2018.
-Artigo
-Poster
-Pressupostos Clássicos OLS ZONATO, W.; DROUBI, L. F. P.; HOCHHEIM, N. Pressupostos clássicos dos modelos de regressão linear e suas implicações sobre as avaliações em massa.</description>
     </item>
     
   </channel>

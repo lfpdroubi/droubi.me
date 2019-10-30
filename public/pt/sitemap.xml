@@ -3,8 +3,16 @@
     
     <url>
     
-      <loc>http://droubi.me/post/appraiser/</loc>
-      <lastmod>2018-11-05T00:00:00+00:00</lastmod>
+      <loc>http://droubi.me/categories/avalia%C3%A7%C3%A3o-de-im%C3%B3veis/</loc>
+      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/tags/bacen/</loc>
+      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -15,7 +23,23 @@
       <xhtml:link rel="alternate" href="http://droubi.me/en/categories/" hreflang="en"/>
     
       <loc>http://droubi.me/categories/</loc>
-      <lastmod>2018-11-05T00:00:00+00:00</lastmod>
+      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/tags/cobreap/</loc>
+      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/categories/congressos/</loc>
+      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -26,6 +50,41 @@
       <xhtml:link rel="alternate" href="http://droubi.me/en/" hreflang="en"/>
     
       <loc>http://droubi.me/</loc>
+      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/categories/machine-learning/</loc>
+      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/post/sobre-a-resolu%C3%A7%C3%A3o-n-4-754-do-bacen/</loc>
+      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="http://droubi.me/tags/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="http://droubi.me/en/tags/" hreflang="en"/>
+    
+      <loc>http://droubi.me/tags/</loc>
+      <lastmod>2019-10-30T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>http://droubi.me/post/appraiser/</loc>
       <lastmod>2018-11-05T00:00:00+00:00</lastmod>
     </url>
     
@@ -66,25 +125,6 @@
     <url>
     
       <loc>http://droubi.me/tags/congresso/</loc>
-      <lastmod>2018-11-04T15:15:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>http://droubi.me/categories/congressos/</loc>
-      <lastmod>2018-11-04T15:15:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <xhtml:link rel="alternate" href="http://droubi.me/tags/" hreflang="pt"/>
-      <xhtml:link rel="alternate" href="http://droubi.me/en/tags/" hreflang="en"/>
-    
-      <loc>http://droubi.me/tags/</loc>
       <lastmod>2018-11-04T15:15:00+00:00</lastmod>
     </url>
     
