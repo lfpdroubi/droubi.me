@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Wed, 30 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://droubi.me/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,9 +15,27 @@
     <item>
       <title>avaliação de imóveis</title>
       <link>http://droubi.me/categories/avalia%C3%A7%C3%A3o-de-im%C3%B3veis/</link>
-      <pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>http://droubi.me/categories/avalia%C3%A7%C3%A3o-de-im%C3%B3veis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>estatistica</title>
+      <link>http://droubi.me/categories/estatistica/</link>
+      <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://droubi.me/categories/estatistica/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>http://droubi.me/categories/r/</link>
+      <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://droubi.me/categories/r/</guid>
       <description></description>
     </item>
     
@@ -36,15 +54,6 @@
       <pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>http://droubi.me/categories/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>http://droubi.me/categories/r/</link>
-      <pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://droubi.me/categories/r/</guid>
       <description></description>
     </item>
     

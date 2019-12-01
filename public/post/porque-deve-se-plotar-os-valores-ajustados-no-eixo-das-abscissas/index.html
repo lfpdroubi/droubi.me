@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.0.0">
+  <meta name="generator" content="Hugo 0.59.0" />
+  <meta name="author" content="Luiz F. P. Droubi">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="Depois de ler este post eu fiquei impressionado como a imensa maioria dos software comerciais de Engenharia de Avaliações erram ao plotar o chamado gráfico de aderência, ou gráfico do poder de predição. Não vou dizer todos porque erram porque seria displicência minha, mas não me recordo de ter visto nenhum software que tenha o gráfico de aderência com os valores estimados no eixo das abscissas.
+Todos sabemos que a NBR exige que seja apresentado em um laudo de avaliação o gráfico de preços observados versus valores estimados pelo modelo, o que alguns chamam de gráfico de poder de predição e outros de gráfico de aderência do modelo.">
+
+  
+  <link rel="alternate" hreflang="pt" href="http://droubi.me/post/porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#795548">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="anonymous">
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-117082498-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="http://droubi.me/index.xml" type="application/rss+xml" title="droubi.me">
+  <link rel="feed" href="http://droubi.me/index.xml" type="application/rss+xml" title="droubi.me">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="http://droubi.me/post/porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@lfpdroubi">
+  <meta property="twitter:creator" content="@lfpdroubi">
+  
+  <meta property="og:site_name" content="droubi.me">
+  <meta property="og:url" content="http://droubi.me/post/porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas/">
+  <meta property="og:title" content="Porque deve-se plotar os valores ajustados no eixo das abscissas! | droubi.me">
+  <meta property="og:description" content="Depois de ler este post eu fiquei impressionado como a imensa maioria dos software comerciais de Engenharia de Avaliações erram ao plotar o chamado gráfico de aderência, ou gráfico do poder de predição. Não vou dizer todos porque erram porque seria displicência minha, mas não me recordo de ter visto nenhum software que tenha o gráfico de aderência com os valores estimados no eixo das abscissas.
+Todos sabemos que a NBR exige que seja apresentado em um laudo de avaliação o gráfico de preços observados versus valores estimados pelo modelo, o que alguns chamam de gráfico de poder de predição e outros de gráfico de aderência do modelo.">
+  
+  
+    
+  <meta property="og:image" content="http://droubi.me/img/eu.jpg">
+  <meta property="og:locale" content="pt">
+  
+  <meta property="article:published_time" content="2019-11-29T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2019-11-29T00:00:00&#43;00:00">
+  
+
+  
+
+  
+
+  <title>Porque deve-se plotar os valores ajustados no eixo das abscissas! | droubi.me</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">droubi.me</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Alterar navegação">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">
+            
+            <span>Sobre</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#publications_selected">
+            
+            <span>Publicações</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#projects">
+            
+            <span>Projetos</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorial/">
+            
+            <span>Tutoriais</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">
+            
+            <span>Contato</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/files/cv.pdf">
+            
+            <span>CV</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Porque deve-se plotar os valores ajustados no eixo das abscissas!</h1>
+
+  
+
+  
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Luiz F. P. Droubi">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="2019-11-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+    <time datetime="2019-11-29 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+      Nov 29, 2019
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Luiz F. P. Droubi">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas/#disqus_thread"></a>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/estatistica/">estatistica</a>, 
+    
+    <a href="/categories/r/">R</a>, 
+    
+    <a href="">avaliação de imóveis</a>
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Porque%20deve-se%20plotar%20os%20valores%20ajustados%20no%20eixo%20das%20abscissas%21&amp;url=http%3a%2f%2fdroubi.me%2fpost%2fporque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fdroubi.me%2fpost%2fporque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fdroubi.me%2fpost%2fporque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas%2f&amp;title=Porque%20deve-se%20plotar%20os%20valores%20ajustados%20no%20eixo%20das%20abscissas%21"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fdroubi.me%2fpost%2fporque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas%2f&amp;title=Porque%20deve-se%20plotar%20os%20valores%20ajustados%20no%20eixo%20das%20abscissas%21"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Porque%20deve-se%20plotar%20os%20valores%20ajustados%20no%20eixo%20das%20abscissas%21&amp;body=http%3a%2f%2fdroubi.me%2fpost%2fporque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+
+<p>Depois de ler este <a href="http://www.win-vector.com/blog/2019/09/why-do-we-plot-predictions-on-the-x-axis/">post</a>
+eu fiquei impressionado como a imensa maioria dos <em>software</em> comerciais de
+Engenharia de Avaliações erram ao plotar o chamado gráfico de aderência, ou
+gráfico do poder de predição. Não vou dizer todos porque erram porque seria
+displicência minha, mas não me recordo de ter visto nenhum <em>software</em>
+que tenha o gráfico de aderência com os valores estimados no eixo das abscissas.</p>
+<p>Todos sabemos que a NBR exige que seja apresentado em um laudo de avaliação o
+<em>gráfico de preços observados versus valores estimados pelo modelo</em>, o que alguns
+chamam de gráfico de poder de predição e outros de gráfico de aderência do modelo.</p>
+<p>O que ninguém sabe é que a NBR 14.653-02, erroneamente, especifica que este
+gráfico deve ser elaborado com o valor dos <em>preços observados na abscissa versus
+valores estimados pelo modelo na ordenada</em> (item 8.2.1.4.1, p.15).</p>
+<p>Eu mesmo, que não faço uso de nenhum destes <em>software</em> comerciais no dia a dia,
+já que faço uso do <strong>R</strong>, cometi este erro recentemente, no artigo em que
+publicamos no XX COBREAP sobre a centralização de dados amostrais. Este foi o
+gráfico que publicamos, no qual acrescentei a reta de regressão (em azul) entre
+os valores ajustados e os valores observados (a reta em vermelho é a bissetriz):</p>
+<pre class="r"><code>power_plot_NBR(fit)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-3"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-3-1.png" alt="Gráfico publicado, elaborado conforme a NBR 14.653-02." width="672" />
+<p class="caption">
+Figure 1: Gráfico publicado, elaborado conforme a NBR 14.653-02.
+</p>
+</div>
+<p>E este seria o gráfico correto:</p>
+<pre class="r"><code>library(appraiseR)
+power_plot(fit)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-4"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-4-1.png" alt="Este seria o gráfico correto." width="672" />
+<p class="caption">
+Figure 2: Este seria o gráfico correto.
+</p>
+</div>
+<p>Obviamente que o meu erro foi o mesmo erro dos programadores dos <em>software</em>
+comerciais: reproduzir sem pensar os gráficos que a gente vê no dia a dia da
+nossa prática da Engenharia de Avaliações, seguindo cegamente o que diz a
+NBR 14.653-02.</p>
+<p>Vou tentar com este post deixar bem claro para a comunidade de avaliadores o
+motivo pelo qual os gráficos de aderência ou poder de predição atuais estão
+errados.</p>
+<div id="modelo-nulo" class="section level3">
+<h3>Modelo nulo</h3>
+<p>Para isto, primeiramente, vamos construir um modelo nulo. Um model nulo é um
+modelo onde a hipótese nula sobre os coeficientes dos regressores, ou seja, a
+hipótese que desejamos negar, é verdadeira, e o modelo de regressão abaixo:</p>
+<p><span class="math display">\[Y = \alpha + \beta X + \epsilon\]</span></p>
+<p>Se degenera no seguinte modelo, dito nulo:</p>
+<p><span class="math display">\[Y = \alpha + \epsilon\]</span>
+Em outras palavras, o modelo nulo é o da média simples da variável dependente, de
+tal maneira que os valores ajustados por este modelo terão sempre o mesmo valor,
+igual à média aritmética da variável.</p>
+<p>Por exemplo, imaginem que foram observados 100 dados de lotes urbanos, com valores
+de área total (<span class="math inline">\(X\)</span>) e valor unitário (<span class="math inline">\(Y\)</span>), não chegando-se a nenhuma correlação
+entre X e Y. A melhor forma de se estimar <span class="math inline">\(Y\)</span>, portanto, seria através da simples
+média dos valores unitários (<span class="math inline">\(\bar Y\)</span>).</p>
+<pre class="r"><code>set.seed(9)
+Y &lt;- rnorm(100, mean = 2500, sd = 200)
+X &lt;- rnorm(100, mean = 500, sd = 100)
+plot(Y ~ X)
+abline(lm(Y~X), col = &quot;red&quot;)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-5"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-5-1.png" alt="Dados com correlação baixíssima." width="672" />
+<p class="caption">
+Figure 3: Dados com correlação baixíssima.
+</p>
+</div>
+<p>Podemos calcular os resíduos de um modelo nulo e plotá-los em função dos valores
+ajustados, obtendo o seguinte gráfico:</p>
+<pre class="r"><code>fit1 &lt;- lm(Y~1)
+plot(fit1, which = 1)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-6"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-6-1.png" alt="Gráfico dos resíduos vs. valores ajustados" width="672" />
+<p class="caption">
+Figure 4: Gráfico dos resíduos vs. valores ajustados
+</p>
+</div>
+<p>Observa-se que, grosso modo, os resíduos são independentes e são identicamente
+distribuídos em torno do seu valor médio, que é igual a zero, como era de
+se esperar.</p>
+<p>Se, no entanto, alguém optar por plotar os resíduos contra os valores observados,
+esta pessoa deduzirá erroneamente um padrão de alta nos resíduos, o que na verdade
+não ocorre na prática. Na realidade, como os valores observados foram
+colocados em ordem para a plotagem, a aparência é que há uma tendenciosidade.</p>
+<pre class="r"><code>plot(fit1$residuals ~ Y)
+abline(h = 0, lty = 3, col = &quot;grey&quot;)</code></pre>
+<p><img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Imagine-se agora que tenhamos um modelo com 100 dados de lotes de terrenos urbanos
+mostrando grande correlação (negativa) entre os valores unitários dos lotes e os
+valores de área. Os dados foram criados randômicamente no <strong>R</strong>, através do
+seguinte código:</p>
+<pre class="r"><code>set.seed(100)
+X &lt;- rnorm(100, mean = 500, sd = 100)
+Y = 10000 -5*X + rnorm(100, mean = 0, sd = 250)
+fit &lt;- lm(Y~X)</code></pre>
+<pre class="r"><code>plot(Y~X)
+abline(lm(Y~X), col = &quot;red&quot;)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-9"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-9-1.png" alt="Dados com correlação negativa." width="672" />
+<p class="caption">
+Figure 5: Dados com correlação negativa.
+</p>
+</div>
+<p>O gráfico correto para a análise dos resíduos é (fornecido pelo próprio <strong>R</strong>):</p>
+<pre class="r"><code>plot(fit, which = 1)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-10"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-10-1.png" alt="Gráficos dos resíduos correto." width="672" />
+<p class="caption">
+Figure 6: Gráficos dos resíduos correto.
+</p>
+</div>
+<p>A maneira errônea de se analisar os resíduos, ou seja, contra os valores observados,
+nem está disponível no <strong>R</strong> – que é um <em>software</em> estatístico produzido por
+estatísticos, portanto com os conceitos corretos–, mas podemos criar este gráfico
+através do seguinte código:</p>
+<pre class="r"><code>plot(fit$residuals ~ Y)
+abline(h = 0, lty = 3, col = &quot;grey&quot;)
+abline(lm(fit$residuals ~ Y), col = &quot;red&quot;)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-11"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-11-1.png" alt="Gráfico dos resíduos incorreto." width="672" />
+<p class="caption">
+Figure 7: Gráfico dos resíduos incorreto.
+</p>
+</div>
+<p>Pode parecer que há uma tendência dos valores mais baixos terem resíduos
+negativos enquanto os valores mais altos tem valores positivos.</p>
+<pre class="r"><code>hist(rstandard(fit))</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-12"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-12-1.png" alt="Histograma dos resíduos padronizados." width="672" />
+<p class="caption">
+Figure 8: Histograma dos resíduos padronizados.
+</p>
+</div>
+<p>Mas, na verdade, não há nada de errado com o modelo. Os resíduos são absolutamente
+normais, com média zero, como mostra o histograma dos resíduos padronizados.</p>
+<p>E o mesmo é válido para o gráfico de aderência.</p>
+<p>Se plotarmos o gráfico de aderência corretamente, vemos que a linha de regressão
+entre os valores observados e os valores ajustados tem coeficiente angular muito
+próximo de 1 – a reta de regressão (em azul), se superpõe à bissetriz (em vermelho).</p>
+<pre class="r"><code>par(pty=&quot;s&quot;)
+plot(Y ~ fit$fitted.values)
+abline(a = 0, b = 1, col = &quot;red&quot;)
+abline(lm(Y ~ fit$fitted.values), col = &quot;blue&quot;, lwd = 2)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-13"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-13-1.png" alt="Gráfico de aderência correto." width="672" />
+<p class="caption">
+Figure 9: Gráfico de aderência correto.
+</p>
+</div>
+<p>Porém, se construirmos o gráfico de aderência incorretamente, como manda a nossa
+NBR 14.653-02, teremos o seguinte gráfico de aderência, o que mostra uma suposta
+estrutura ausente no modelo, o que não é verdade.</p>
+<pre class="r"><code>par(pty=&quot;s&quot;)
+plot(fit$fitted.values ~ Y)
+abline(a = 0, b = 1, col = &quot;red&quot;)
+abline(lm(fit$fitted.values~Y), col = &quot;blue&quot;, lwd = 2)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-14"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-14-1.png" alt="Gráfico de aderência incorreto." width="672" />
+<p class="caption">
+Figure 10: Gráfico de aderência incorreto.
+</p>
+</div>
+</div>
+<div id="dados-criados-para-ilustrar-melhor-o-fenomeno" class="section level3">
+<h3>Dados criados para ilustrar melhor o fenômeno</h3>
+<p>Criei os dados abaixo especificamente para melhor entendimento:</p>
+<pre class="r"><code>X &lt;- c(0, 0.5, 1, 1, 1.5, 1, 2, 2, 2, 2, 2, 2.5, 3, 3, 3, 3.5, 4, 4, 4, 4, 4, 4.5, 5, 5, 5, 5.5, 6, 6, 6, 6, 6, 6.5, 7, 7, 7, 7.5)
+Y &lt;- c(0, 0.5, 0, 1, 1.5, 2, 0, 1, 2, 3, 4, 2.5, 2, 3, 4, 3.5, 2, 3, 4, 5, 6, 4.5, 4, 5, 6, 5.5, 4, 5, 6, 7, 8, 6.5, 6, 7, 8, 7.5)
+fit &lt;- lm(Y ~ X)
+par(pty=&quot;s&quot;)
+plot(Y ~ X, xlim = c(0,8), ylim = c(0,8))
+abline(fit, col = &quot;red&quot;)</code></pre>
+<p><img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<pre class="r"><code>plot(fit, which = 1)</code></pre>
+<p><img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<pre class="r"><code>plot(fit$residuals ~ Y)
+abline(h = 0, lty = 3, col = &quot;grey&quot;)
+abline(lm(fit$residuals ~ Y), col = &quot;red&quot;)</code></pre>
+<p><img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<pre class="r"><code>par(pty=&quot;s&quot;)
+plot(Y ~ fit$fitted.values, xlim = c(0, 8))
+abline(a = 0, b = 1, col = &quot;red&quot;)
+abline(lm(Y ~ fit$fitted.values), col = &quot;blue&quot;, lwd = 2)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-18"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-18-1.png" alt="Gráfico de aderência correto." width="672" />
+<p class="caption">
+Figure 11: Gráfico de aderência correto.
+</p>
+</div>
+<pre class="r"><code>par(pty=&quot;s&quot;)
+plot(fit$fitted.values ~ Y, ylim = c(0,8))
+abline(a = 0, b = 1, col = &quot;red&quot;)
+abline(lm(fit$fitted.values~Y), col = &quot;blue&quot;, 2)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-19"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-19-1.png" alt="Gráfico de aderência incorreto." width="672" />
+<p class="caption">
+Figure 12: Gráfico de aderência incorreto.
+</p>
+</div>
+</div>
+
+    </div>
+
+    
+
+
+
+
+    
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  <img class="portrait mr-3" src="https://s.gravatar.com/avatar/461d14fc89fd2e7298fdbbee06ffb8ab?s=200')" itemprop="image" alt="Avatar">
+  
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/">Luiz F. P. Droubi</a></h5>
+    <h6 class="card-subtitle">Mestrando no Programa de Pós-Graduação em Engenharia de Transportes e Gestão Territorial</h6>
+    
+    <ul class="network-icon" aria-hidden="true">
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      <li>
+        <a itemprop="sameAs" href="mailto:lfpdroubi@gmail.com" >
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://github.com/lfpdroubi" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.linkedin.com/in/luiz-fernando-palin-droubi-52942034/" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="http://www.facebook.com/luiz.droubi" target="_blank" rel="noopener">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="http://www.instagram.com/lfpdroubi" target="_blank" rel="noopener">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://twitter.com/lfpdroubi" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://orcid.org/0000-0002-5971-7220" target="_blank" rel="noopener">
+          <i class="ai ai-orcid"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="http://lattes.cnpq.br/5150615628956067" target="_blank" rel="noopener">
+          <i class="ai ai-lattes"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "droubi" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    &copy; 2018 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+    
+    
+    <script src="/js/mathjax-config.500a6cbb2c0f345fcecc21b3116d6637aa78f1f11db8081ea581abe05390c2e8f3bbffe61be3cf0217baf785c40efceabe51050a4f007e69af94efd3643260e8.js" integrity="sha512-UApsuywPNF/OzCGzEW1mN6p48fEduAgepYGr4FOQwujzu//mG&#43;PPAhe694XEDvzqvlEFCk8AfmmvlO/TZDJg6A=="></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//droubi.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "",
+        'results': "",
+        'no_results': ""
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "",
+        'publication' : "Publicações",
+        'talk' : "Palestras"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    <script src="/js/search.js"></script>
+    
+
+    
+    
+
+  </body>
+</html>
+

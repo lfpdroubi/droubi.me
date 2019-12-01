@@ -1,0 +1,216 @@
+---
+title: "Porque deve-se plotar os valores ajustados no eixo das abscissas!"
+author: "Droubi"
+date: '2019-11-29'
+image:
+  caption: ''
+  focal_point: ''
+slug: porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas
+tags: []
+categories:
+- estatistica
+- R
+- avaliação de imóveis
+---
+
+
+
+<p>Depois de ler este <a href="http://www.win-vector.com/blog/2019/09/why-do-we-plot-predictions-on-the-x-axis/">post</a>
+eu fiquei impressionado como a imensa maioria dos <em>software</em> comerciais de
+Engenharia de Avaliações erram ao plotar o chamado gráfico de aderência, ou
+gráfico do poder de predição. Não vou dizer todos porque erram porque seria
+displicência minha, mas não me recordo de ter visto nenhum <em>software</em>
+que tenha o gráfico de aderência com os valores estimados no eixo das abscissas.</p>
+<p>Todos sabemos que a NBR exige que seja apresentado em um laudo de avaliação o
+<em>gráfico de preços observados versus valores estimados pelo modelo</em>, o que alguns
+chamam de gráfico de poder de predição e outros de gráfico de aderência do modelo.</p>
+<p>O que ninguém sabe é que a NBR 14.653-02, erroneamente, especifica que este
+gráfico deve ser elaborado com o valor dos <em>preços observados na abscissa versus
+valores estimados pelo modelo na ordenada</em> (item 8.2.1.4.1, p.15).</p>
+<p>Eu mesmo, que não faço uso de nenhum destes <em>software</em> comerciais no dia a dia,
+já que faço uso do <strong>R</strong>, cometi este erro recentemente, no artigo em que
+publicamos no XX COBREAP sobre a centralização de dados amostrais. Este foi o
+gráfico que publicamos, no qual acrescentei a reta de regressão (em azul) entre
+os valores ajustados e os valores observados (a reta em vermelho é a bissetriz):</p>
+<pre class="r"><code>power_plot_NBR(fit)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-3"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-3-1.png" alt="Gráfico publicado, elaborado conforme a NBR 14.653-02." width="672" />
+<p class="caption">
+Figure 1: Gráfico publicado, elaborado conforme a NBR 14.653-02.
+</p>
+</div>
+<p>E este seria o gráfico correto:</p>
+<pre class="r"><code>library(appraiseR)
+power_plot(fit)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-4"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-4-1.png" alt="Este seria o gráfico correto." width="672" />
+<p class="caption">
+Figure 2: Este seria o gráfico correto.
+</p>
+</div>
+<p>Obviamente que o meu erro foi o mesmo erro dos programadores dos <em>software</em>
+comerciais: reproduzir sem pensar os gráficos que a gente vê no dia a dia da
+nossa prática da Engenharia de Avaliações, seguindo cegamente o que diz a
+NBR 14.653-02.</p>
+<p>Vou tentar com este post deixar bem claro para a comunidade de avaliadores o
+motivo pelo qual os gráficos de aderência ou poder de predição atuais estão
+errados.</p>
+<div id="modelo-nulo" class="section level3">
+<h3>Modelo nulo</h3>
+<p>Para isto, primeiramente, vamos construir um modelo nulo. Um model nulo é um
+modelo onde a hipótese nula sobre os coeficientes dos regressores, ou seja, a
+hipótese que desejamos negar, é verdadeira, e o modelo de regressão abaixo:</p>
+<p><span class="math display">\[Y = \alpha + \beta X + \epsilon\]</span></p>
+<p>Se degenera no seguinte modelo, dito nulo:</p>
+<p><span class="math display">\[Y = \alpha + \epsilon\]</span>
+Em outras palavras, o modelo nulo é o da média simples da variável dependente, de
+tal maneira que os valores ajustados por este modelo terão sempre o mesmo valor,
+igual à média aritmética da variável.</p>
+<p>Por exemplo, imaginem que foram observados 100 dados de lotes urbanos, com valores
+de área total (<span class="math inline">\(X\)</span>) e valor unitário (<span class="math inline">\(Y\)</span>), não chegando-se a nenhuma correlação
+entre X e Y. A melhor forma de se estimar <span class="math inline">\(Y\)</span>, portanto, seria através da simples
+média dos valores unitários (<span class="math inline">\(\bar Y\)</span>).</p>
+<pre class="r"><code>set.seed(9)
+Y &lt;- rnorm(100, mean = 2500, sd = 200)
+X &lt;- rnorm(100, mean = 500, sd = 100)
+plot(Y ~ X)
+abline(lm(Y~X), col = &quot;red&quot;)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-5"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-5-1.png" alt="Dados com correlação baixíssima." width="672" />
+<p class="caption">
+Figure 3: Dados com correlação baixíssima.
+</p>
+</div>
+<p>Podemos calcular os resíduos de um modelo nulo e plotá-los em função dos valores
+ajustados, obtendo o seguinte gráfico:</p>
+<pre class="r"><code>fit1 &lt;- lm(Y~1)
+plot(fit1, which = 1)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-6"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-6-1.png" alt="Gráfico dos resíduos vs. valores ajustados" width="672" />
+<p class="caption">
+Figure 4: Gráfico dos resíduos vs. valores ajustados
+</p>
+</div>
+<p>Observa-se que, grosso modo, os resíduos são independentes e são identicamente
+distribuídos em torno do seu valor médio, que é igual a zero, como era de
+se esperar.</p>
+<p>Se, no entanto, alguém optar por plotar os resíduos contra os valores observados,
+esta pessoa deduzirá erroneamente um padrão de alta nos resíduos, o que na verdade
+não ocorre na prática. Na realidade, como os valores observados foram
+colocados em ordem para a plotagem, a aparência é que há uma tendenciosidade.</p>
+<pre class="r"><code>plot(fit1$residuals ~ Y)
+abline(h = 0, lty = 3, col = &quot;grey&quot;)</code></pre>
+<p><img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Imagine-se agora que tenhamos um modelo com 100 dados de lotes de terrenos urbanos
+mostrando grande correlação (negativa) entre os valores unitários dos lotes e os
+valores de área. Os dados foram criados randômicamente no <strong>R</strong>, através do
+seguinte código:</p>
+<pre class="r"><code>set.seed(100)
+X &lt;- rnorm(100, mean = 500, sd = 100)
+Y = 10000 -5*X + rnorm(100, mean = 0, sd = 250)
+fit &lt;- lm(Y~X)</code></pre>
+<pre class="r"><code>plot(Y~X)
+abline(lm(Y~X), col = &quot;red&quot;)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-9"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-9-1.png" alt="Dados com correlação negativa." width="672" />
+<p class="caption">
+Figure 5: Dados com correlação negativa.
+</p>
+</div>
+<p>O gráfico correto para a análise dos resíduos é (fornecido pelo próprio <strong>R</strong>):</p>
+<pre class="r"><code>plot(fit, which = 1)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-10"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-10-1.png" alt="Gráficos dos resíduos correto." width="672" />
+<p class="caption">
+Figure 6: Gráficos dos resíduos correto.
+</p>
+</div>
+<p>A maneira errônea de se analisar os resíduos, ou seja, contra os valores observados,
+nem está disponível no <strong>R</strong> – que é um <em>software</em> estatístico produzido por
+estatísticos, portanto com os conceitos corretos–, mas podemos criar este gráfico
+através do seguinte código:</p>
+<pre class="r"><code>plot(fit$residuals ~ Y)
+abline(h = 0, lty = 3, col = &quot;grey&quot;)
+abline(lm(fit$residuals ~ Y), col = &quot;red&quot;)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-11"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-11-1.png" alt="Gráfico dos resíduos incorreto." width="672" />
+<p class="caption">
+Figure 7: Gráfico dos resíduos incorreto.
+</p>
+</div>
+<p>Pode parecer que há uma tendência dos valores mais baixos terem resíduos
+negativos enquanto os valores mais altos tem valores positivos.</p>
+<pre class="r"><code>hist(rstandard(fit))</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-12"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-12-1.png" alt="Histograma dos resíduos padronizados." width="672" />
+<p class="caption">
+Figure 8: Histograma dos resíduos padronizados.
+</p>
+</div>
+<p>Mas, na verdade, não há nada de errado com o modelo. Os resíduos são absolutamente
+normais, com média zero, como mostra o histograma dos resíduos padronizados.</p>
+<p>E o mesmo é válido para o gráfico de aderência.</p>
+<p>Se plotarmos o gráfico de aderência corretamente, vemos que a linha de regressão
+entre os valores observados e os valores ajustados tem coeficiente angular muito
+próximo de 1 – a reta de regressão (em azul), se superpõe à bissetriz (em vermelho).</p>
+<pre class="r"><code>par(pty=&quot;s&quot;)
+plot(Y ~ fit$fitted.values)
+abline(a = 0, b = 1, col = &quot;red&quot;)
+abline(lm(Y ~ fit$fitted.values), col = &quot;blue&quot;, lwd = 2)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-13"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-13-1.png" alt="Gráfico de aderência correto." width="672" />
+<p class="caption">
+Figure 9: Gráfico de aderência correto.
+</p>
+</div>
+<p>Porém, se construirmos o gráfico de aderência incorretamente, como manda a nossa
+NBR 14.653-02, teremos o seguinte gráfico de aderência, o que mostra uma suposta
+estrutura ausente no modelo, o que não é verdade.</p>
+<pre class="r"><code>par(pty=&quot;s&quot;)
+plot(fit$fitted.values ~ Y)
+abline(a = 0, b = 1, col = &quot;red&quot;)
+abline(lm(fit$fitted.values~Y), col = &quot;blue&quot;, lwd = 2)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-14"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-14-1.png" alt="Gráfico de aderência incorreto." width="672" />
+<p class="caption">
+Figure 10: Gráfico de aderência incorreto.
+</p>
+</div>
+</div>
+<div id="dados-criados-para-ilustrar-melhor-o-fenomeno" class="section level3">
+<h3>Dados criados para ilustrar melhor o fenômeno</h3>
+<p>Criei os dados abaixo especificamente para melhor entendimento:</p>
+<pre class="r"><code>X &lt;- c(0, 0.5, 1, 1, 1.5, 1, 2, 2, 2, 2, 2, 2.5, 3, 3, 3, 3.5, 4, 4, 4, 4, 4, 4.5, 5, 5, 5, 5.5, 6, 6, 6, 6, 6, 6.5, 7, 7, 7, 7.5)
+Y &lt;- c(0, 0.5, 0, 1, 1.5, 2, 0, 1, 2, 3, 4, 2.5, 2, 3, 4, 3.5, 2, 3, 4, 5, 6, 4.5, 4, 5, 6, 5.5, 4, 5, 6, 7, 8, 6.5, 6, 7, 8, 7.5)
+fit &lt;- lm(Y ~ X)
+par(pty=&quot;s&quot;)
+plot(Y ~ X, xlim = c(0,8), ylim = c(0,8))
+abline(fit, col = &quot;red&quot;)</code></pre>
+<p><img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<pre class="r"><code>plot(fit, which = 1)</code></pre>
+<p><img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<pre class="r"><code>plot(fit$residuals ~ Y)
+abline(h = 0, lty = 3, col = &quot;grey&quot;)
+abline(lm(fit$residuals ~ Y), col = &quot;red&quot;)</code></pre>
+<p><img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<pre class="r"><code>par(pty=&quot;s&quot;)
+plot(Y ~ fit$fitted.values, xlim = c(0, 8))
+abline(a = 0, b = 1, col = &quot;red&quot;)
+abline(lm(Y ~ fit$fitted.values), col = &quot;blue&quot;, lwd = 2)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-18"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-18-1.png" alt="Gráfico de aderência correto." width="672" />
+<p class="caption">
+Figure 11: Gráfico de aderência correto.
+</p>
+</div>
+<pre class="r"><code>par(pty=&quot;s&quot;)
+plot(fit$fitted.values ~ Y, ylim = c(0,8))
+abline(a = 0, b = 1, col = &quot;red&quot;)
+abline(lm(fit$fitted.values~Y), col = &quot;blue&quot;, 2)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-19"></span>
+<img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-19-1.png" alt="Gráfico de aderência incorreto." width="672" />
+<p class="caption">
+Figure 12: Gráfico de aderência incorreto.
+</p>
+</div>
+</div>
