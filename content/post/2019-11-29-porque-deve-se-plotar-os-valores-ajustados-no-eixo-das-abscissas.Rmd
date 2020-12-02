@@ -76,7 +76,7 @@ E este seria o gráfico correto:
 
 ```{r, fig.cap = "Este seria o gráfico correto.", message=FALSE}
 library(appraiseR)
-power_plot(fit)
+powerPlot(fit, axis = "inverted")
 ```
 
 

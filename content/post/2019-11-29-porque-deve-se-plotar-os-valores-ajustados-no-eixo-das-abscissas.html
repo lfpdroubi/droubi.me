@@ -33,6 +33,7 @@ publicamos no XX COBREAP sobre a centralização de dados amostrais. Este foi o
 gráfico que publicamos, no qual acrescentei a reta de regressão (em azul) entre
 os valores ajustados e os valores observados (a reta em vermelho é a bissetriz):</p>
 <pre class="r"><code>power_plot_NBR(fit)</code></pre>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <div class="figure"><span id="fig:unnamed-chunk-3"></span>
 <img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-3-1.png" alt="Gráfico publicado, elaborado conforme a NBR 14.653-02." width="672" />
 <p class="caption">
@@ -41,7 +42,7 @@ Figure 1: Gráfico publicado, elaborado conforme a NBR 14.653-02.
 </div>
 <p>E este seria o gráfico correto:</p>
 <pre class="r"><code>library(appraiseR)
-power_plot(fit)</code></pre>
+powerPlot(fit, axis = &quot;inverted&quot;)</code></pre>
 <div class="figure"><span id="fig:unnamed-chunk-4"></span>
 <img src="/post/2019-11-29-porque-deve-se-plotar-os-valores-ajustados-no-eixo-das-abscissas_files/figure-html/unnamed-chunk-4-1.png" alt="Este seria o gráfico correto." width="672" />
 <p class="caption">
@@ -177,7 +178,7 @@ Figure 10: Gráfico de aderência incorreto.
 </p>
 </div>
 </div>
-<div id="dados-criados-para-ilustrar-melhor-o-fenomeno" class="section level3">
+<div id="dados-criados-para-ilustrar-melhor-o-fenômeno" class="section level3">
 <h3>Dados criados para ilustrar melhor o fenômeno</h3>
 <p>Criei os dados abaixo especificamente para melhor entendimento:</p>
 <pre class="r"><code>X &lt;- c(0, 0.5, 1, 1, 1.5, 1, 2, 2, 2, 2, 2, 2.5, 3, 3, 3, 3.5, 4, 4, 4, 4, 4, 4.5, 5, 5, 5, 5.5, 6, 6, 6, 6, 6, 6.5, 7, 7, 7, 7.5)

@@ -6,10 +6,6 @@
     <description>Recent content in Categories on droubi.me</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    
-	<atom:link href="http://droubi.me/en/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>&amp;copy; 2018</copyright><atom:link href="http://droubi.me/en/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
