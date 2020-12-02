@@ -1,10 +1,10 @@
 +++
-title = "Modelos Mistos"
-date = 2020-11-30T14:25:00
+title = "Crítica ao uso do Campo de Arbítrio do Avaliador em situações de escassez de dados de mercado"
+date = 2020-12-02T14:00:00
 draft = false
 
 # Authors
-authors = ["Luiz Fernando Palin Droubi", "Carlos Augusto Zilli", "Norberto Hochheim"]
+authors = ["Luiz Fernando Palin Droubi", "Carlos Augusto Zilli", "Willian Zonato", "Norberto Hochheim"]
 
 # Publication type.
 # Legend:
@@ -22,7 +22,25 @@ publication = "In *IX Simpósio da Sociedade Brasileira de Engenharia de Avalia�
 publication_short = "In *IX SOBREA*"
 
 # Abstract and optional shortened version.
-abstract = "Os modelos mistos são modelos estatísticos que tratam a heterogeneidade amostral de forma aleatória, possibilitando assim a modelagem da variabilidade entre os diversos agrupamentos de uma amostra, diferentemente do que ocorre com a abordagem padrão para lidar com a heterogeneidade amostral, a modelagem de efeitos fixos, que, por restringir a variância entre os agrupamentos ao infinito, tem a capacidade de modelar apenas a variância entre os indivíduos da amostra, i.e. entre os imóveis, no caso da Engenharia de Avaliações. Desta forma, nos modelos de efeitos mistos, desde que sejam inseridas variáveis que expliquem a variância entre os agrupamentos, é possível a previsão de valores para agrupamentos não amostrados, onde sejam conhecidos os valores dessas variáveis, o que pode ser bastante útil na confecção de Plantas de Valores Genéricos (PVGs). Ainda, com uma formulação adequada, pode-se pensar em aplicar os modelos mistos a dados de imóveis em painel, possibilitando assim a confecção de índices de preços de imóveis, o que permitiria uma atualização mais adequada das PVGs já que, na atualidade, isto é feito com a aplicação de índices de preços ao consumidor, o que a médio/longo prazo acaba por distorcer as plantas."
+abstract = "Neste trabalho são apresentados aspectos teóricos e práticos 
+relacionados ao conceito de Campo de Arbítrio (CA) do Avaliador, dada a 
+importância deste conceito na Engenharia de Avaliações. Foram elencados os 
+critérios previstos na normativa que possibilitam ao avaliador fazer uso do 
+Campo de Arbítrio, detalhando cada um destes critérios levantados e ponderando 
+se a adoção do conceito de Campo de Arbítrio do avaliador é uma condição 
+suficiente e necessária para a solução dos problemas práticos enfrentados pelo 
+avaliador. Para melhor ilustrar, foram elaborados estudos de diversos casos com 
+a geração de dados randômicos simulando o problema da micronumerosidade de dados 
+de uma mesma característica, comparando os resultados obtidos com a adoção de 
+diversas abordagens, fazendo uso tanto do Campo de Arbítrio do Avaliador quando 
+do intervalo de predição (IP) das previsões efetuadas com os modelos obtidos em 
+cada abordagem. Outro aspecto importante abordado lateralmente neste trabalho é 
+sobre a previsão de valores de venda a partir de dados de oferta, haja vista que 
+a falta de dados de transações e, em consequência a falta de um fator oferta 
+obtido cientificamamente, é um dos grandes motivos que levam os avaliadores a 
+fazerem uso do Campo de Arbítrio. Ao final, a partir da pesquisa elaborada e 
+dos resultados obtidos são feitas recomendações visando
+uma melhoria na NBR 14.653 numa eventual revisão desta."
 
 # Is this a selected publication? (true/false)
 selected = true
@@ -37,15 +55,15 @@ projects = ["internal-project"]
 
 # Tags (optional).
 #   Set `tags = []` for no tags, or use the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
-tags = ["modelos mistos", "modelagem hierarquica", "avaliação em massa", "PVG"]
+tags = ["engenharia de avaliações", "campo de arbítrio", "modelos econométricos"]
 
 # Links (optional).
-url_pdf = "https://github.com/lfpdroubi/mixedModels/raw/master/Artigo_Modelos_Mistos_SOBREA.pdf"
+url_pdf = "https://github.com/academicPapers/campoArbitrio/raw/master/Artigo.pdf"
 #url_preprint = "http://eprints.soton.ac.uk/352095/1/Cushen-IMV2013.pdf"
 #url_code = "#"
 #url_dataset = "#"
 #url_project = "#"
-url_slides = "https://github.com/lfpdroubi/mixedModels/raw/master/docs/index/Apresentacao_Modelos_Mistos_Droubi.pdf"
+url_slides = "https://github.com/academicPapers/campoArbitrio/raw/master/docs/index/index.pdf"
 #url_video = "#"
 #url_poster = "#"
 #url_source = "#"

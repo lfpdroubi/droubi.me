@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>avaliação-em-massa on droubi.me</title>
+    <title>avaliação em massa on droubi.me</title>
     <link>http://droubi.me/tags/avalia%C3%A7%C3%A3o-em-massa/</link>
-    <description>Recent content in avaliação-em-massa on droubi.me</description>
+    <description>Recent content in avaliação em massa on droubi.me</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Thu, 01 Nov 2018 20:06:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Nov 2020 14:25:00 +0000</lastBuildDate>
     
 	<atom:link href="http://droubi.me/tags/avalia%C3%A7%C3%A3o-em-massa/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Modelos Mistos</title>
+      <link>http://droubi.me/publication/campo-arbitrio/</link>
+      <pubDate>Mon, 30 Nov 2020 14:25:00 +0000</pubDate>
+      
+      <guid>http://droubi.me/publication/campo-arbitrio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modelos Mistos</title>
+      <link>http://droubi.me/publication/modelos-mistos/</link>
+      <pubDate>Mon, 30 Nov 2020 14:25:00 +0000</pubDate>
+      
+      <guid>http://droubi.me/publication/modelos-mistos/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Pressupostos inferência clássica</title>
