@@ -61,7 +61,7 @@ doi = ""
 math = true
 
 # Featured image
-# To use, add an image named `CotaTerraQuantis.png` to your page's folder. 
+# To use, add an image named `featured.png` to your page's folder. 
 [image]
   # Caption (optional)
   # caption = "Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)"
