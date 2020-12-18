@@ -15,8 +15,8 @@
   
     
   
-  <meta name="description" content="Um dos maiores problemas da prática atual da Engenharia de Avaliações no Brasil está na falta de dados de mercado referentes a valores de transações de imóveis.
-Enquanto em outros países os dados de transações de imóveis são públicos e estão disponíveis de maneira estruturada), isto ainda está longe de tornar-se realidade no Brasil, por inúmeros fatores que não pretendo discutir neste pequeno post.
+  <meta name="description" content="Um dos maiores problemas práticos da Engenharia de Avaliações no Brasil na atualidade está na falta de dados de mercado referentes a valores de transações de imóveis.
+Enquanto em outros países os dados de transações de imóveis são públicos e estão disponíveis de maneira estruturada, isto ainda está longe de tornar-se realidade no Brasil, por inúmeros fatores que não pretendo discutir neste pequeno post.
 O que pretendo discutir aqui é sobre a implicação da aplicação de um fator de homogeneização aos dados de oferta antes ou depois do ajuste de um modelo de regressão linear.">
 
   
@@ -114,8 +114,8 @@ O que pretendo discutir aqui é sobre a implicação da aplicação de um fator 
   <meta property="og:site_name" content="droubi.me">
   <meta property="og:url" content="http://droubi.me/post/2020-12-18-implica%C3%A7%C3%B5es-da-utiliza%C3%A7%C3%A3o-de-um-fator-oferta-em-modelos-de-regress%C3%A3o-linear/">
   <meta property="og:title" content="Implicações da utilização de um fator oferta em modelos de regressão linear | droubi.me">
-  <meta property="og:description" content="Um dos maiores problemas da prática atual da Engenharia de Avaliações no Brasil está na falta de dados de mercado referentes a valores de transações de imóveis.
-Enquanto em outros países os dados de transações de imóveis são públicos e estão disponíveis de maneira estruturada), isto ainda está longe de tornar-se realidade no Brasil, por inúmeros fatores que não pretendo discutir neste pequeno post.
+  <meta property="og:description" content="Um dos maiores problemas práticos da Engenharia de Avaliações no Brasil na atualidade está na falta de dados de mercado referentes a valores de transações de imóveis.
+Enquanto em outros países os dados de transações de imóveis são públicos e estão disponíveis de maneira estruturada, isto ainda está longe de tornar-se realidade no Brasil, por inúmeros fatores que não pretendo discutir neste pequeno post.
 O que pretendo discutir aqui é sobre a implicação da aplicação de um fator de homogeneização aos dados de oferta antes ou depois do ajuste de um modelo de regressão linear.">
   
   
@@ -437,17 +437,18 @@ O que pretendo discutir aqui é sobre a implicação da aplicação de um fator 
 <script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
 
 
-<p>Um dos maiores problemas da prática atual da Engenharia de Avaliações no Brasil
-está na falta de dados de mercado referentes a valores de transações de imóveis.</p>
+<p>Um dos maiores problemas práticos da Engenharia de Avaliações no Brasil na
+atualidade está na falta de dados de mercado referentes a valores de transações
+de imóveis.</p>
 <p>Enquanto em outros países os dados de transações de imóveis são públicos e
-<a href="https://www.kaggle.com/c/zillow-prize-1">estão disponíveis de maneira estruturada</a>),
+<a href="https://www.kaggle.com/c/zillow-prize-1">estão disponíveis de maneira estruturada</a>,
 isto ainda está longe de tornar-se realidade no Brasil, por inúmeros fatores que
 não pretendo discutir neste pequeno post.</p>
 <p>O que pretendo discutir aqui é sobre a implicação da aplicação de um fator de
 homogeneização aos dados de oferta antes ou depois do ajuste de um modelo de
 regressão linear.</p>
 <p>A NBR 14.685-2 permite a aplicação de um fator de homogeneização aos dados de
-oferta, conforme previsto no item 9.2.1.3:</p>
+oferta, conforme prevê o item 9.2.1.3:</p>
 <blockquote>
 <p><strong>9.2.1.3</strong> É permitida a utilização de tratamento prévio dos preços
 observados, limitado a um único fator de homogeneização, desde que fundamentado
@@ -460,11 +461,11 @@ metodologia científica. Ora, essa exigência é um pouco anacrônica, pois, se 
 possível definir um fator oferta por metodologia científica, melhor seria
 obtê-lo através do próprio modelo de regressão linear utilizado para previsão de
 dados.</p>
-<p>Na prática, por conta desta exigência, a maioria dos avaliadores utiliza-se como
-subterfúgio o campo de arbítrio do avaliador, aplicando um redutor ao valor da
-estimativa central obtida com o modelo de regressão linear ajustado com os dados
-de oferta.</p>
-<p>Argumento que, na prática, o resultado final é o mesmo, já que:</p>
+<p>Na prática, por conta desta exigência, a maioria dos avaliadores utiliza, como
+um subterfúgio, o campo de arbítrio do avaliador, aplicando um redutor ao valor
+da estimativa central obtida com o modelo de regressão linear ajustado com os
+dados de oferta.</p>
+<p>Argumento aqui que, na prática, o resultado final deve ser o mesmo, já que:</p>
 <p><span class="math display">\[\mathbb{E}[c \cdot VU] = c\mathbb{E}[VU]\]</span>
 Ou seja, para o valor da estimativa central tanto faz o avaliador aplicar o
 fator de homogeneização antes ou após a estimação do modelo. Se tratarmos a
@@ -474,22 +475,27 @@ venda como <span class="math inline">\(VU_{venda}\)</span>, temos que:</p>
 <p>O que significa que podemos obter o valor ajustado para os valores de venda
 simplesmente aplicando o fator redutor ao valor ajustado para os valores de
 oferta (<span class="math inline">\(\hat{VU}_{venda} = \mathbb{E}[VU_{venda}] = c \mathbb{E}[VU_{oferta}] = c \hat{VU}_{oferta}\)</span>).</p>
-<p>O mesmo não ocorre, no entanto, seguindo os preceitos normativos, para os
-limites dos intervalos de confiança e predição, o que é um fato indesejável.</p>
+<p>Ora, mas isso é de conhecimento público. O que talvez não seja de conhecimento
+público é que o mesmo deveria valer para os limites do intervalos de confiança!</p>
+<p>No entanto, seguindo os preceitos normativos da avaliação intervalar, os limites
+dos intervalos de valores admissíveis obtidos com os dois métodos citados (a
+aplicação do fator de homogeneização antes ou depois do ajuste do modelo) são
+diferentes, o que é um fato indesejável.</p>
 <p>Mas por que isto ocorre? Pretendo mostrar que trata-se de uma inconsistência
 quanto ao procedimento estatístico adotado.</p>
 <p>É uma das propriedades conhecidas da variância de uma variável aleatória
-qualquer (no caso da Engenharia de Avaliações podemos tratar da variável
+qualquer (no caso da Engenharia de Avaliações estamos tratando da variável
 <span class="math inline">\(VU\)</span>) que:</p>
-<p><span class="math display">\[\mathbb{V}[cVU] = c^2\mathbb{V}[VU]\]</span>
-Desta maneira:</p>
+<p><span class="math display">\[\mathbb{V}[c \cdot VU] = c^2\mathbb{V}[VU]\]</span></p>
+<p>Desta maneira:</p>
 <p><span class="math display">\[\mathbb{V}[VU_{venda}] = \mathbb{V}[c\cdot VU_{oferta}] = c^2 \mathbb{V}[VU_{oferta}]\]</span></p>
 <p>Assim, os intervalos de confiança obtidos com o modelo ajustado com
-dados de oferta não são válidos para a estimação da variável de venda dos
-imóveis, já que:</p>
+dados de oferta não são válidos para a estimação da variável venda dos imóveis,
+já que, para o cálculo do IC desta variável deve-se utilizar o erro-padrão desse
+estimador e não do estimador da variável oferta:</p>
 <p><span class="math display">\[IC_{(1-\alpha)} = \hat{VU}_{venda} \pm t_{1−\alpha/2;\, n−k−1} \, s.e.(\hat{VU}_{venda})\]</span></p>
 <p>Com <span class="math inline">\(s.e.(\hat{VU}_{venda}) = \sqrt{\mathbb{V}(\hat{VU}_{venda})}\)</span>.</p>
-<p>Pode-se escrever, então, o intervalo de confiança do estimador <span class="math inline">\(\hat{VU}_{venda}\)</span>
+<p>É possível escrever o intervalo de confiança do estimador <span class="math inline">\(\hat{VU}_{venda}\)</span>
 em termos do estimador <span class="math inline">\(\hat{VU}_{oferta}\)</span> como segue:</p>
 <p><span class="math display">\[IC_{(1-\alpha)} = c\cdot \hat{VU}_{oferta} \pm t_{1−\alpha/2;\, n−k−1} \, s.e.(c\cdot \hat{VU}_{oferta})\]</span></p>
 <p>O erro-padrão de <span class="math inline">\(c\cdot \hat{VU}_{oferta}\)</span> pode ser calculado como segue:</p>
@@ -499,16 +505,25 @@ s.e.(c\cdot \hat{VU}_{oferta}) &amp;= \sqrt{\mathbb{V}(c\cdot \hat{VU}_{oferta})
 &amp;= c\sqrt{ \mathbb{V}(\hat{VU}_{oferta})} \\
 &amp;= c\cdot s.e.(\hat{VU}_{oferta})
 \end{align*}\]</span></p>
-<p>Ou seja, o IC para os valores de venda, escrito em termos do estimador <span class="math inline">\(\hat{VU}_{oferta}\)</span> é igual a:</p>
+<p>Ou seja, o IC para os valores de venda, escrito em termos do estimador
+<span class="math inline">\(\hat{VU}_{oferta}\)</span> é igual a:</p>
 <p><span class="math display">\[IC_{(1-\alpha)} = c\cdot \hat{VU}_{oferta} \pm c \cdot t_{1−\alpha/2;\, n−k−1} \cdot s.e.(\hat{VU}_{oferta})\]</span></p>
 <p>Simplificadamente, isto pode ser escrito da seguinte forma:</p>
 <p><span class="math display">\[IC_{1-\alpha; \, venda} = c\cdot IC_{1-\alpha; \, oferta}\]</span></p>
 <p>Isto implica que, na transformação de valores estimados de oferta em valores
 estimados de venda, não apenas aos valores da estimativa central deveriam ser
 aplicados o fator redutor, mas também aos limites dos intervalos de confiança.</p>
-<p>Desta maneira, teria-se uma consistência entre os valores obtidos com os
-procedimentos de aplicar o fator de redução aos valores de oferta antes ou após
-o ajuste do modelo de regressão linear.</p>
+<p>Desta maneira, teria-se uma consistência entre os valores obtidos com os dois
+procedimentos citados, ou seja, os limites dos intervalos admissíveis seriam os
+mesmos, independente de aplicar o fator de redução aos valores de oferta antes
+ou após o ajuste do modelo de regressão linear.</p>
+<p>Já de acordo com a atual normativa, se utiliza-se o campo de arbítrio para
+efetuar a redução do valor estimado para ofertas para obter o valor estimado de
+venda, deve-se deslocar os limites do intervalo de confiança para que este fique
+em torno da nova estimativa. Na prática, então, o limite inferior obtido para o
+novo intervalo é menor do que deveria e o limite superior do novo intervalo é
+maior do que o que seria obtido se fosse aplicado o tratamento estatístico
+consistente do intervalo.</p>
 
     </div>
 
