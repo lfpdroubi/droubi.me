@@ -484,7 +484,7 @@ qualquer (no caso da Engenharia de Avaliações podemos tratar da variável
 <p><span class="math display">\[\mathbb{V}[cVU] = c^2\mathbb{V}[VU]\]</span>
 Desta maneira:</p>
 <p><span class="math display">\[\mathbb{V}[VU_{venda}] = \mathbb{V}[c\cdot VU_{oferta}] = c^2 \mathbb{V}[VU_{oferta}]\]</span></p>
-<p>Desta maneira, os intervalos de confiança obtidos com o modelo ajustado com
+<p>Assim, os intervalos de confiança obtidos com o modelo ajustado com
 dados de oferta não são válidos para a estimação da variável de venda dos
 imóveis, já que:</p>
 <p><span class="math display">\[IC_{(1-\alpha)} = \hat{VU}_{venda} \pm t_{1−\alpha/2;\, n−k−1} \, s.e.(\hat{VU}_{venda})\]</span></p>
@@ -492,11 +492,11 @@ imóveis, já que:</p>
 <p>Pode-se escrever, então, o intervalo de confiança do estimador <span class="math inline">\(\hat{VU}_{venda}\)</span>
 em termos do estimador <span class="math inline">\(\hat{VU}_{oferta}\)</span> como segue:</p>
 <p><span class="math display">\[IC_{(1-\alpha)} = c\cdot \hat{VU}_{oferta} \pm t_{1−\alpha/2;\, n−k−1} \, s.e.(c\cdot \hat{VU}_{oferta})\]</span></p>
-<p>O erro padrão de <span class="math inline">\(c\cdot \hat{VU}_{oferta}\)</span> pode ser calculado como segue:</p>
+<p>O erro-padrão de <span class="math inline">\(c\cdot \hat{VU}_{oferta}\)</span> pode ser calculado como segue:</p>
 <p><span class="math display">\[\begin{align*}
-s.e.(c\cdot \hat{VU}_{oferta}) &amp;= s.e.(\sqrt{\mathbb{V}(c\cdot \hat{VU}_{oferta})})
-&amp;= s.e.(\sqrt{c^2 \mathbb{V}(\hat{VU}_{oferta})})
-&amp;= s.e.(c\sqrt{ \mathbb{V}(\hat{VU}_{oferta})})
+s.e.(c\cdot \hat{VU}_{oferta}) &amp;= s.e.(\sqrt{\mathbb{V}(c\cdot \hat{VU}_{oferta})}) \\
+&amp;= s.e.(\sqrt{c^2 \mathbb{V}(\hat{VU}_{oferta})}) \\
+&amp;= s.e.(c\sqrt{ \mathbb{V}(\hat{VU}_{oferta})}) \\
 &amp;= c\cdot s.e.(\sqrt{ \mathbb{V}(\hat{VU}_{oferta})})
 \end{align*}\]</span></p>
 <p>Ou seja, o IC para os valores de venda, escrito em termos do estimador <span class="math inline">\(\hat{VU}_{oferta}\)</span> é igual a:</p>

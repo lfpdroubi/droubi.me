@@ -75,7 +75,7 @@ Desta maneira:
 
 $$\mathbb{V}[VU_{venda}] = \mathbb{V}[c\cdot VU_{oferta}] = c^2 \mathbb{V}[VU_{oferta}]$$
 
-Desta maneira, os intervalos de confiança obtidos com o modelo ajustado com 
+Assim, os intervalos de confiança obtidos com o modelo ajustado com 
 dados de oferta não são válidos para a estimação da variável de venda dos 
 imóveis, já que:
 
@@ -88,12 +88,12 @@ em termos do estimador $\hat{VU}_{oferta}$ como segue:
 
 $$IC_{(1-\alpha)} = c\cdot \hat{VU}_{oferta} \pm t_{1−\alpha/2;\, n−k−1} \, s.e.(c\cdot \hat{VU}_{oferta})$$
 
-O erro padrão de $c\cdot \hat{VU}_{oferta}$ pode ser calculado como segue:
+O erro-padrão de $c\cdot \hat{VU}_{oferta}$ pode ser calculado como segue:
 
 \begin{align*}
-s.e.(c\cdot \hat{VU}_{oferta}) &= s.e.(\sqrt{\mathbb{V}(c\cdot \hat{VU}_{oferta})})
-&= s.e.(\sqrt{c^2 \mathbb{V}(\hat{VU}_{oferta})})
-&= s.e.(c\sqrt{ \mathbb{V}(\hat{VU}_{oferta})})
+s.e.(c\cdot \hat{VU}_{oferta}) &= s.e.(\sqrt{\mathbb{V}(c\cdot \hat{VU}_{oferta})}) \\
+&= s.e.(\sqrt{c^2 \mathbb{V}(\hat{VU}_{oferta})}) \\
+&= s.e.(c\sqrt{ \mathbb{V}(\hat{VU}_{oferta})}) \\
 &= c\cdot s.e.(\sqrt{ \mathbb{V}(\hat{VU}_{oferta})})
 \end{align*}
 
