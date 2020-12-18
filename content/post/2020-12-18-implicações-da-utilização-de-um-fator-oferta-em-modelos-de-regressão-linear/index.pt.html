@@ -1,0 +1,92 @@
+---
+title: Implicações da utilização de um fator oferta em modelos de regressão linear
+author: Luiz F. P. Droubi
+date: '2020-12-18'
+slug: []
+categories:
+  - avaliação de imóveis
+  - estatistica
+tags:
+  - SOBREA
+authors: []
+image:
+  caption: ''
+  focal_point: ''
+---
+
+<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
+
+
+<p>Um dos maiores problemas da prática atual da Engenharia de Avaliações no Brasil
+está na falta de dados de mercado referentes a valores de transações de imóveis.</p>
+<p>Enquanto em outros países os dados de transações de imóveis são públicos e
+<a href="https://www.kaggle.com/c/zillow-prize-1">estão disponíveis de maneira estruturada</a>),
+isto ainda está longe de tornar-se realidade no Brasil, por inúmeros fatores que
+não pretendo discutir neste pequeno post.</p>
+<p>O que pretendo discutir aqui é sobre a implicação da aplicação de um fator de
+homogeneização aos dados de oferta antes ou depois do ajuste de um modelo de
+regressão linear.</p>
+<p>A NBR 14.685-2 permite a aplicação de um fator de homogeneização aos dados de
+oferta, conforme previsto no item 9.2.1.3:</p>
+<blockquote>
+<p><strong>9.2.1.3</strong> É permitida a utilização de tratamento prévio dos preços
+observados, limitado a um único fator de homogeneização, desde que fundamentado
+conforme 8.2.1.4.2, sem prejuízo dos ajustes citados em 9.2.1.2 (exemplo:
+aplicação do fator de fonte para a transformação de preços de oferta para as
+condições de transação).</p>
+</blockquote>
+<p>Por sua vez, o item 8.2.1.4.2 obriga que este fator seja obtido de acordo com
+metodologia científica. Ora, essa exigência é um pouco anacrônica, pois, se é
+possível definir um fator oferta por metodologia científica, melhor seria
+obtê-lo através do próprio modelo de regressão linear utilizado para previsão de
+dados.</p>
+<p>Na prática, por conta desta exigência, a maioria dos avaliadores utiliza-se como
+subterfúgio o campo de arbítrio do avaliador, aplicando um redutor ao valor da
+estimativa central obtida com o modelo de regressão linear ajustado com os dados
+de oferta.</p>
+<p>Argumento que, na prática, o resultado final é o mesmo, já que:</p>
+<p><span class="math display">\[\mathbb{E}[c \cdot VU] = c\mathbb{E}[VU]\]</span>
+Ou seja, para o valor da estimativa central tanto faz o avaliador aplicar o
+fator de homogeneização antes ou após a estimação do modelo. Se tratarmos a
+variável dos preços ofertados como <span class="math inline">\(VU_{oferta}\)</span> e a variável dos preços de
+venda como <span class="math inline">\(VU_{venda}\)</span>, temos que:</p>
+<p><span class="math display">\[\mathbb{E}[VU_{venda}] = \mathbb{E}[c\cdot VU_{oferta}] = c \mathbb{E}[VU_{oferta}]\]</span></p>
+<p>O que significa que podemos obter o valor ajustado para os valores de venda
+simplesmente aplicando o fator redutor ao valor ajustado para os valores de
+oferta (<span class="math inline">\(\hat{VU}_{venda} = \mathbb{E}[VU_{venda}] = c \mathbb{E}[VU_{oferta}] = c \hat{VU}_{oferta}\)</span>).</p>
+<p>O mesmo não ocorre, no entanto, seguindo os preceitos normativos, para os
+limites dos intervalos de confiança e predição, o que é um fato indesejável.</p>
+<p>Mas por que isto ocorre? Pretendo mostrar que trata-se de uma inconsistência
+quanto ao procedimento estatístico adotado.</p>
+<p>É uma das propriedades conhecidas da variância de uma variável aleatória
+qualquer (no caso da Engenharia de Avaliações podemos tratar da variável
+<span class="math inline">\(VU\)</span>) que:</p>
+<p><span class="math display">\[\mathbb{V}[cVU] = c^2\mathbb{V}[VU]\]</span>
+Desta maneira:</p>
+<p><span class="math display">\[\mathbb{V}[VU_{venda}] = \mathbb{V}[c\cdot VU_{oferta}] = c^2 \mathbb{V}[VU_{oferta}]\]</span></p>
+<p>Desta maneira, os intervalos de confiança obtidos com o modelo ajustado com
+dados de oferta não são válidos para a estimação da variável de venda dos
+imóveis, já que:</p>
+<p><span class="math display">\[IC_{(1-\alpha)} = \hat{VU}_{venda} \pm t_{1−\alpha/2;\, n−k−1} \, s.e.(\hat{VU}_{venda})\]</span></p>
+<p>Com <span class="math inline">\(s.e.(\hat{VU}_{venda}) = \sqrt{\mathbb{V}(\hat{VU}_{venda})}\)</span>.</p>
+<p>Pode-se escrever, então, o intervalo de confiança do estimador <span class="math inline">\(\hat{VU}_{venda}\)</span>
+em termos do estimador <span class="math inline">\(\hat{VU}_{oferta}\)</span> como segue:</p>
+<p><span class="math display">\[IC_{(1-\alpha)} = c\cdot \hat{VU}_{oferta} \pm t_{1−\alpha/2;\, n−k−1} \, s.e.(c\cdot \hat{VU}_{oferta})\]</span></p>
+<p>O erro padrão de <span class="math inline">\(c\cdot \hat{VU}_{oferta}\)</span> pode ser calculado como segue:</p>
+<p><span class="math display">\[\begin{align*}
+s.e.(c\cdot \hat{VU}_{oferta}) &amp;= s.e.(\sqrt{\mathbb{V}(c\cdot \hat{VU}_{oferta})})
+&amp;= s.e.(\sqrt{c^2 \mathbb{V}(\hat{VU}_{oferta})})
+&amp;= s.e.(c\sqrt{ \mathbb{V}(\hat{VU}_{oferta})})
+&amp;= c\cdot s.e.(\sqrt{ \mathbb{V}(\hat{VU}_{oferta})})
+\end{align*}\]</span></p>
+<p>Ou seja, o IC para os valores de venda, escrito em termos do estimador <span class="math inline">\(\hat{VU}_{oferta}\)</span> é igual a:</p>
+<p><span class="math display">\[IC_{(1-\alpha)} = c\cdot \hat{VU}_{oferta} \pm c \cdot t_{1−\alpha/2;\, n−k−1} \cdot s.e.(\hat{VU}_{oferta})\]</span></p>
+<p>Simplificadamente, isto pode ser escrito da seguinte forma:</p>
+<p><span class="math display">\[IC_{1-\alpha; \, venda} = c\cdot IC_{1-\alpha; \, oferta}\]</span></p>
+<p>Isto implica que, na transformação de valores estimados de oferta em valores
+estimados de venda, não apenas aos valores da estimativa central deveriam ser
+aplicados o fator redutor, mas também aos limites dos intervalos de confiança.</p>
+<p>Desta maneira, teria-se uma consistência entre os valores obtidos com os
+procedimentos de aplicar o fator de redução aos valores de oferta antes ou após
+o ajuste do modelo de regressão linear.</p>
