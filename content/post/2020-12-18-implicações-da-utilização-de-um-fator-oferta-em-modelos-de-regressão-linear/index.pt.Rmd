@@ -91,10 +91,10 @@ $$IC_{(1-\alpha)} = c\cdot \hat{VU}_{oferta} \pm t_{1−\alpha/2;\, n−k−1} \
 O erro-padrão de $c\cdot \hat{VU}_{oferta}$ pode ser calculado como segue:
 
 \begin{align*}
-s.e.(c\cdot \hat{VU}_{oferta}) &= s.e.(\sqrt{\mathbb{V}(c\cdot \hat{VU}_{oferta})}) \\
-&= s.e.(\sqrt{c^2 \mathbb{V}(\hat{VU}_{oferta})}) \\
-&= s.e.(c\sqrt{ \mathbb{V}(\hat{VU}_{oferta})}) \\
-&= c\cdot s.e.(\sqrt{ \mathbb{V}(\hat{VU}_{oferta})})
+s.e.(c\cdot \hat{VU}_{oferta}) &= \sqrt{\mathbb{V}(c\cdot \hat{VU}_{oferta})} \\
+&= \sqrt{c^2 \mathbb{V}(\hat{VU}_{oferta})} \\
+&= c\sqrt{ \mathbb{V}(\hat{VU}_{oferta})} \\
+&= c\cdot s.e.(\hat{VU}_{oferta})
 \end{align*}
 
 Ou seja, o IC para os valores de venda, escrito em termos do estimador $\hat{VU}_{oferta}$ é igual a:

@@ -75,10 +75,10 @@ em termos do estimador <span class="math inline">\(\hat{VU}_{oferta}\)</span> co
 <p><span class="math display">\[IC_{(1-\alpha)} = c\cdot \hat{VU}_{oferta} \pm t_{1−\alpha/2;\, n−k−1} \, s.e.(c\cdot \hat{VU}_{oferta})\]</span></p>
 <p>O erro-padrão de <span class="math inline">\(c\cdot \hat{VU}_{oferta}\)</span> pode ser calculado como segue:</p>
 <p><span class="math display">\[\begin{align*}
-s.e.(c\cdot \hat{VU}_{oferta}) &amp;= s.e.(\sqrt{\mathbb{V}(c\cdot \hat{VU}_{oferta})}) \\
-&amp;= s.e.(\sqrt{c^2 \mathbb{V}(\hat{VU}_{oferta})}) \\
-&amp;= s.e.(c\sqrt{ \mathbb{V}(\hat{VU}_{oferta})}) \\
-&amp;= c\cdot s.e.(\sqrt{ \mathbb{V}(\hat{VU}_{oferta})})
+s.e.(c\cdot \hat{VU}_{oferta}) &amp;= \sqrt{\mathbb{V}(c\cdot \hat{VU}_{oferta})} \\
+&amp;= \sqrt{c^2 \mathbb{V}(\hat{VU}_{oferta})} \\
+&amp;= c\sqrt{ \mathbb{V}(\hat{VU}_{oferta})} \\
+&amp;= c\cdot s.e.(\hat{VU}_{oferta})
 \end{align*}\]</span></p>
 <p>Ou seja, o IC para os valores de venda, escrito em termos do estimador <span class="math inline">\(\hat{VU}_{oferta}\)</span> é igual a:</p>
 <p><span class="math display">\[IC_{(1-\alpha)} = c\cdot \hat{VU}_{oferta} \pm c \cdot t_{1−\alpha/2;\, n−k−1} \cdot s.e.(\hat{VU}_{oferta})\]</span></p>
