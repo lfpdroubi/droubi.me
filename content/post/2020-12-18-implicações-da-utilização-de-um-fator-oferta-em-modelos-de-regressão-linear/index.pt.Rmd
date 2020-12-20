@@ -82,7 +82,10 @@ Desta maneira:
 
 $$\mathbb{V}[VU_{venda}] = \mathbb{V}[c\cdot VU_{oferta}] = c^2 \mathbb{V}[VU_{oferta}]$$
 
-```{r, echo = FALSE, fig.cap = ""}
+Em tempo: Elaborei a Figura \@ref(fig:violins) para melhor visualização de como
+muda a variância com a transformação dos dados de oferta em dados de venda.
+
+```{r violins, echo = FALSE, fig.cap = "Diferenças entre valores ofertados e valores de venda.", message = FALSE, warning=FALSE}
 library(appraiseR)
 library(sf)
 library(ggplot2)
@@ -91,7 +94,7 @@ theme_set(theme_cowplot(12))
 data(centro_2015)
 dados <- st_drop_geometry(centro_2015)
 colnames(dados)[1] <- "valor_oferta"
-dados$valor_venda <- .9*dados$valor_oferta
+dados$valor_venda <- .8*dados$valor_oferta
 dat <- reshape2::melt(dados,
                  measure.vars = c("valor_oferta", "valor_venda"),
                  value.name = "Valor")
