@@ -82,6 +82,36 @@ Desta maneira:
 
 $$\mathbb{V}[VU_{venda}] = \mathbb{V}[c\cdot VU_{oferta}] = c^2 \mathbb{V}[VU_{oferta}]$$
 
+```{r, echo = FALSE, fig.cap = ""}
+library(appraiseR)
+library(sf)
+library(ggplot2)
+library(cowplot)
+theme_set(theme_cowplot(12))
+data(centro_2015)
+dados <- st_drop_geometry(centro_2015)
+colnames(dados)[1] <- "valor_oferta"
+dados$valor_venda <- .9*dados$valor_oferta
+dat <- reshape2::melt(dados,
+                 measure.vars = c("valor_oferta", "valor_venda"),
+                 value.name = "Valor")
+mean_oferta <- mean(dados$valor_oferta, na.rm = TRUE)
+mean_venda <- mean(dados$valor_venda, na.rm = TRUE)
+ggplot(dat, aes(x= variable, y = Valor))  +
+  geom_violin(trim = FALSE) +
+  geom_dotplot(binaxis='y', stackdir='center', dotsize = .8, alpha = 0.5) +
+  stat_summary(fun.data=mean_sdl, fun.args = list(mult=1),
+               geom="pointrange", color="red") +
+  geom_hline(yintercept = mean_venda, lty = 2, color = "grey") +
+  geom_hline(yintercept = mean_oferta, lty = 2, color = "grey") +
+  theme(legend.position = "none")
+# lmts <- range(dados$valor, na.rm = TRUE)
+# par(mfrow = c(1, 2))
+# boxplot(dados$valor, ylim=lmts)
+# boxplot(dados$valor_oferta, ylim=lmts)
+```
+
+
 Assim, os intervalos de confiança obtidos com o modelo ajustado com 
 dados de oferta não são válidos para a estimação da variável venda dos imóveis, 
 já que, para o cálculo do IC desta variável deve-se utilizar o erro-padrão desse

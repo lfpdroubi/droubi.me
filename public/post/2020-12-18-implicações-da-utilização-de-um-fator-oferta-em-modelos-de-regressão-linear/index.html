@@ -353,7 +353,7 @@ O que pretendo discutir aqui é sobre a implicação da aplicação de um fator 
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    4 min read
+    5 min read
   </span>
   
 
@@ -489,6 +489,12 @@ qualquer (no caso da Engenharia de Avaliações estamos tratando da variável
 <p><span class="math display">\[\mathbb{V}[c \cdot VU] = c^2\mathbb{V}[VU]\]</span></p>
 <p>Desta maneira:</p>
 <p><span class="math display">\[\mathbb{V}[VU_{venda}] = \mathbb{V}[c\cdot VU_{oferta}] = c^2 \mathbb{V}[VU_{oferta}]\]</span></p>
+<pre><code>## Linking to GEOS 3.6.2, GDAL 2.2.3, PROJ 4.9.3</code></pre>
+<pre><code>## Warning: Removed 6 rows containing non-finite values (stat_ydensity).</code></pre>
+<pre><code>## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>## Warning: Removed 6 rows containing non-finite values (stat_bindot).</code></pre>
+<pre><code>## Warning: Removed 6 rows containing non-finite values (stat_summary).</code></pre>
+<p><img src="/post/2020-12-18-implicações-da-utilização-de-um-fator-oferta-em-modelos-de-regressão-linear/index.pt_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p>Assim, os intervalos de confiança obtidos com o modelo ajustado com
 dados de oferta não são válidos para a estimação da variável venda dos imóveis,
 já que, para o cálculo do IC desta variável deve-se utilizar o erro-padrão desse
