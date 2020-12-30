@@ -1,0 +1,118 @@
+---
+title: "Implicações da utilização de transformações sobre a variável dependente"
+author: "Luiz F. P. Droubi"
+date: '2020-12-30'
+categories:
+- avaliação de imóveis
+- estatistica
+image:
+  caption: ''
+  focal_point: ''
+slug: []
+tags: SOBREA
+authors: []
+---
+
+```{r,setup, include=FALSE}
+knitr::opts_chunk$set(cache=FALSE, echo = TRUE, message = FALSE)
+```
+
+É muito comum na Engenharia de Avaliações a aplicação de transformações à 
+variável dependente para a confecção do modelo de regressão linear.
+
+As consequências da adoção de transformações sobre a variável dependente, 
+contudo ainda não foram bem esclarecidas aos avaliadores.
+
+Em 2018, [elaboramos um artigo para o COBRAC](https://droubi.me/publication/dist_lognormal/),
+assim como um artigo para o VIII Simpósio da SOBREA em que analisamos as 
+consequências da transformação da variável dependente para a distribuição
+lognormal. Naquela ocasião, contudo, além de nos atermos apenas a essa
+transformação, focamos apenas na questão do valor da estimativa central e não
+nos aprofundamos na questão dos intervalos de confiança.
+
+Alguns dias atrás, contudo, enquanto fazia uma pequena pesquisa sobre intervalos
+de confiança, cheguei ao artigo original de [Land (1972)](https://projecteuclid.org/download/pdf_1/euclid.aoms/1177693235), onde
+este descreve um procedimento para obtenção de intervalos de confiança exatos
+para a média da distribuição lognormal, além de um procedimento para a obtenção
+de intervalos aproximados para outras transformações não-lineares da variável
+dependente.
+
+Em relação ao valor esperado, eis o que acontece, para diversas transformações
+usuais:
+
+1. $Y = ln(X); \mathbb{E}[X] = exp(\mu + \frac{1}{2}\sigma^2)$
+2. $Y = \sqrt{X}; \mathbb{E}[X] = \mu^2 + \sigma^2$
+3. $Y = \sqrt[3]{X}; \mathbb{E}[X] = \mu^3 + 3\mu\sigma^2$
+
+Deve-se perceber o seguinte: se o valor de $\sigma$ for baixo, a simplificação
+usual que fazemos, de simplesmente aplicar a transformação inversa, pode ser
+tranquilamente aceita. Porém, se o valor de $\sigma^2$ não puder ser desprezado,
+o valor obtido com a simples retransformação pode ficar resultar bem viesado.
+
+Quanto aos intervalos, é usual que apliquemos também a simples retransformação
+aos seus limites superior e inferior, que são os limites dos denominados *naive 
+intervals*. Por exemplo, se optamos pela avaliação com a média, aplicamos a
+retransformação $exp(VU + \sigma^2/2)$ tanto para o valor central como para os
+limites do intervalo obtido com o modelo com a variável transformada. Este 
+método de obtenção do intervalo, a partir da retransformação do intervalo obtido
+com a variável normalizada, é denominado método da aproximação normal.
+
+Vamos ver como um intervalo para a média calculado com este método se distancia
+do intervalo exato, ou seja, do intervalo calculado segundo o método de Land.
+
+Para isto, vou utilizar os dados de valores de apartamentos no centro de 
+Florianópolis em 2015, obtidos pelo Prof. Norberto Hochheim, meu orientador.
+
+Como é possível ver na Figura \@ref(fig:dists), claramente se trata de dados
+ com distribuição lognormal.
+
+```{r, echo = FALSE}
+library(appraiseR)
+library(sf)
+dados <- st_drop_geometry(centro_2015)
+dados <- dados[complete.cases(dados), ]
+```
+
+```{r dists, echo = FALSE, fig.cap="Ajuste de uma distribuição lognormal aos dados."}
+library(fitdistrplus)
+fln <- fitdist(dados$valor, "lnorm")
+par(mfrow = c(1, 2))
+denscomp(fln)
+qqcomp(fln)
+```
+```{r, echo = FALSE}
+summary(fln)
+```
+
+Agora vamos efetuar o cálculo do intervalo de confiança para a média estimada
+dos valores da distribuição. Primeiramente, utilizando o método de Land 
+(intervalo exato):
+
+```{r}
+library(EnvStats)
+elnormAlt(dados$valor, ci = TRUE, ci.method = "land")
+```
+
+E agora com o método da aproximação normal:
+
+```{r}
+elnormAlt(dados$valor, ci = TRUE, ci.method = "normal.approx")
+```
+
+Nota-se que a diferença entre os limites inferior (LCL) e superior (UCL) dos
+intervalos aproximados calculados diferem menos de 5% (a menor) dos valores 
+exatos.
+
+Pode-se argumentar que esta aproximação é tolerável, porém deve-se lembrar que a 
+NBR 14.653-2 permite arredondamentos até 1% do valor final, de maneira que seria
+subjetivo um avaliador determinar o quanto seria aceitável, estando esta 
+diferença acima do valor recomendado pela norma.
+
+Por fim, é bom esclarecer que os intervalos obtidos com a variável normalizada
+são exatos para a estimação da mediana da distribuição lognormal. Talvez seja
+o caso de, numa próxima revisão da NBR 14.653 estabelecer que a mediana deva 
+ser utilizada em lugar da média (ou da moda) para a estimava de valores, já que,
+desta maneira, simplifica-se sobremaneira o problema.
+
+Feliz ano novo a todos!
+

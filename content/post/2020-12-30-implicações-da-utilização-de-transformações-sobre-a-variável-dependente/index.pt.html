@@ -1,0 +1,146 @@
+---
+title: "Implicações da utilização de transformações sobre a variável dependente"
+author: "Luiz F. P. Droubi"
+date: '2020-12-30'
+categories:
+- avaliação de imóveis
+- estatistica
+image:
+  caption: ''
+  focal_point: ''
+slug: []
+tags: SOBREA
+authors: []
+---
+
+<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
+
+
+<p>É muito comum na Engenharia de Avaliações a aplicação de transformações à
+variável dependente para a confecção do modelo de regressão linear.</p>
+<p>As consequências da adoção de transformações sobre a variável dependente,
+contudo ainda não foram bem esclarecidas aos avaliadores.</p>
+<p>Em 2018, <a href="https://droubi.me/publication/dist_lognormal/">elaboramos um artigo para o COBRAC</a>,
+assim como um artigo para o VIII Simpósio da SOBREA em que analisamos as
+consequências da transformação da variável dependente para a distribuição
+lognormal. Naquela ocasião, contudo, além de nos atermos apenas a essa
+transformação, focamos apenas na questão do valor da estimativa central e não
+nos aprofundamos na questão dos intervalos de confiança.</p>
+<p>Alguns dias atrás, contudo, enquanto fazia uma pequena pesquisa sobre intervalos
+de confiança, cheguei ao artigo original de <a href="https://projecteuclid.org/download/pdf_1/euclid.aoms/1177693235">Land (1972)</a>, onde
+este descreve um procedimento para obtenção de intervalos de confiança exatos
+para a média da distribuição lognormal, além de um procedimento para a obtenção
+de intervalos aproximados para outras transformações não-lineares da variável
+dependente.</p>
+<p>Em relação ao valor esperado, eis o que acontece, para diversas transformações
+usuais:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(Y = ln(X); \mathbb{E}[X] = exp(\mu + \frac{1}{2}\sigma^2)\)</span></li>
+<li><span class="math inline">\(Y = \sqrt{X}; \mathbb{E}[X] = \mu^2 + \sigma^2\)</span></li>
+<li><span class="math inline">\(Y = \sqrt[3]{X}; \mathbb{E}[X] = \mu^3 + 3\mu\sigma^2\)</span></li>
+</ol>
+<p>Deve-se perceber o seguinte: se o valor de <span class="math inline">\(\sigma\)</span> for baixo, a simplificação
+usual que fazemos, de simplesmente aplicar a transformação inversa, pode ser
+tranquilamente aceita. Porém, se o valor de <span class="math inline">\(\sigma^2\)</span> não puder ser desprezado,
+o valor obtido com a simples retransformação pode ficar resultar bem viesado.</p>
+<p>Quanto aos intervalos, é usual que apliquemos também a simples retransformação
+aos seus limites superior e inferior, que são os limites dos denominados <em>naive
+intervals</em>. Por exemplo, se optamos pela avaliação com a média, aplicamos a
+retransformação <span class="math inline">\(exp(VU + \sigma^2/2)\)</span> tanto para o valor central como para os
+limites do intervalo obtido com o modelo com a variável transformada. Este
+método de obtenção do intervalo, a partir da retransformação do intervalo obtido
+com a variável normalizada, é denominado método da aproximação normal.</p>
+<p>Vamos ver como um intervalo para a média calculado com este método se distancia
+do intervalo exato, ou seja, do intervalo calculado segundo o método de Land.</p>
+<p>Para isto, vou utilizar os dados de valores de apartamentos no centro de
+Florianópolis em 2015, obtidos pelo Prof. Norberto Hochheim, meu orientador.</p>
+<p>Como é possível ver na Figura <a href="#fig:dists">1</a>, claramente se trata de dados
+com distribuição lognormal.</p>
+<div class="figure"><span id="fig:dists"></span>
+<img src="/post/2020-12-30-implicações-da-utilização-de-transformações-sobre-a-variável-dependente/index.pt_files/figure-html/dists-1.png" alt="Ajuste de uma distribuição lognormal aos dados." width="672" />
+<p class="caption">
+Figure 1: Ajuste de uma distribuição lognormal aos dados.
+</p>
+</div>
+<pre><code>## Fitting of the distribution &#39; lnorm &#39; by maximum likelihood 
+## Parameters : 
+##           estimate Std. Error
+## meanlog 13.5792960 0.08710166
+## sdlog    0.6159017 0.06158944
+## Loglikelihood:  -725.6783   AIC:  1455.357   BIC:  1459.181 
+## Correlation matrix:
+##         meanlog sdlog
+## meanlog       1     0
+## sdlog         0     1</code></pre>
+<p>Agora vamos efetuar o cálculo do intervalo de confiança para a média estimada
+dos valores da distribuição. Primeiramente, utilizando o método de Land
+(intervalo exato):</p>
+<pre class="r"><code>library(EnvStats)
+elnormAlt(dados$valor, ci = TRUE, ci.method = &quot;land&quot;)</code></pre>
+<pre><code>## 
+## Results of Distribution Parameter Estimation
+## --------------------------------------------
+## 
+## Assumed Distribution:            Lognormal
+## 
+## Estimated Parameter(s):          mean = 9.538529e+05
+##                                  cv   = 6.756391e-01
+## 
+## Estimation Method:               mvue
+## 
+## Data:                            dados$valor
+## 
+## Sample Size:                     50
+## 
+## Confidence Interval for:         mean
+## 
+## Confidence Interval Method:      Land
+## 
+## Confidence Interval Type:        two-sided
+## 
+## Confidence Level:                95%
+## 
+## Confidence Interval:             LCL =  802218.8
+##                                  UCL = 1185112.0</code></pre>
+<p>E agora com o método da aproximação normal:</p>
+<pre class="r"><code>elnormAlt(dados$valor, ci = TRUE, ci.method = &quot;normal.approx&quot;)</code></pre>
+<pre><code>## 
+## Results of Distribution Parameter Estimation
+## --------------------------------------------
+## 
+## Assumed Distribution:            Lognormal
+## 
+## Estimated Parameter(s):          mean = 9.538529e+05
+##                                  cv   = 6.756391e-01
+## 
+## Estimation Method:               mvue
+## 
+## Data:                            dados$valor
+## 
+## Sample Size:                     50
+## 
+## Confidence Interval for:         mean
+## 
+## Confidence Interval Method:      Normal Approximation
+##                                  (t Distribution)
+## 
+## Confidence Interval Type:        two-sided
+## 
+## Confidence Level:                95%
+## 
+## Confidence Interval:             LCL =  772391.8
+##                                  UCL = 1135313.9</code></pre>
+<p>Nota-se que a diferença entre os limites inferior (LCL) e superior (UCL) dos
+intervalos aproximados calculados diferem menos de 5% (a menor) dos valores
+exatos.</p>
+<p>Pode-se argumentar que esta aproximação é tolerável, porém deve-se lembrar que a
+NBR 14.653-2 permite arredondamentos até 1% do valor final, de maneira que seria
+subjetivo um avaliador determinar o quanto seria aceitável, estando esta
+diferença acima do valor recomendado pela norma.</p>
+<p>Por fim, é bom esclarecer que os intervalos obtidos com a variável normalizada
+são exatos para a estimação da mediana da distribuição lognormal. Talvez seja
+o caso de, numa próxima revisão da NBR 14.653 estabelecer que a mediana deva
+ser utilizada em lugar da média (ou da moda) para a estimava de valores, já que,
+desta maneira, simplifica-se sobremaneira o problema.</p>
+<p>Feliz ano novo a todos!</p>
