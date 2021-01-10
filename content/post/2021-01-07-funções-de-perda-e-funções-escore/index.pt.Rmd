@@ -1,0 +1,213 @@
+---
+title: "Funções de perda e funções de escore"
+author: "Luiz F. P. Droubi"
+date: '2021-01-07'
+categories:
+- avaliação de imóveis
+- estatistica
+- machine learning
+image:
+  caption: ''
+  focal_point: ''
+slug: []
+tags: SOBREA
+authors: []
+---
+
+```{r,setup, include=FALSE}
+knitr::opts_chunk$set(cache=FALSE, echo = TRUE, message = FALSE)
+library(fitdistrplus)
+library(appraiseR)
+library(ggplot2)
+```
+
+Como muitos devem saber, a regressão linear é um método estística para a
+estimação da média condicional de uma distribuição. Desta forma, para sua
+estimação, minimiza-se o MSE (*mean square error*) ou erro médio quadrático. 
+Caso se deseje estimar a mediana, deve-se minimizar o MAE (*mean absolute error*) 
+ou erro médio absoluto.
+
+Genericamente falando, no entanto, pode-se optar por minimizar qualquer [função
+de perda](https://en.wikipedia.org/wiki/Loss_function) que se deseje. No
+entanto, a depender da distribuição real dos dados, uma função será mais
+apropriada do que as outras. Por exemplo, se os dados seguem a distribuição
+normal, a eficiência na estimação da média é muito superior à eficiência para a
+estimação da mediana. Por outro lado, se a distribuição dos dados seguir a
+distribuição de Laplace, a estimação da mediana é muito mais eficiente. 
+
+Há que se diferenciar, ainda, as funções de perda das funções de escore(https://en.wikipedia.org/wiki/Scoring_rule). Em outras palavras, há de
+se diferenciar estimação de predição. Na comunidade de *Machine Learning* 
+geralmente parte-se direto dos dados para a previsão de valores, sem passar por
+qualquer estimação de parâmetros. Ou seja, escolhe-se uma função de escore
+apropriada e aplica-se um método (redes neurais, por exemplo) e busca-se a 
+minimização do erro de predição.
+
+Na aprendizagem de máquina, no entanto, perde-se a capacidade de explicar o 
+fenômeno. Desta forma, em muitas ramos da ciência, como na Engenharia de 
+Avaliações, opta-se primeiramente pelo ajuste de um modelo que explique o 
+funcionamento do mercado para, subsequentemente, com este modelo, efetuar as 
+previsões de valores necessárias.
+
+Pois bem. Feita esta introdução, se os dados seguem a distribuição normal, como
+já dito acima, a estimação da média é mais eficiente. Um analista deveria
+preferir, portanto, um modelo de regressão linear, que minimiza o MSE, a um
+modelo de regressão quantílica, que minimiza o MAE, já que assim estará
+utilizando um método mais eficiente de estimação.
+
+Se os dados são normais, no entanto, moda, média e mediana coincidem. Se a 
+homocedasticidade for verificada, pode-se estimar qualquer que seja o percentil 
+através da regressão linear (inclusive a mediana), bastando o ajuste apropriado 
+do intercepto.
+
+Os problemas começam a aparecer quando os dados não seguem a distribuição
+normal. 
+
+(Este [artigo](http://www.econ.uiuc.edu/~roger/research/frechet/frechet.pdf) 
+argumenta que boa parte dos dados que pensamos apresentar distribuição normal, 
+na verdade, podem se ajustar melhor à distribuição de Laplace. Mas isto é 
+assunto para um outro dia.) 
+
+Hoje pretendo discutir um caso que é muito comum na Engenharia de Avaliações, em
+que os dados apresentam uma distribuição lognormal.
+
+Existem outras alternativas para a modelagem de dados lognormais, mais
+imaginemos que devamos escolher apenas entre regressão linear e regressão
+quantílica. Se os dados apresentam distribuição lognormal, então basta 
+transformar os dados com a função logarítimca para a obtenção da normalidade. 
+Uma vez normalizados os dados, pode-se utilizar tranquilamente a regressão 
+linear e toda a inferência clássica. Isto é mais eficiente do que a regressão 
+quantílica, mesmo para a estimação da mediana da distribuição.
+
+Mas é neste ponto que começa a confusão entre função de escore e função de perda.
+
+Se os dados tem distribuição lognormal, a utilização da função de perda
+quadrática (MSE) é mais eficiente na estimação, mas isto não significa que a
+previsão de valores deva ser feita, necessariamente, com a média da
+distribuição. Pode ser que se deseje, para previsão, minimizar o MAE. Esta, em
+última análise, é uma decisão do cliente. Ele é quem deve definir se, no seu 
+caso, é mais importante que se erre menos em termos absolutos, o que penaliza da
+mesma forma os valores mais extremos e menos extremos, ou se é mais importante 
+que se erre menos em termos quadráticos, o que acarreta em dar um peso maior aos 
+erros mais extremos.
+
+Se o cliente opta pela minimização do MSE, o analista deve adotar a média da
+distribuição lognormal para efetuação das previsões. Já se a opção do cliente 
+for pelo menor MAE, o analista deve optar pela mediana da distribuição.
+
+E quanto às outras funções de escore? Existe uma [infinidade delas](https://heartbeat.fritz.ai/5-regression-loss-functions-all-machine-learners-should-know-4fb140e9d4b0). 
+
+Com algumas pode ser que não haja solução teórica, apenas numérica. O cliente
+pode optar por qualquer uma delas, cabendo ao analista escolher o método 
+estatístico mais adequado.
+
+Dentre as funções de escore que mais estão me intrigando no momento está a
+MAPE, (*mean absolute percentage error*), ou erro médio percentual absoluto.
+Esta consiste em uma minimização do erro percentual absoluto cometido na 
+previsão das observações.
+
+Ainda não está claro pra mim se e quando poderia ser melhor utilizar esta função
+de escore em detrimento das outras, mais tradicionais, como a MSE e a MAE.
+
+(Aliás, o problema de delegar ao cliente a escolha da função de escore mais
+apropriada é este: o cliente sabe escolher qual a melhor função para ele?)
+
+Esta [resposta](https://stats.stackexchange.com/a/389316), no entanto, sugere
+que, ao menos para dados lognormais, a moda da distribuição minimiza o MAPE.
+
+Apenas para ilustrar, fiz umas simulações com dados lognormais: imagine-se que
+sejam dados de lotes com área variando uniformemente de 360 a 600 $m^2$, com
+valores unitários seguindo uma distribuição lognormal.
+
+```{r}
+set.seed(1)
+dados <- data.frame(
+  Area = runif(100, min = 360, max = 600)
+)
+dados$LVU <- 12 - .0075*dados$Area + rnorm(100, mean = 0, sd = .25)
+dados$VU <- exp(dados$LVU)
+```
+
+
+```{r, echo = FALSE, fig.cap = "Valores Unitários de Lotes com distribuição lognormal."}
+fln <- fitdist(dados$VU, "lnorm")
+par(mfrow = c(1, 2))
+denscomp(fln)
+qqcomp(fln)
+```
+
+Se ajustamos um modelo de regressão linear, sem a tranformação dos dados, obtemos:
+
+```{r}
+linFit <- lm(VU~Area, dados)
+summary(linFit)
+```
+
+
+Percebam que trata-se de um modelo razoavelmente bom, porém, nem são 
+necessárias maiores análises para saber que as hipóteses da inferência clássica
+não se verificam: basta a análise da Figura \@ref(fig:linFit), em que diversos 
+pontos se localizam bem distantes da reta de regressão, o que sugere uma 
+distribuição com cauda longa.
+
+```{r linFit, fig.cap="Modelo linear.", echo = FALSE}
+ggplot(dados, aes(x = Area, y = VU)) + 
+  geom_point() +
+  stat_smooth(method = "lm", level = .80)
+```
+
+
+Para previsão de valores centrais, no entanto, o modelo linear não deixa muito
+a desejar, como pode-se ver na Figura \@ref(fig:linPowerPlot):
+
+```{r linPowerPlot, fig.cap="Poder de Predição para o modelo linear."}
+powerPlot(linFit, axis = "inverted")
+```
+
+No entanto, se ajustamos um modelo com a variável dependente transformada, temos
+um modelo melhor ajustado (na escala logarítmica), onde se verificam os 
+pressupostos básicos da inferência clássica.
+
+```{r}
+loglinFit <- lm(log(VU)~Area, dados)
+s <- summary(loglinFit)
+s
+```
+
+Mas, na Engenharia de Avaliações, geralmente o que importa é a previsão de
+valores na escala original. Os gráficos das Figuras \@ref(fig:media) a
+\@ref(fig:moda) abaixo mostram como a previsão de valores com a média, moda e
+mediana minimizam o MSE, o MAPE e o MAE, respectivamente. Nestes gráficos, a
+linha vermelha é a bissetriz e a linha azul é a regressão dos valores previstos
+aos valores observados.
+
+```{r media, fig.cap = "Poder de predição com a média."}
+yhatMedia <- exp(fitted(loglinFit) + s$sigma^2/2)
+powerPlot(dados$VU, yhatMedia, axis = "inverted")
+```
+
+```{r mediana, fig.cap = "Poder de predição com a mediana."}
+yhatMediana <- exp(fitted(loglinFit))
+powerPlot(dados$VU, yhatMediana, axis = "inverted")
+```
+
+```{r moda, fig.cap = "Poder de predição com a moda."}
+yhatModa <- exp(fitted(loglinFit) - s$sigma^2)
+powerPlot(dados$VU, yhatModa, axis = "inverted")
+```
+
+Vamos ver como nos sairíamos se optássemos pela mediana, porém estimando-a 
+através da regressão quantílica.
+
+```{r, fig.cap="Poder de predição com a mediana, obtida através da regressão quantílica."}
+library(quantreg)
+medFit <- rq(VU~Area, data = dados, tau = .5)
+powerPlot(medFit, axis = "inverted")
+```
+
+Conforme esperado, percebe-se que a estimação com a regressão linear é mais 
+eficiente para este tipo de dados. A estimação da mediana à partir da regressão
+linear minimizou o erro médio absoluto mais eficientemente do que a própria 
+regressão quantílica, que é um método que busca minimizar o MAE diretamente.
+
+
+
