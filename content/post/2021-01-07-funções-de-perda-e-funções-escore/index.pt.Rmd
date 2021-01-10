@@ -1,16 +1,16 @@
 ---
 title: "Funções de perda e funções de escore"
 author: "Luiz F. P. Droubi"
-date: '2021-01-07'
+date: '2021-01-10'
 categories:
 - avaliação de imóveis
 - estatistica
-- machine learning
 image:
   caption: ''
   focal_point: ''
 slug: []
-tags: SOBREA
+tags: 
+  - SOBREA
 authors: []
 ---
 
