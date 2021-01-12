@@ -121,7 +121,7 @@
   <meta property="og:image" content="http://droubi.me/img/eu.jpg">
   <meta property="og:locale" content="pt">
   
-  <meta property="og:updated_time" content="2021-01-10T00:00:00&#43;00:00">
+  <meta property="og:updated_time" content="2021-01-12T00:00:00&#43;00:00">
   
 
   
@@ -332,6 +332,29 @@
   
 
   
+  
+  <div>
+    <h2><a href="/post/2020-01-12-retransforma%C3%A7%C3%A3o-de-vari%C3%A1veis/">Retransformação de Variáveis  (1)</a></h2>
+    <div class="article-style">
+      
+      Em um dos posts anteriores comentei brevemente sobre o problema da retransformação de variáveis. No último post mostrei algumas simulações sobre a retransformação de valores quando utiliza-se a transformação da variável dependente para a escala logarítmica.
+Neste post, vou mostrar algumas simulações que fiz sobre o problema da retransformação quando utiliza-se a função raiz quadrada para a transformação da variável dependente.
+Segundo Land (1972), quando esta transformação é aplicada a retransformação deve ser feita com a seguinte expressão (ver prova):
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/post/2020-01-12-retransforma%C3%A7%C3%A3o-de-vari%C3%A1veis-2/">Retransformação de Variáveis  (2)</a></h2>
+    <div class="article-style">
+      
+      Segundo Land (1972), o cubo de uma variável aleatória normal \(X \sim N(\mu, \sigma^2)\) é igual a (ver prova):
+\[\mathbb{E}[X^3] = \mu^3 + 3\mu\sigma^2\]
+Para melhor compreender, criei os dados abaixo no R:
+set.seed(1) dados &lt;- data.frame( Area = runif(100, min = 360, max = 600) ) dados$CROOTVU &lt;- 40 - .05*dados$Area + rnorm(100, mean = 0, sd = 1.5) dados$VU &lt;- dados$CROOTVU^3 A Figura 1 mostra que os dados transformados pela raiz cúbica são aproximadamente normais.
+      
+    </div>
+  </div>
   
   <div>
     <h2><a href="/post/2021-01-07-fun%C3%A7%C3%B5es-de-perda-e-fun%C3%A7%C3%B5es-escore/">Funções de perda e funções de escore</a></h2>

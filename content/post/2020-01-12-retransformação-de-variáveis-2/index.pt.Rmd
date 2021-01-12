@@ -1,0 +1,113 @@
+---
+title: "Retransformação de Variáveis  (2)"
+subtitle: "Raiz cúbica"
+author: "Luiz F. P. Droubi"
+date: '2021-01-12'
+categories:
+- avaliação de imóveis
+- estatistica
+image:
+  caption: ''
+  focal_point: ''
+slug: []
+tags: 
+  - SOBREA
+authors: []
+---
+
+```{r,setup, include=FALSE}
+knitr::opts_chunk$set(cache=FALSE, echo = TRUE, message = FALSE)
+library(fitdistrplus)
+library(appraiseR)
+library(ggplot2)
+library(mosaic)
+```
+
+
+Segundo  [Land (1972)](https://projecteuclid.org/download/pdf_1/euclid.aoms/1177693235),
+o cubo de uma variável aleatória normal $X \sim N(\mu, \sigma^2)$ é igual a (ver [prova](https://math.stackexchange.com/a/3741451)):
+
+$$\mathbb{E}[X^3] = \mu^3 + 3\mu\sigma^2$$
+
+Para melhor compreender, criei os dados abaixo no R:
+
+```{r}
+set.seed(1)
+dados <- data.frame(
+  Area = runif(100, min = 360, max = 600)
+)
+dados$CROOTVU <- 40 - .05*dados$Area + rnorm(100, mean = 0, sd = 1.5)
+dados$VU <- dados$CROOTVU^3
+```
+
+A Figura \@ref(fig:hist) mostra que os dados transformados pela raiz cúbica são
+aproximadamente normais.
+
+```{r hist, fig.keep='last', fig.cap="Histograma dos dados transformados."}
+m <- mean(dados$VU^(1/3))
+s <- sd(dados$VU^(1/3))
+histogram(~VU^(1/3), dados)
+plotDist("norm", mean = m, sd = s, add = TRUE)
+```
+
+Primeiro ajustamos um modelo linear:
+
+```{r}
+linFit <- lm(VU~Area, dados)
+summary(linFit)
+```
+
+Percebem-se os problemas do modelo na Figura \@ref(fig:linFit):
+
+```{r linFit, fig.cap="Modelo linear.", echo = FALSE}
+ggplot(dados, aes(x = Area, y = VU)) + 
+  geom_point() +
+  stat_smooth(method = "lm", level = .80)
+```
+
+A Figura \@ref(fig:boxcox) mostra que a transformação ideal é mesmo a raiz 
+cúbica (que surpresa!).
+
+```{r boxcox}
+boxcox(linFit)
+```
+
+Mais uma vez, fica nítida a não-linearidade pela análise da Figura
+\@ref(fig:linPowerPlot), como no caso da raiz quadrada. Mas é claro que o ajuste
+está longe do ideal.
+
+```{r linPowerPlot, fig.cap="Poder de Predição para o modelo linear."}
+powerPlot(linFit, axis = "inverted")
+```
+
+Ajusta-se então um modelo com a variável transformada.
+
+```{r}
+transFit <- lm(VU^(1/3)~Area, dados)
+s <- summary(transFit)
+s
+```
+
+Na Figura \@ref(fig:mediana) pode-se ver o Poder de Predição do modelo com a 
+retransformação *naive*, ou seja, com a adoção da mediana.
+
+```{r mediana, fig.cap = "Poder de predição com retransformação \\emph{naive}"}
+powerPlot(dados$VU, fitted(transFit)^3, axis = "inverted")
+```
+
+E na Figura \@ref(fig:media) pode-se ver o Poder de Predição obtido com a média
+da distribuição original.
+
+```{r media, fig.cap = "Poder de predição com a média."}
+yhatMedia <- fitted(transFit)^3 + 3*fitted(transFit)*s$sigma^2
+powerPlot(dados$VU, yhatMedia, axis = "inverted")
+```
+
+É possível perceber que o ajuste dos dados ($R^2$) não aumenta substancialmente.
+De maneira análoga, aliás, ao que ocorreu com as outras transformações estudadas
+nos posts anteriores.
+
+Mas percebe-se uma nítida melhora na previsão de valores nos extremos da
+amostra. Além disto, as hipóteses da inferência clássica não se verificam nos
+modelos sem a transformação das variáveis, o que significa que os testes de 
+hipótese e os intervalos de confiança obtidos com estes modelos.

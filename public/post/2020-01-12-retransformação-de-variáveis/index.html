@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.0.0">
+  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="author" content="Luiz F. P. Droubi">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="Em um dos posts anteriores comentei brevemente sobre o problema da retransformação de variáveis. No último post mostrei algumas simulações sobre a retransformação de valores quando utiliza-se a transformação da variável dependente para a escala logarítmica.
+Neste post, vou mostrar algumas simulações que fiz sobre o problema da retransformação quando utiliza-se a função raiz quadrada para a transformação da variável dependente.
+Segundo Land (1972), quando esta transformação é aplicada a retransformação deve ser feita com a seguinte expressão (ver prova):">
+
+  
+  <link rel="alternate" hreflang="pt" href="http://droubi.me/post/2020-01-12-retransforma%C3%A7%C3%A3o-de-vari%C3%A1veis/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#795548">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="anonymous">
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-117082498-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="http://droubi.me/index.xml" type="application/rss+xml" title="droubi.me">
+  <link rel="feed" href="http://droubi.me/index.xml" type="application/rss+xml" title="droubi.me">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="http://droubi.me/post/2020-01-12-retransforma%C3%A7%C3%A3o-de-vari%C3%A1veis/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@lfpdroubi">
+  <meta property="twitter:creator" content="@lfpdroubi">
+  
+  <meta property="og:site_name" content="droubi.me">
+  <meta property="og:url" content="http://droubi.me/post/2020-01-12-retransforma%C3%A7%C3%A3o-de-vari%C3%A1veis/">
+  <meta property="og:title" content="Retransformação de Variáveis  (1) | droubi.me">
+  <meta property="og:description" content="Em um dos posts anteriores comentei brevemente sobre o problema da retransformação de variáveis. No último post mostrei algumas simulações sobre a retransformação de valores quando utiliza-se a transformação da variável dependente para a escala logarítmica.
+Neste post, vou mostrar algumas simulações que fiz sobre o problema da retransformação quando utiliza-se a função raiz quadrada para a transformação da variável dependente.
+Segundo Land (1972), quando esta transformação é aplicada a retransformação deve ser feita com a seguinte expressão (ver prova):">
+  
+  
+    
+  <meta property="og:image" content="http://droubi.me/img/eu.jpg">
+  <meta property="og:locale" content="pt">
+  
+  <meta property="article:published_time" content="2021-01-12T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2021-01-12T00:00:00&#43;00:00">
+  
+
+  
+
+  
+
+  <title>Retransformação de Variáveis  (1) | droubi.me</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">droubi.me</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Alterar navegação">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">
+            
+            <span>Sobre</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#publications_selected">
+            
+            <span>Publicações</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#projects">
+            
+            <span>Projetos</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorial/">
+            
+            <span>Tutoriais</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">
+            
+            <span>Contato</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/files/cv.pdf">
+            
+            <span>CV</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Retransformação de Variáveis  (1)</h1>
+
+  
+  <p class="page-subtitle">Raiz quadrada</p>
+  
+
+  
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Luiz F. P. Droubi">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="2021-01-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+    <time datetime="2021-01-12 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+      Jan 12, 2021
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Luiz F. P. Droubi">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/2020-01-12-retransforma%C3%A7%C3%A3o-de-vari%C3%A1veis/#disqus_thread"></a>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    
+    <a href="">avaliação de imóveis</a>, 
+    
+    <a href="/categories/estatistica/">estatistica</a>
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Retransforma%c3%a7%c3%a3o%20de%20Vari%c3%a1veis%20%20%281%29&amp;url=http%3a%2f%2fdroubi.me%2fpost%2f2020-01-12-retransforma%25C3%25A7%25C3%25A3o-de-vari%25C3%25A1veis%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fdroubi.me%2fpost%2f2020-01-12-retransforma%25C3%25A7%25C3%25A3o-de-vari%25C3%25A1veis%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fdroubi.me%2fpost%2f2020-01-12-retransforma%25C3%25A7%25C3%25A3o-de-vari%25C3%25A1veis%2f&amp;title=Retransforma%c3%a7%c3%a3o%20de%20Vari%c3%a1veis%20%20%281%29"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fdroubi.me%2fpost%2f2020-01-12-retransforma%25C3%25A7%25C3%25A3o-de-vari%25C3%25A1veis%2f&amp;title=Retransforma%c3%a7%c3%a3o%20de%20Vari%c3%a1veis%20%20%281%29"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Retransforma%c3%a7%c3%a3o%20de%20Vari%c3%a1veis%20%20%281%29&amp;body=http%3a%2f%2fdroubi.me%2fpost%2f2020-01-12-retransforma%25C3%25A7%25C3%25A3o-de-vari%25C3%25A1veis%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
+
+
+<p>Em <a href="https://droubi.me/post/2020-12-30-implica%C3%A7%C3%B5es-da-utiliza%C3%A7%C3%A3o-de-transforma%C3%A7%C3%B5es-sobre-a-vari%C3%A1vel-dependente/">um dos posts anteriores</a> comentei brevemente sobre o problema da retransformação de variáveis. No <a href="https://droubi.me/post/2021-01-07-fun%C3%A7%C3%B5es-de-perda-e-fun%C3%A7%C3%B5es-escore/">último post</a>
+mostrei algumas simulações sobre a retransformação de valores quando utiliza-se
+a transformação da variável dependente para a escala logarítmica.</p>
+<p>Neste post, vou mostrar algumas simulações que fiz sobre o problema da
+retransformação quando utiliza-se a função raiz quadrada para a transformação da
+variável dependente.</p>
+<p>Segundo <a href="https://projecteuclid.org/download/pdf_1/euclid.aoms/1177693235">Land (1972)</a>,
+quando esta transformação é aplicada a retransformação deve ser feita com a
+seguinte expressão (ver <a href="https://math.stackexchange.com/a/461313">prova</a>):</p>
+<p><span class="math display">\[Y = \sqrt{X}; \mathbb{E}[X] = \mu^2 + \sigma^2\]</span>
+Vamos ver, então, como fica a previsão de valores com um modelo ajustado com
+este tipo de dados.</p>
+<p>Os dados foram criados, no R, com o código abaixo:</p>
+<pre class="r"><code>set.seed(1)
+dados &lt;- data.frame(
+  Area = runif(100, min = 360, max = 600)
+)
+dados$SQRTVU &lt;- 250 - .4*dados$Area + rnorm(100, mean = 0, sd = 12.5)
+dados$VU &lt;- dados$SQRTVU^2</code></pre>
+<p>Pode-se demonstrar que, se <span class="math inline">\(\sqrt{VU} \sim N(\mu, \sigma^2)\)</span>, então <span class="math inline">\(VU\)</span> tem
+distribuição <a href="https://en.wikipedia.org/wiki/Generalized_chi-squared_distribution"><span class="math inline">\(\chi^2\)</span>
+generalizada</a>,
+com 2 graus de liberdade, parâmetro de não-centralidade <span class="math inline">\(\lambda = (\mu/\sigma)^2\)</span>, o que pode ser verificado com o código abaixo:</p>
+<pre class="r"><code>library(mosaic)
+m &lt;- mean(dados$SQRTVU)
+s &lt;- sd(dados$SQRTVU)
+histogram(sqrt(s^2*rchisq(300, 2, ncp = (m/s)^2)))
+plotDist(&quot;norm&quot;, mean = m, sd = s, add = TRUE)</code></pre>
+<p><img src="/post/2020-01-12-retransformação-de-variáveis/index.pt_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Na prática, então, de posse de uma amostra, podemos testar:</p>
+<ol style="list-style-type: decimal">
+<li>Se a raiz quadrada dos dados se ajusta à distribuição normal, como acima;</li>
+<li>Se os dados se ajustam a uma distribuição <span class="math inline">\(\chi^2\)</span> generalizada, como
+ilustrado abaixo:</li>
+</ol>
+<pre class="r"><code>histogram(~VU/s^2, dados)
+plotDist(&quot;chisq&quot;, df = 2, ncp = (m/s)^2, add = TRUE)</code></pre>
+<p><img src="/post/2020-01-12-retransformação-de-variáveis/index.pt_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>É boa prática utilizar a família de Box-Cox para verificar o melhor parâmetro
+para a transformação dos dados. Para isto, no R, podemos ajustar primeiro um
+modelo linear (sem transformacões):</p>
+<pre class="r"><code>linFit &lt;- lm(VU~Area, dados)
+summary(linFit)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = VU ~ Area, data = dados)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -3316.2  -915.6  -204.2   663.1  6354.5 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 25092.353   1240.384   20.23   &lt;2e-16 ***
+## Area          -43.801      2.539  -17.25   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1623 on 98 degrees of freedom
+## Multiple R-squared:  0.7522, Adjusted R-squared:  0.7497 
+## F-statistic: 297.5 on 1 and 98 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Percebe-se na Figura <a href="#fig:linFit">1</a> a presença de alguma não-linearidade no
+modelo.</p>
+<div class="figure"><span id="fig:linFit"></span>
+<img src="/post/2020-01-12-retransformação-de-variáveis/index.pt_files/figure-html/linFit-1.png" alt="Modelo linear." width="672" />
+<p class="caption">
+Figure 1: Modelo linear.
+</p>
+</div>
+<p>E na Figura <a href="#fig:linPowerPlot">2</a>, o Poder de Predição do modelo linear.
+Percebe-se que o problema fica na estimação de valores nos extremos da escala
+(inclusive o modelo prevê alguns valores negativos).</p>
+<pre class="r"><code>powerPlot(linFit, axis = &quot;inverted&quot;)</code></pre>
+<div class="figure"><span id="fig:linPowerPlot"></span>
+<img src="/post/2020-01-12-retransformação-de-variáveis/index.pt_files/figure-html/linPowerPlot-1.png" alt="Poder de Predição para o modelo linear." width="672" />
+<p class="caption">
+Figure 2: Poder de Predição para o modelo linear.
+</p>
+</div>
+<p>A Figura <a href="#fig:boxCox">3</a> mostra que o melhor parâmetro para transformação
+é, aproximadamente, 0.5. Ou seja, a transformação mais conveniente é a raiz
+quadrada.</p>
+<pre class="r"><code>library(car)
+boxCox(linFit)</code></pre>
+<div class="figure"><span id="fig:boxCox"></span>
+<img src="/post/2020-01-12-retransformação-de-variáveis/index.pt_files/figure-html/boxCox-1.png" alt="Ajuste do parâmetro de transformação para família de Box-Cox." width="672" />
+<p class="caption">
+Figure 3: Ajuste do parâmetro de transformação para família de Box-Cox.
+</p>
+</div>
+<p>Ajusta-se o modelo, então, com a transformação adequada:</p>
+<pre class="r"><code>transFit &lt;- lm(sqrt(VU)~Area, dados)
+s &lt;- summary(transFit)
+s</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = sqrt(VU) ~ Area, data = dados)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -23.122  -7.028  -1.088   6.553  31.458 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 241.90200    8.99258   26.90   &lt;2e-16 ***
+## Area         -0.38373    0.01841  -20.84   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 11.76 on 98 degrees of freedom
+## Multiple R-squared:  0.816,  Adjusted R-squared:  0.8141 
+## F-statistic: 434.5 on 1 and 98 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>E verifica-se o poder de predição.</p>
+<p>Primeiro com a simples retransformação pela função inversa (naive), que
+leva à mediana da distribuição. Percebe-se que, devido à transformação, não são
+previstos mais quaisquer valores negativos, o que é desejável.</p>
+<pre class="r"><code>powerPlot(transFit, axis = &quot;inverted&quot;, func = &quot;sqrt&quot;)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-7"></span>
+<img src="/post/2020-01-12-retransformação-de-variáveis/index.pt_files/figure-html/unnamed-chunk-7-1.png" alt="Poder de predição com retransformação \emph{naive}" width="672" />
+<p class="caption">
+Figure 4: Poder de predição com retransformação 
+</p>
+</div>
+<p>Depois com o valor esperado (ou média) da distribuição:</p>
+<pre class="r"><code>yhatMedia &lt;- fitted(transFit)^2 + s$sigma^2
+powerPlot(dados$VU, yhatMedia, axis = &quot;inverted&quot;)</code></pre>
+<div class="figure"><span id="fig:media"></span>
+<img src="/post/2020-01-12-retransformação-de-variáveis/index.pt_files/figure-html/media-1.png" alt="Poder de predição com a média." width="672" />
+<p class="caption">
+Figure 5: Poder de predição com a média.
+</p>
+</div>
+<p>Mais uma vez: a estimação foi realizada com a minimização da função erro médio
+quadrático (MSE), já que foi utilizada a regressão linear. Mas não
+necessariamente deve ser utilizada a média para a previsão de valores.</p>
+<p>Na regressão à mediana o problema da retransformação desaparece: o quantil da
+variável transformada corresponde ao mesmo quantil da variável original, já que
+a transformação foi feita com uma função monótona (ver <a href="https://www.jstor.org/stable/1913643">Koenker e Basset (1978, p.39-40)</a>).</p>
+<p>Desta forma, pode-se aplicar a regressão quantílica e depois simplesmente
+retransformar os valores previstos com a função inversa, obtendo-se o mesmo
+quantil estimado.</p>
+<p>(A regressão quantílica não pressupõe normalidade, porém a transformação
+possibilita a previsão de valores sempre positivos).</p>
+<pre class="r"><code>library(quantreg)
+medFit &lt;- rq(sqrt(VU)~Area, dados, tau = .5)
+powerPlot(medFit, axis = &quot;inverted&quot;, func = &quot;sqrt&quot;)</code></pre>
+<p><img src="/post/2020-01-12-retransformação-de-variáveis/index.pt_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/sobrea/">SOBREA</a>
+  
+</div>
+
+
+
+    
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  <img class="portrait mr-3" src="https://s.gravatar.com/avatar/461d14fc89fd2e7298fdbbee06ffb8ab?s=200')" itemprop="image" alt="Avatar">
+  
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/">Luiz F. P. Droubi</a></h5>
+    <h6 class="card-subtitle">Mestrando no Programa de Pós-Graduação em Engenharia de Transportes e Gestão Territorial</h6>
+    
+    <ul class="network-icon" aria-hidden="true">
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      <li>
+        <a itemprop="sameAs" href="mailto:lfpdroubi@gmail.com" >
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://github.com/lfpdroubi" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.linkedin.com/in/luiz-fernando-palin-droubi-52942034/" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="http://www.facebook.com/luiz.droubi" target="_blank" rel="noopener">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="http://www.instagram.com/lfpdroubi" target="_blank" rel="noopener">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://twitter.com/lfpdroubi" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://orcid.org/0000-0002-5971-7220" target="_blank" rel="noopener">
+          <i class="ai ai-orcid"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="http://lattes.cnpq.br/5150615628956067" target="_blank" rel="noopener">
+          <i class="ai ai-lattes"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>Related</h3>
+      <ul>
+        
+        <li><a href="/post/2020-01-12-retransforma%C3%A7%C3%A3o-de-vari%C3%A1veis-2/">Retransformação de Variáveis  (2)</a></li>
+        
+        <li><a href="/post/2021-01-07-fun%C3%A7%C3%B5es-de-perda-e-fun%C3%A7%C3%B5es-escore/">Funções de perda e funções de escore</a></li>
+        
+        <li><a href="/post/2020-12-30-implica%C3%A7%C3%B5es-da-utiliza%C3%A7%C3%A3o-de-transforma%C3%A7%C3%B5es-sobre-a-vari%C3%A1vel-dependente/">Implicações da utilização de transformações sobre a variável dependente</a></li>
+        
+        <li><a href="/post/2020-12-18-implica%C3%A7%C3%B5es-da-utiliza%C3%A7%C3%A3o-de-um-fator-oferta-em-modelos-de-regress%C3%A3o-linear/">Implicações da utilização de um fator oferta em modelos de regressão linear</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "droubi" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2018 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+    
+    
+    <script src="/js/mathjax-config.500a6cbb2c0f345fcecc21b3116d6637aa78f1f11db8081ea581abe05390c2e8f3bbffe61be3cf0217baf785c40efceabe51050a4f007e69af94efd3643260e8.js" integrity="sha512-UApsuywPNF/OzCGzEW1mN6p48fEduAgepYGr4FOQwujzu//mG&#43;PPAhe694XEDvzqvlEFCk8AfmmvlO/TZDJg6A=="></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//droubi.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "Search Results",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publicações",
+        'talk' : "Palestras"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    <script src="/js/search.js"></script>
+    
+
+    
+    
+
+  </body>
+</html>
+

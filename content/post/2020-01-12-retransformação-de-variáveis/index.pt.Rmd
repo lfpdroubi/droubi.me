@@ -1,0 +1,210 @@
+---
+title: "Retransformação de Variáveis  (1)"
+author: "Luiz F. P. Droubi"
+date: '2021-01-12'
+categories:
+- avaliação de imóveis
+- estatistica
+image:
+  caption: ''
+  focal_point: ''
+slug: []
+subtitle: Raiz quadrada
+tags: 
+  - SOBREA
+authors: []
+---
+
+```{r,setup, include=FALSE}
+knitr::opts_chunk$set(cache=FALSE, echo = TRUE, message = FALSE)
+library(appraiseR)
+library(ggplot2)
+library(sadists)
+testf <- function(dpqr, nobs, ...) {
+  require(ggplot2)
+  require(grid)
+
+  rv <- sort(dpqr$r(nobs, ...))
+  data <- data.frame(draws = rv, pvals = dpqr$p(rv,...))
+  text.size <- 6 # sigh
+  
+  # http://stackoverflow.com/a/5688125/164611
+  p1 <- ggplot(data, aes(x = draws)) +
+    geom_line(aes(y = ..density..,
+    colour = "Empirical"), stat = "density") +
+    stat_function(fun = function(x) {
+      dpqr$d(x, ...)
+    }, aes(colour = "Theoretical")) +
+    geom_histogram(aes(y = ..density..), alpha = 0.3) + 
+    scale_colour_manual(name = "Density", values = c("red", "blue")) +
+    theme(text = element_text(size = text.size)) +
+    labs(title = "Density (tests dfunc)")
+  
+  # Q-Q plot
+  p2 <- ggplot(data, aes(sample = draws)) +
+    stat_qq(distribution = function(p) {
+      dpqr$q(p, ...)
+    }) + 
+    geom_abline(slope = 1, intercept = 0, colour = "red") + 
+    theme(text = element_text(size = text.size)) +
+    labs(title = "Q-Q plot (tests qfunc)")
+  
+  # empirical CDF of the p-values;
+  # should be uniform
+  p3 <- ggplot(data, aes(sample = pvals)) +
+    stat_qq(distribution = qunif) +
+    geom_abline(slope = 1, intercept = 0, colour = "red") + 
+    theme(text = element_text(size = text.size)) +
+    labs(title = "P-P plot (tests pfunc)")
+  
+  # Define grid layout to locate plots
+  # and print each graph
+  pushViewport(viewport(layout = grid.layout(2, 2)))
+  print(p1, vp = viewport(layout.pos.row = 1, layout.pos.col = 1:2))
+  print(p2, vp = viewport(layout.pos.row = 2, layout.pos.col = 1))
+  print(p3, vp = viewport(layout.pos.row = 2, layout.pos.col = 2))
+}
+```
+
+Em [um dos posts anteriores](https://droubi.me/post/2020-12-30-implica%C3%A7%C3%B5es-da-utiliza%C3%A7%C3%A3o-de-transforma%C3%A7%C3%B5es-sobre-a-vari%C3%A1vel-dependente/) comentei brevemente sobre o problema da retransformação de variáveis. No [último post](https://droubi.me/post/2021-01-07-fun%C3%A7%C3%B5es-de-perda-e-fun%C3%A7%C3%B5es-escore/)
+mostrei algumas simulações sobre a retransformação de valores quando utiliza-se
+a transformação da variável dependente para a escala logarítmica.
+
+Neste post, vou mostrar algumas simulações que fiz sobre o problema da 
+retransformação quando utiliza-se a função raiz quadrada para a transformação da
+variável dependente.
+
+Segundo  [Land (1972)](https://projecteuclid.org/download/pdf_1/euclid.aoms/1177693235),
+quando esta transformação é aplicada a retransformação deve ser feita com a
+seguinte expressão (ver [prova](https://math.stackexchange.com/a/461313)):
+
+$$Y = \sqrt{X}; \mathbb{E}[X] = \mu^2 + \sigma^2$$
+Vamos ver, então, como fica a previsão de valores com um modelo ajustado com
+este tipo de dados.
+
+Os dados foram criados, no R, com o código abaixo:
+
+```{r}
+set.seed(1)
+dados <- data.frame(
+  Area = runif(100, min = 360, max = 600)
+)
+dados$SQRTVU <- 250 - .4*dados$Area + rnorm(100, mean = 0, sd = 12.5)
+dados$VU <- dados$SQRTVU^2
+```
+
+Pode-se demonstrar que, se $\sqrt{VU} \sim N(\mu, \sigma^2)$, então $VU$ tem
+distribuição [$\chi^2$
+generalizada](https://en.wikipedia.org/wiki/Generalized_chi-squared_distribution),
+com 2 graus de liberdade, parâmetro de não-centralidade $\lambda =
+(\mu/\sigma)^2$, o que pode ser verificado com o código abaixo:
+
+```{r, fig.keep='last'}
+library(mosaic)
+m <- mean(dados$SQRTVU)
+s <- sd(dados$SQRTVU)
+histogram(sqrt(s^2*rchisq(300, 2, ncp = (m/s)^2)))
+plotDist("norm", mean = m, sd = s, add = TRUE)
+```
+
+Na prática, então, de posse de uma amostra, podemos testar:
+
+1. Se a raiz quadrada dos dados se ajusta à distribuição normal, como acima;
+2. Se os dados se ajustam a uma distribuição $\chi^2$ generalizada, como 
+ilustrado abaixo:
+
+```{r, fig.keep='last'}
+histogram(~VU/s^2, dados)
+plotDist("chisq", df = 2, ncp = (m/s)^2, add = TRUE)
+```
+
+
+```{r, fig.cap = "Valores Unitários de Lotes com distribuição lognormal.", echo = FALSE, eval = FALSE}
+library(fitdistrplus)
+fln <- fitdist(dados$VU/s^2, "chisq", start = list(df = 2, ncp = (m/s)^2))
+par(mfrow = c(1, 2))
+denscomp(fln)
+qqcomp(fln)
+```
+
+É boa prática utilizar a família de Box-Cox para verificar o melhor parâmetro 
+para a transformação dos dados. Para isto, no R, podemos ajustar primeiro um
+modelo linear (sem transformacões):
+
+```{r}
+linFit <- lm(VU~Area, dados)
+summary(linFit)
+```
+
+Percebe-se na Figura \@ref(fig:linFit) a presença de alguma não-linearidade no
+modelo.
+
+```{r linFit, fig.cap="Modelo linear.", echo = FALSE}
+ggplot(dados, aes(x = Area, y = VU)) + 
+  geom_point() +
+  stat_smooth(method = "lm", level = .80)
+```
+
+E na Figura \@ref(fig:linPowerPlot), o Poder de Predição do modelo linear. 
+Percebe-se que o problema fica na estimação de valores nos extremos da escala 
+(inclusive o modelo prevê alguns valores negativos).
+
+```{r linPowerPlot, fig.cap="Poder de Predição para o modelo linear."}
+powerPlot(linFit, axis = "inverted")
+```
+
+A Figura \@ref(fig:boxCox) mostra que o melhor parâmetro para transformação 
+é, aproximadamente, 0.5. Ou seja, a transformação mais conveniente é a raiz
+quadrada.
+
+```{r boxCox, fig.cap="Ajuste do parâmetro de transformação para família de Box-Cox."}
+library(car)
+boxCox(linFit)
+```
+
+Ajusta-se o modelo, então, com a transformação adequada:
+
+```{r}
+transFit <- lm(sqrt(VU)~Area, dados)
+s <- summary(transFit)
+s
+```
+
+E verifica-se o poder de predição.
+
+Primeiro com a simples retransformação pela função inversa (naive), que
+leva à mediana da distribuição. Percebe-se que, devido à transformação, não são
+previstos mais quaisquer valores negativos, o que é desejável.
+
+```{r, fig.cap = "Poder de predição com retransformação \\emph{naive}"}
+powerPlot(transFit, axis = "inverted", func = "sqrt")
+```
+
+Depois com o valor esperado (ou média) da distribuição:
+
+```{r media, fig.cap = "Poder de predição com a média."}
+yhatMedia <- fitted(transFit)^2 + s$sigma^2
+powerPlot(dados$VU, yhatMedia, axis = "inverted")
+```
+
+Mais uma vez: a estimação foi realizada com a minimização da função erro médio 
+quadrático (MSE), já que foi utilizada a regressão linear. Mas não 
+necessariamente deve ser utilizada a média para a previsão de valores.
+
+Na regressão à mediana o problema da retransformação desaparece: o quantil da
+variável transformada corresponde ao mesmo quantil da variável original, já que 
+a transformação foi feita com uma função monótona (ver [Koenker e Basset (1978, p.39-40)](https://www.jstor.org/stable/1913643)).
+
+Desta forma, pode-se aplicar a regressão quantílica e depois simplesmente 
+retransformar os valores previstos com a função inversa, obtendo-se o mesmo
+quantil estimado. 
+
+(A regressão quantílica não pressupõe normalidade, porém a transformação
+possibilita a previsão de valores sempre positivos).
+
+```{r}
+library(quantreg)
+medFit <- rq(sqrt(VU)~Area, dados, tau = .5)
+powerPlot(medFit, axis = "inverted", func = "sqrt")
+```
+

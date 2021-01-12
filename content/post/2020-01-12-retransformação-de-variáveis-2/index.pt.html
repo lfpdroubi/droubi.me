@@ -1,0 +1,133 @@
+---
+title: "Retransformação de Variáveis  (2)"
+subtitle: "Raiz cúbica"
+author: "Luiz F. P. Droubi"
+date: '2021-01-12'
+categories:
+- avaliação de imóveis
+- estatistica
+image:
+  caption: ''
+  focal_point: ''
+slug: []
+tags: 
+  - SOBREA
+authors: []
+---
+
+<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
+
+
+<p>Segundo <a href="https://projecteuclid.org/download/pdf_1/euclid.aoms/1177693235">Land (1972)</a>,
+o cubo de uma variável aleatória normal <span class="math inline">\(X \sim N(\mu, \sigma^2)\)</span> é igual a (ver <a href="https://math.stackexchange.com/a/3741451">prova</a>):</p>
+<p><span class="math display">\[\mathbb{E}[X^3] = \mu^3 + 3\mu\sigma^2\]</span></p>
+<p>Para melhor compreender, criei os dados abaixo no R:</p>
+<pre class="r"><code>set.seed(1)
+dados &lt;- data.frame(
+  Area = runif(100, min = 360, max = 600)
+)
+dados$CROOTVU &lt;- 40 - .05*dados$Area + rnorm(100, mean = 0, sd = 1.5)
+dados$VU &lt;- dados$CROOTVU^3</code></pre>
+<p>A Figura <a href="#fig:hist">1</a> mostra que os dados transformados pela raiz cúbica são
+aproximadamente normais.</p>
+<pre class="r"><code>m &lt;- mean(dados$VU^(1/3))
+s &lt;- sd(dados$VU^(1/3))
+histogram(~VU^(1/3), dados)
+plotDist(&quot;norm&quot;, mean = m, sd = s, add = TRUE)</code></pre>
+<div class="figure"><span id="fig:hist"></span>
+<img src="/post/2020-01-12-retransformação-de-variáveis-2/index.pt_files/figure-html/hist-1.png" alt="Histograma dos dados transformados." width="672" />
+<p class="caption">
+Figure 1: Histograma dos dados transformados.
+</p>
+</div>
+<p>Primeiro ajustamos um modelo linear:</p>
+<pre class="r"><code>linFit &lt;- lm(VU~Area, dados)
+summary(linFit)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = VU ~ Area, data = dados)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -2665.4  -736.0  -124.3   501.4  5114.1 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 22608.881   1004.015   22.52   &lt;2e-16 ***
+## Area          -37.484      2.055  -18.24   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1313 on 98 degrees of freedom
+## Multiple R-squared:  0.7724, Adjusted R-squared:  0.7701 
+## F-statistic: 332.6 on 1 and 98 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Percebem-se os problemas do modelo na Figura <a href="#fig:linFit">2</a>:</p>
+<div class="figure"><span id="fig:linFit"></span>
+<img src="/post/2020-01-12-retransformação-de-variáveis-2/index.pt_files/figure-html/linFit-1.png" alt="Modelo linear." width="672" />
+<p class="caption">
+Figure 2: Modelo linear.
+</p>
+</div>
+<p>A Figura <a href="#fig:boxcox"><strong>??</strong></a> mostra que a transformação ideal é mesmo a raiz
+cúbica (que surpresa!).</p>
+<pre class="r"><code>boxcox(linFit)</code></pre>
+<p><img src="/post/2020-01-12-retransformação-de-variáveis-2/index.pt_files/figure-html/boxcox-1.png" width="672" /></p>
+<p>Mais uma vez, fica nítida a não-linearidade pela análise da Figura
+<a href="#fig:linPowerPlot">3</a>, como no caso da raiz quadrada. Mas é claro que o ajuste
+está longe do ideal.</p>
+<pre class="r"><code>powerPlot(linFit, axis = &quot;inverted&quot;)</code></pre>
+<div class="figure"><span id="fig:linPowerPlot"></span>
+<img src="/post/2020-01-12-retransformação-de-variáveis-2/index.pt_files/figure-html/linPowerPlot-1.png" alt="Poder de Predição para o modelo linear." width="672" />
+<p class="caption">
+Figure 3: Poder de Predição para o modelo linear.
+</p>
+</div>
+<p>Ajusta-se então um modelo com a variável transformada.</p>
+<pre class="r"><code>transFit &lt;- lm(VU^(1/3)~Area, dados)
+s &lt;- summary(transFit)
+s</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = VU^(1/3) ~ Area, data = dados)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -2.7747 -0.8433 -0.1306  0.7864  3.7749 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 39.028240   1.079110   36.17   &lt;2e-16 ***
+## Area        -0.048048   0.002209  -21.75   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.412 on 98 degrees of freedom
+## Multiple R-squared:  0.8284, Adjusted R-squared:  0.8266 
+## F-statistic: 473.1 on 1 and 98 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Na Figura <a href="#fig:mediana">4</a> pode-se ver o Poder de Predição do modelo com a
+retransformação <em>naive</em>, ou seja, com a adoção da mediana.</p>
+<pre class="r"><code>powerPlot(dados$VU, fitted(transFit)^3, axis = &quot;inverted&quot;)</code></pre>
+<div class="figure"><span id="fig:mediana"></span>
+<img src="/post/2020-01-12-retransformação-de-variáveis-2/index.pt_files/figure-html/mediana-1.png" alt="Poder de predição com retransformação \emph{naive}" width="672" />
+<p class="caption">
+Figure 4: Poder de predição com retransformação 
+</p>
+</div>
+<p>E na Figura <a href="#fig:media">5</a> pode-se ver o Poder de Predição obtido com a média
+da distribuição original.</p>
+<pre class="r"><code>yhatMedia &lt;- fitted(transFit)^3 + 3*fitted(transFit)*s$sigma^2
+powerPlot(dados$VU, yhatMedia, axis = &quot;inverted&quot;)</code></pre>
+<div class="figure"><span id="fig:media"></span>
+<img src="/post/2020-01-12-retransformação-de-variáveis-2/index.pt_files/figure-html/media-1.png" alt="Poder de predição com a média." width="672" />
+<p class="caption">
+Figure 5: Poder de predição com a média.
+</p>
+</div>
+<p>É possível perceber que o ajuste dos dados (<span class="math inline">\(R^2\)</span>) não aumenta substancialmente.
+De maneira análoga, aliás, ao que ocorreu com as outras transformações estudadas
+nos posts anteriores.</p>
+<p>Mas percebe-se uma nítida melhora na previsão de valores nos extremos da
+amostra. Além disto, as hipóteses da inferência clássica não se verificam nos
+modelos sem a transformação das variáveis, o que significa que os testes de
+hipótese e os intervalos de confiança obtidos com estes modelos.</p>
