@@ -96,14 +96,14 @@ dados$VU <- dados$SQRTVU^2
 Pode-se demonstrar que, se $\sqrt{VU} \sim N(\mu, \sigma^2)$, então $VU$ tem
 distribuição [$\chi^2$
 generalizada](https://en.wikipedia.org/wiki/Generalized_chi-squared_distribution),
-com 2 graus de liberdade, parâmetro de não-centralidade $\lambda =
+com ~~2 graus~~ 1 grau de liberdade, parâmetro de não-centralidade $\lambda =
 (\mu/\sigma)^2$, o que pode ser verificado com o código abaixo:
 
 ```{r, fig.keep='last'}
 library(mosaic)
 m <- mean(dados$SQRTVU)
 s <- sd(dados$SQRTVU)
-histogram(sqrt(s^2*rchisq(300, 2, ncp = (m/s)^2)))
+histogram(sqrt(s^2*rchisq(300, 1, ncp = (m/s)^2)))
 plotDist("norm", mean = m, sd = s, add = TRUE)
 ```
 
@@ -115,13 +115,13 @@ ilustrado abaixo:
 
 ```{r, fig.keep='last'}
 histogram(~VU/s^2, dados)
-plotDist("chisq", df = 2, ncp = (m/s)^2, add = TRUE)
+plotDist("chisq", df = 1, ncp = (m/s)^2, add = TRUE)
 ```
 
 
 ```{r, fig.cap = "Valores Unitários de Lotes com distribuição lognormal.", echo = FALSE, eval = FALSE}
 library(fitdistrplus)
-fln <- fitdist(dados$VU/s^2, "chisq", start = list(df = 2, ncp = (m/s)^2))
+fln <- fitdist(dados$VU/s^2, "chisq", start = list(df = 1, ncp = (m/s)^2))
 par(mfrow = c(1, 2))
 denscomp(fln)
 qqcomp(fln)
