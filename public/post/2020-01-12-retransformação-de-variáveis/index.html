@@ -461,11 +461,11 @@ dados$VU &lt;- dados$SQRTVU^2</code></pre>
 <p>Pode-se demonstrar que, se <span class="math inline">\(\sqrt{VU} \sim N(\mu, \sigma^2)\)</span>, então <span class="math inline">\(VU\)</span> tem
 distribuição <a href="https://en.wikipedia.org/wiki/Generalized_chi-squared_distribution"><span class="math inline">\(\chi^2\)</span>
 generalizada</a>,
-com 2 graus de liberdade, parâmetro de não-centralidade <span class="math inline">\(\lambda = (\mu/\sigma)^2\)</span>, o que pode ser verificado com o código abaixo:</p>
+com <del>2 graus</del> 1 grau de liberdade, parâmetro de não-centralidade <span class="math inline">\(\lambda = (\mu/\sigma)^2\)</span>, o que pode ser verificado com o código abaixo:</p>
 <pre class="r"><code>library(mosaic)
 m &lt;- mean(dados$SQRTVU)
 s &lt;- sd(dados$SQRTVU)
-histogram(sqrt(s^2*rchisq(300, 2, ncp = (m/s)^2)))
+histogram(sqrt(s^2*rchisq(300, 1, ncp = (m/s)^2)))
 plotDist(&quot;norm&quot;, mean = m, sd = s, add = TRUE)</code></pre>
 <p><img src="/post/2020-01-12-retransformação-de-variáveis/index.pt_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Na prática, então, de posse de uma amostra, podemos testar:</p>
@@ -475,7 +475,7 @@ plotDist(&quot;norm&quot;, mean = m, sd = s, add = TRUE)</code></pre>
 ilustrado abaixo:</li>
 </ol>
 <pre class="r"><code>histogram(~VU/s^2, dados)
-plotDist(&quot;chisq&quot;, df = 2, ncp = (m/s)^2, add = TRUE)</code></pre>
+plotDist(&quot;chisq&quot;, df = 1, ncp = (m/s)^2, add = TRUE)</code></pre>
 <p><img src="/post/2020-01-12-retransformação-de-variáveis/index.pt_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>É boa prática utilizar a família de Box-Cox para verificar o melhor parâmetro
 para a transformação dos dados. Para isto, no R, podemos ajustar primeiro um
@@ -762,6 +762,8 @@ powerPlot(medFit, axis = &quot;inverted&quot;, func = &quot;sqrt&quot;)</code></
       <ul>
         
         <li><a href="/post/2020-01-12-retransforma%C3%A7%C3%A3o-de-vari%C3%A1veis-2/">Retransformação de Variáveis  (2)</a></li>
+        
+        <li><a href="/post/2020-01-13-retransforma%C3%A7%C3%A3o-de-vari%C3%A1veis-3/">Retransformação de Variáveis  (3)</a></li>
         
         <li><a href="/post/2021-01-07-fun%C3%A7%C3%B5es-de-perda-e-fun%C3%A7%C3%B5es-escore/">Funções de perda e funções de escore</a></li>
         

@@ -357,6 +357,16 @@ set.seed(1) dados &lt;- data.frame( Area = runif(100, min = 360, max = 600) ) da
   </div>
   
   <div>
+    <h2><a href="/post/2020-01-13-retransforma%C3%A7%C3%A3o-de-vari%C3%A1veis-3/">Retransformação de Variáveis  (3)</a></h2>
+    <div class="article-style">
+      
+      set.seed(1) dados &lt;- data.frame( Area = runif(300, min = 360, max = 600) ) dados$INVVU &lt;- .85 + .001*dados$Area + rnorm(300, mean = 0, sd = 0.15) dados$VU &lt;- 10*dados$INVVU^(-1) A Figura 1 mostra que os dados transformados pela função recíproca são aproximadamente normais.
+m &lt;- mean(dados$VU^(-1)) s &lt;- sd(dados$VU^(-1)) histogram(~VU^(-1), dados) plotDist(&quot;norm&quot;, mean = m, sd = s, add = TRUE)  Figure 1: Histograma dos dados transformados.
+      
+    </div>
+  </div>
+  
+  <div>
     <h2><a href="/post/2021-01-07-fun%C3%A7%C3%B5es-de-perda-e-fun%C3%A7%C3%B5es-escore/">Funções de perda e funções de escore</a></h2>
     <div class="article-style">
       

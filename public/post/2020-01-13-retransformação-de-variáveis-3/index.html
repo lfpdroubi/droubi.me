@@ -15,13 +15,11 @@
   
     
   
-  <meta name="description" content="Segundo Land (1972), o cubo de uma variável aleatória normal \(X \sim N(\mu, \sigma^2)\) é igual a (ver prova):
-\[\mathbb{E}[X^3] = \mu^3 &#43; 3\mu\sigma^2\]
-Para melhor compreender, criei os dados abaixo no R:
-set.seed(1) dados &lt;- data.frame( Area = runif(100, min = 360, max = 600) ) dados$CROOTVU &lt;- 40 - .05*dados$Area &#43; rnorm(100, mean = 0, sd = 1.5) dados$VU &lt;- dados$CROOTVU^3 A Figura 1 mostra que os dados transformados pela raiz cúbica são aproximadamente normais.">
+  <meta name="description" content="set.seed(1) dados &lt;- data.frame( Area = runif(300, min = 360, max = 600) ) dados$INVVU &lt;- .85 &#43; .001*dados$Area &#43; rnorm(300, mean = 0, sd = 0.15) dados$VU &lt;- 10*dados$INVVU^(-1) A Figura 1 mostra que os dados transformados pela função recíproca são aproximadamente normais.
+m &lt;- mean(dados$VU^(-1)) s &lt;- sd(dados$VU^(-1)) histogram(~VU^(-1), dados) plotDist(&quot;norm&quot;, mean = m, sd = s, add = TRUE)  Figure 1: Histograma dos dados transformados.">
 
   
-  <link rel="alternate" hreflang="pt" href="http://droubi.me/post/2020-01-12-retransforma%C3%A7%C3%A3o-de-vari%C3%A1veis-2/">
+  <link rel="alternate" hreflang="pt" href="http://droubi.me/post/2020-01-13-retransforma%C3%A7%C3%A3o-de-vari%C3%A1veis-3/">
 
   
 
@@ -105,7 +103,7 @@ set.seed(1) dados &lt;- data.frame( Area = runif(100, min = 360, max = 600) ) da
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="http://droubi.me/post/2020-01-12-retransforma%C3%A7%C3%A3o-de-vari%C3%A1veis-2/">
+  <link rel="canonical" href="http://droubi.me/post/2020-01-13-retransforma%C3%A7%C3%A3o-de-vari%C3%A1veis-3/">
 
   <meta property="twitter:card" content="summary_large_image">
   
@@ -113,12 +111,10 @@ set.seed(1) dados &lt;- data.frame( Area = runif(100, min = 360, max = 600) ) da
   <meta property="twitter:creator" content="@lfpdroubi">
   
   <meta property="og:site_name" content="droubi.me">
-  <meta property="og:url" content="http://droubi.me/post/2020-01-12-retransforma%C3%A7%C3%A3o-de-vari%C3%A1veis-2/">
-  <meta property="og:title" content="Retransformação de Variáveis  (2) | droubi.me">
-  <meta property="og:description" content="Segundo Land (1972), o cubo de uma variável aleatória normal \(X \sim N(\mu, \sigma^2)\) é igual a (ver prova):
-\[\mathbb{E}[X^3] = \mu^3 &#43; 3\mu\sigma^2\]
-Para melhor compreender, criei os dados abaixo no R:
-set.seed(1) dados &lt;- data.frame( Area = runif(100, min = 360, max = 600) ) dados$CROOTVU &lt;- 40 - .05*dados$Area &#43; rnorm(100, mean = 0, sd = 1.5) dados$VU &lt;- dados$CROOTVU^3 A Figura 1 mostra que os dados transformados pela raiz cúbica são aproximadamente normais.">
+  <meta property="og:url" content="http://droubi.me/post/2020-01-13-retransforma%C3%A7%C3%A3o-de-vari%C3%A1veis-3/">
+  <meta property="og:title" content="Retransformação de Variáveis  (3) | droubi.me">
+  <meta property="og:description" content="set.seed(1) dados &lt;- data.frame( Area = runif(300, min = 360, max = 600) ) dados$INVVU &lt;- .85 &#43; .001*dados$Area &#43; rnorm(300, mean = 0, sd = 0.15) dados$VU &lt;- 10*dados$INVVU^(-1) A Figura 1 mostra que os dados transformados pela função recíproca são aproximadamente normais.
+m &lt;- mean(dados$VU^(-1)) s &lt;- sd(dados$VU^(-1)) histogram(~VU^(-1), dados) plotDist(&quot;norm&quot;, mean = m, sd = s, add = TRUE)  Figure 1: Histograma dos dados transformados.">
   
   
     
@@ -134,7 +130,7 @@ set.seed(1) dados &lt;- data.frame( Area = runif(100, min = 360, max = 600) ) da
 
   
 
-  <title>Retransformação de Variáveis  (2) | droubi.me</title>
+  <title>Retransformação de Variáveis  (3) | droubi.me</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -325,10 +321,10 @@ set.seed(1) dados &lt;- data.frame( Area = runif(100, min = 360, max = 600) ) da
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">Retransformação de Variáveis  (2)</h1>
+  <h1 itemprop="name">Retransformação de Variáveis  (3)</h1>
 
   
-  <p class="page-subtitle">Raiz cúbica</p>
+  <p class="page-subtitle">Inverso</p>
   
 
   
@@ -364,7 +360,7 @@ set.seed(1) dados &lt;- data.frame( Area = runif(100, min = 360, max = 600) ) da
   
   
   <span class="middot-divider"></span>
-  <a href="/post/2020-01-12-retransforma%C3%A7%C3%A3o-de-vari%C3%A1veis-2/#disqus_thread"></a>
+  <a href="/post/2020-01-13-retransforma%C3%A7%C3%A3o-de-vari%C3%A1veis-3/#disqus_thread"></a>
   
 
   
@@ -388,35 +384,35 @@ set.seed(1) dados &lt;- data.frame( Area = runif(100, min = 360, max = 600) ) da
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Retransforma%c3%a7%c3%a3o%20de%20Vari%c3%a1veis%20%20%282%29&amp;url=http%3a%2f%2fdroubi.me%2fpost%2f2020-01-12-retransforma%25C3%25A7%25C3%25A3o-de-vari%25C3%25A1veis-2%2f"
+         href="https://twitter.com/intent/tweet?text=Retransforma%c3%a7%c3%a3o%20de%20Vari%c3%a1veis%20%20%283%29&amp;url=http%3a%2f%2fdroubi.me%2fpost%2f2020-01-13-retransforma%25C3%25A7%25C3%25A3o-de-vari%25C3%25A1veis-3%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fdroubi.me%2fpost%2f2020-01-12-retransforma%25C3%25A7%25C3%25A3o-de-vari%25C3%25A1veis-2%2f"
+         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fdroubi.me%2fpost%2f2020-01-13-retransforma%25C3%25A7%25C3%25A3o-de-vari%25C3%25A1veis-3%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fdroubi.me%2fpost%2f2020-01-12-retransforma%25C3%25A7%25C3%25A3o-de-vari%25C3%25A1veis-2%2f&amp;title=Retransforma%c3%a7%c3%a3o%20de%20Vari%c3%a1veis%20%20%282%29"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fdroubi.me%2fpost%2f2020-01-13-retransforma%25C3%25A7%25C3%25A3o-de-vari%25C3%25A1veis-3%2f&amp;title=Retransforma%c3%a7%c3%a3o%20de%20Vari%c3%a1veis%20%20%283%29"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fdroubi.me%2fpost%2f2020-01-12-retransforma%25C3%25A7%25C3%25A3o-de-vari%25C3%25A1veis-2%2f&amp;title=Retransforma%c3%a7%c3%a3o%20de%20Vari%c3%a1veis%20%20%282%29"
+         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fdroubi.me%2fpost%2f2020-01-13-retransforma%25C3%25A7%25C3%25A3o-de-vari%25C3%25A1veis-3%2f&amp;title=Retransforma%c3%a7%c3%a3o%20de%20Vari%c3%a1veis%20%20%283%29"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Retransforma%c3%a7%c3%a3o%20de%20Vari%c3%a1veis%20%20%282%29&amp;body=http%3a%2f%2fdroubi.me%2fpost%2f2020-01-12-retransforma%25C3%25A7%25C3%25A3o-de-vari%25C3%25A1veis-2%2f">
+         href="mailto:?subject=Retransforma%c3%a7%c3%a3o%20de%20Vari%c3%a1veis%20%20%283%29&amp;body=http%3a%2f%2fdroubi.me%2fpost%2f2020-01-13-retransforma%25C3%25A7%25C3%25A3o-de-vari%25C3%25A1veis-3%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -441,28 +437,26 @@ set.seed(1) dados &lt;- data.frame( Area = runif(100, min = 360, max = 600) ) da
 <script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
 
 
-<p>Segundo <a href="https://projecteuclid.org/download/pdf_1/euclid.aoms/1177693235">Land (1972)</a>,
-o cubo de uma variável aleatória normal <span class="math inline">\(X \sim N(\mu, \sigma^2)\)</span> é igual a (ver <a href="https://math.stackexchange.com/a/3741451">prova</a>):</p>
-<p><span class="math display">\[\mathbb{E}[X^3] = \mu^3 + 3\mu\sigma^2\]</span></p>
-<p>Para melhor compreender, criei os dados abaixo no R:</p>
 <pre class="r"><code>set.seed(1)
 dados &lt;- data.frame(
-  Area = runif(100, min = 360, max = 600)
+  Area = runif(300, min = 360, max = 600)
 )
-dados$CROOTVU &lt;- 40 - .05*dados$Area + rnorm(100, mean = 0, sd = 1.5)
-dados$VU &lt;- dados$CROOTVU^3</code></pre>
-<p>A Figura <a href="#fig:hist">1</a> mostra que os dados transformados pela raiz cúbica são
-aproximadamente normais.</p>
-<pre class="r"><code>m &lt;- mean(dados$VU^(1/3))
-s &lt;- sd(dados$VU^(1/3))
-histogram(~VU^(1/3), dados)
+dados$INVVU &lt;- .85 + .001*dados$Area + rnorm(300, mean = 0, sd = 0.15)
+dados$VU &lt;- 10*dados$INVVU^(-1)</code></pre>
+<p>A Figura <a href="#fig:hist">1</a> mostra que os dados transformados pela função
+recíproca são aproximadamente normais.</p>
+<pre class="r"><code>m &lt;- mean(dados$VU^(-1))
+s &lt;- sd(dados$VU^(-1))
+histogram(~VU^(-1), dados)
 plotDist(&quot;norm&quot;, mean = m, sd = s, add = TRUE)</code></pre>
 <div class="figure"><span id="fig:hist"></span>
-<img src="/post/2020-01-12-retransformação-de-variáveis-2/index.pt_files/figure-html/hist-1.png" alt="Histograma dos dados transformados." width="672" />
+<img src="/post/2020-01-13-retransformação-de-variáveis-3/index.pt_files/figure-html/hist-1.png" alt="Histograma dos dados transformados." width="672" />
 <p class="caption">
 Figure 1: Histograma dos dados transformados.
 </p>
 </div>
+<pre class="r"><code>histogram(~VU, dados)</code></pre>
+<p><img src="/post/2020-01-13-retransformação-de-variáveis-3/index.pt_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Primeiro ajustamos um modelo linear:</p>
 <pre class="r"><code>linFit &lt;- lm(VU~Area, dados)
 summary(linFit)</code></pre>
@@ -472,21 +466,21 @@ summary(linFit)</code></pre>
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -2665.4  -736.0  -124.3   501.4  5114.1 
+## -1.9492 -0.6689 -0.0610  0.4189  3.4340 
 ## 
 ## Coefficients:
 ##              Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) 22608.881   1004.015   22.52   &lt;2e-16 ***
-## Area          -37.484      2.055  -18.24   &lt;2e-16 ***
+## (Intercept) 10.007935   0.403075   24.83  &lt; 2e-16 ***
+## Area        -0.004966   0.000836   -5.94 7.93e-09 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 1313 on 98 degrees of freedom
-## Multiple R-squared:  0.7724, Adjusted R-squared:  0.7701 
-## F-statistic: 332.6 on 1 and 98 DF,  p-value: &lt; 2.2e-16</code></pre>
+## Residual standard error: 0.9528 on 298 degrees of freedom
+## Multiple R-squared:  0.1059, Adjusted R-squared:  0.1029 
+## F-statistic: 35.28 on 1 and 298 DF,  p-value: 7.934e-09</code></pre>
 <p>Percebem-se os problemas do modelo na Figura <a href="#fig:linFit">2</a>:</p>
 <div class="figure"><span id="fig:linFit"></span>
-<img src="/post/2020-01-12-retransformação-de-variáveis-2/index.pt_files/figure-html/linFit-1.png" alt="Modelo linear." width="672" />
+<img src="/post/2020-01-13-retransformação-de-variáveis-3/index.pt_files/figure-html/linFit-1.png" alt="Modelo linear." width="672" />
 <p class="caption">
 Figure 2: Modelo linear.
 </p>
@@ -494,54 +488,54 @@ Figure 2: Modelo linear.
 <p>A Figura <a href="#fig:boxcox"><strong>??</strong></a> mostra que a transformação ideal é mesmo a raiz
 cúbica (que surpresa!).</p>
 <pre class="r"><code>boxcox(linFit)</code></pre>
-<p><img src="/post/2020-01-12-retransformação-de-variáveis-2/index.pt_files/figure-html/boxcox-1.png" width="672" /></p>
+<p><img src="/post/2020-01-13-retransformação-de-variáveis-3/index.pt_files/figure-html/boxcox-1.png" width="672" /></p>
 <p>Mais uma vez, fica nítida a não-linearidade pela análise da Figura
 <a href="#fig:linPowerPlot">3</a>, como no caso da raiz quadrada. Mas é claro que o ajuste
 está longe do ideal.</p>
 <pre class="r"><code>powerPlot(linFit, axis = &quot;inverted&quot;)</code></pre>
 <div class="figure"><span id="fig:linPowerPlot"></span>
-<img src="/post/2020-01-12-retransformação-de-variáveis-2/index.pt_files/figure-html/linPowerPlot-1.png" alt="Poder de Predição para o modelo linear." width="672" />
+<img src="/post/2020-01-13-retransformação-de-variáveis-3/index.pt_files/figure-html/linPowerPlot-1.png" alt="Poder de Predição para o modelo linear." width="672" />
 <p class="caption">
 Figure 3: Poder de Predição para o modelo linear.
 </p>
 </div>
 <p>Ajusta-se então um modelo com a variável transformada.</p>
-<pre class="r"><code>transFit &lt;- lm(VU^(1/3)~Area, dados)
+<pre class="r"><code>transFit &lt;- lm(VU^(-1)~Area, dados)
 s &lt;- summary(transFit)
 s</code></pre>
 <pre><code>## 
 ## Call:
-## lm(formula = VU^(1/3) ~ Area, data = dados)
+## lm(formula = VU^(-1) ~ Area, data = dados)
 ## 
 ## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -2.7747 -0.8433 -0.1306  0.7864  3.7749 
+##       Min        1Q    Median        3Q       Max 
+## -0.044648 -0.008939 -0.001051  0.010192  0.038172 
 ## 
 ## Coefficients:
 ##              Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) 39.028240   1.079110   36.17   &lt;2e-16 ***
-## Area        -0.048048   0.002209  -21.75   &lt;2e-16 ***
+## (Intercept) 9.328e-02  6.490e-03  14.374  &lt; 2e-16 ***
+## Area        8.328e-05  1.346e-05   6.187 2.02e-09 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 1.412 on 98 degrees of freedom
-## Multiple R-squared:  0.8284, Adjusted R-squared:  0.8266 
-## F-statistic: 473.1 on 1 and 98 DF,  p-value: &lt; 2.2e-16</code></pre>
+## Residual standard error: 0.01534 on 298 degrees of freedom
+## Multiple R-squared:  0.1138, Adjusted R-squared:  0.1109 
+## F-statistic: 38.28 on 1 and 298 DF,  p-value: 2.018e-09</code></pre>
 <p>Na Figura <a href="#fig:mediana">4</a> pode-se ver o Poder de Predição do modelo com a
 retransformação <em>naive</em>, ou seja, com a adoção da mediana.</p>
-<pre class="r"><code>powerPlot(dados$VU, fitted(transFit)^3, axis = &quot;inverted&quot;)</code></pre>
+<pre class="r"><code>powerPlot(transFit, func = &quot;rec&quot;, axis = &quot;inverted&quot;)</code></pre>
 <div class="figure"><span id="fig:mediana"></span>
-<img src="/post/2020-01-12-retransformação-de-variáveis-2/index.pt_files/figure-html/mediana-1.png" alt="Poder de predição com retransformação \emph{naive}" width="672" />
+<img src="/post/2020-01-13-retransformação-de-variáveis-3/index.pt_files/figure-html/mediana-1.png" alt="Poder de predição com retransformação \emph{naive}" width="672" />
 <p class="caption">
 Figure 4: Poder de predição com retransformação 
 </p>
 </div>
 <p>E na Figura <a href="#fig:media">5</a> pode-se ver o Poder de Predição obtido com a média
 da distribuição original.</p>
-<pre class="r"><code>yhatMedia &lt;- fitted(transFit)^3 + 3*fitted(transFit)*s$sigma^2
+<pre class="r"><code>yhatMedia &lt;- fitted(transFit)/(fitted(transFit)^2 + s$sigma/300)
 powerPlot(dados$VU, yhatMedia, axis = &quot;inverted&quot;)</code></pre>
 <div class="figure"><span id="fig:media"></span>
-<img src="/post/2020-01-12-retransformação-de-variáveis-2/index.pt_files/figure-html/media-1.png" alt="Poder de predição com a média." width="672" />
+<img src="/post/2020-01-13-retransformação-de-variáveis-3/index.pt_files/figure-html/media-1.png" alt="Poder de predição com a média." width="672" />
 <p class="caption">
 Figure 5: Poder de predição com a média.
 </p>
@@ -730,7 +724,7 @@ hipótese e os intervalos de confiança obtidos com estes modelos.</p>
         
         <li><a href="/post/2020-01-12-retransforma%C3%A7%C3%A3o-de-vari%C3%A1veis/">Retransformação de Variáveis  (1)</a></li>
         
-        <li><a href="/post/2020-01-13-retransforma%C3%A7%C3%A3o-de-vari%C3%A1veis-3/">Retransformação de Variáveis  (3)</a></li>
+        <li><a href="/post/2020-01-12-retransforma%C3%A7%C3%A3o-de-vari%C3%A1veis-2/">Retransformação de Variáveis  (2)</a></li>
         
         <li><a href="/post/2021-01-07-fun%C3%A7%C3%B5es-de-perda-e-fun%C3%A7%C3%B5es-escore/">Funções de perda e funções de escore</a></li>
         
